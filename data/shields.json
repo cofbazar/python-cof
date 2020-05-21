@@ -1,0 +1,98 @@
+[
+  {
+    "__type__": "Shield",
+    "ability": null,
+    "area": null,
+    "attack": null,
+    "base_item": "petit-bouclier",
+    "category": "Standard",
+    "cost": {
+      "__type__": "Cost",
+      "unit": "pa",
+      "value": 2
+    },
+    "count": 1,
+    "creature": null,
+    "defense": [
+      {
+        "__type__": "Mod",
+        "count": 1,
+        "die": null,
+        "label": "DEF",
+        "limitation": null,
+        "mtype": "+",
+        "target": null
+      }
+    ],
+    "duration": null,
+    "flavor": [],
+    "full_description": "Un petit bouclier en métal qui occupe une main. Très maniable, il n'offre cependant que très peu de protection contre les projectiles. Il procure un bonus de DEF +1.",
+    "hands": 1,
+    "magical_level": null,
+    "material": null,
+    "name": "Petit bouclier",
+    "oid": "petit-bouclier",
+    "quantity": -1,
+    "range": null,
+    "scenario": null,
+    "short_description": "Un petit bouclier très maniable en métal qui occupe une main.",
+    "skill": null,
+    "special_property": [],
+    "usable_by": [],
+    "use": -1,
+    "way_rank": -1,
+    "weight": {
+      "__type__": "Weight",
+      "unit": "Kg",
+      "value": 2.0
+    }
+  },
+  {
+    "__type__": "Shield",
+    "ability": null,
+    "area": null,
+    "attack": null,
+    "base_item": "grand-bouclier",
+    "category": "Standard",
+    "cost": {
+      "__type__": "Cost",
+      "unit": "pa",
+      "value": 4
+    },
+    "count": 1,
+    "creature": null,
+    "defense": [
+      {
+        "__type__": "Mod",
+        "count": 2,
+        "die": null,
+        "label": "DEF",
+        "limitation": null,
+        "mtype": "+",
+        "target": null
+      }
+    ],
+    "duration": null,
+    "flavor": [],
+    "full_description": "Un grand bouclier en métal qui occupe une main. Ce bouclier offre une bonne protection contre les projectiles. Il procure un bonus de DEF +2.",
+    "hands": 1,
+    "magical_level": null,
+    "material": null,
+    "name": "Grand bouclier",
+    "oid": "grand-bouclier",
+    "quantity": -1,
+    "range": null,
+    "scenario": null,
+    "short_description": "Un grand bouclier en métal qui occupe une main.",
+    "skill": null,
+    "special_property": [],
+    "usable_by": [],
+    "use": -1,
+    "way_rank": -1,
+    "weight": {
+      "__type__": "Weight",
+      "unit": "Kg",
+      "value": 3.0
+    }
+  }
+]
