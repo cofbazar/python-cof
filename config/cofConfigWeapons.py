@@ -527,7 +527,7 @@ weapons = {
                                                             "également la RD d'une telle créature.".format(
                 item.full_description),
             'cost': lambda item, magical_level: cof.properties.Cost(
-                value=(2.0 * config.cofConfig.config['global']['cost']['silver'] *
+                value=(config.cofConfig.config['global']['cost']['silver'] *
                        max_dm(item.attack.damages) + item.cost.iso().value),
                 unit=config.cofConfig.config['global']['cost']['unit']).iso(),
             'special_property': lambda item, magical_level: [sp for sp in item.special_property] +
@@ -547,7 +547,7 @@ weapons = {
                                                             "contre les fées et les démons.".format(
                 item.full_description),
             'cost': lambda item, magical_level: cof.properties.Cost(
-                value=(2.0 * config.cofConfig.config['global']['cost']['cold-iron'] *
+                value=(config.cofConfig.config['global']['cost']['cold-iron'] *
                        max_dm(item.attack.damages) + item.cost.iso().value),
                 unit=config.cofConfig.config['global']['cost']['unit']).iso(),
             'special_property': lambda item, magical_level: [sp for sp in item.special_property] +
@@ -572,6 +572,10 @@ weapons = {
                                                             "de -1 en attaque, mais augmente le dé de DM d'une "
                                                             "catégorie (d4->d6->d8->d10->d12) et elles sont presque "
                                                             "indestructibles.".format(item.full_description),
+            'cost': lambda item, magical_level: cof.properties.Cost(
+                value=(config.cofConfig.config['global']['cost']['durium'] *
+                       max_dm(item.attack.damages) + item.cost.iso().value),
+                unit=config.cofConfig.config['global']['cost']['unit']).iso(),
             'attack': lambda item, magical_level: None if item.attack is None else Attack(
                 atype=item.attack.atype,
                 name=item.attack.name,
@@ -586,10 +590,6 @@ weapons = {
                                                                 unit=item.attack.area.unit),
                 critical=item.attack.critical.union(RangeSet())
             ),
-            'cost': lambda item, magical_level: cof.properties.Cost(
-                value=(2.0 * config.cofConfig.config['global']['cost']['durium'] *
-                       max_dm(item.attack.damages) + item.cost.iso().value),
-                unit=config.cofConfig.config['global']['cost']['unit']).iso()
         },
         'mythral': {
             'category': lambda item, magical_level: 'Bazar du bizarre',
@@ -618,7 +618,7 @@ weapons = {
                 critical=item.attack.critical.union(RangeSet())
             ),
             'cost': lambda item, magical_level: cof.properties.Cost(
-                value=(2.0 * config.cofConfig.config['global']['cost']['mythral'] *
+                value=(config.cofConfig.config['global']['cost']['mythral'] *
                        max_dm(item.attack.damages) + item.cost.iso().value),
                 unit=config.cofConfig.config['global']['cost']['unit']).iso()
         },
@@ -652,7 +652,7 @@ weapons = {
                 critical=RangeSet("{}-{}".format(item.attack.critical[0]-1, item.attack.critical[-1]))
             ),
             'cost': lambda item, magical_level: cof.properties.Cost(
-                value=(2.0 * config.cofConfig.config['global']['cost']['lothar'] *
+                value=(config.cofConfig.config['global']['cost']['lothar'] *
                        max_dm(item.attack.damages) + item.cost.iso().value),
                 unit=config.cofConfig.config['global']['cost']['unit']).iso()
         },
@@ -673,7 +673,7 @@ weapons = {
                                                             "créatures.".format(
                 item.full_description),
             'cost': lambda item, magical_level: cof.properties.Cost(
-                value=(2.0 * config.cofConfig.config['global']['cost']['adamantium'] *
+                value=(config.cofConfig.config['global']['cost']['adamantium'] *
                        max_dm(item.attack.damages) + item.cost.iso().value),
                 unit=config.cofConfig.config['global']['cost']['unit']).iso(),
             'special_property': lambda item, magical_level: [sp for sp in item.special_property] +
@@ -699,7 +699,7 @@ weapons = {
                                                             "contre la magie de +{}.".format(
                 item.full_description, weapon_size[get_size(item)]['bonus-defense-magique']),
             'cost': lambda item, magical_level: cof.properties.Cost(
-                value=(2.0 * config.cofConfig.config['global']['cost']['sombracier'] *
+                value=(config.cofConfig.config['global']['cost']['sombracier'] *
                        max_dm(item.attack.damages) + item.cost.iso().value),
                 unit=config.cofConfig.config['global']['cost']['unit']).iso(),
             'special_property': lambda item, magical_level: [sp for sp in item.special_property] +
@@ -722,7 +722,7 @@ weapons = {
                                                             "zone éclairée est de {} m.".format(
                 item.full_description, weapon_size[get_size(item)]['zone-lumiere']),
             'cost': lambda item, magical_level: cof.properties.Cost(
-                value=(2.0 * config.cofConfig.config['global']['cost']['laenk'][get_size(item)] *
+                value=(config.cofConfig.config['global']['cost']['laenk'][get_size(item)] *
                        max_dm(item.attack.damages) + item.cost.iso().value),
                 unit=config.cofConfig.config['global']['cost']['unit']).iso(),
             'special_property': lambda item, magical_level: [sp for sp in item.special_property] +
@@ -760,7 +760,7 @@ weapons = {
                 critical=item.attack.critical
             ),
             'cost': lambda item, magical_level: cof.properties.Cost(
-                value=(2.0 * config.cofConfig.config['global']['cost']['xylene'] *
+                value=(config.cofConfig.config['global']['cost']['xylene'] *
                        max_dm(item.attack.damages) + item.cost.iso().value),
                 unit=config.cofConfig.config['global']['cost']['unit']).iso(),
         },
@@ -799,7 +799,7 @@ weapons = {
                 critical=item.attack.critical
             ),
             'cost': lambda item, magical_level: cof.properties.Cost(
-                value=(2.0 * config.cofConfig.config['global']['cost']['phospharium'] *
+                value=(config.cofConfig.config['global']['cost']['phospharium'] *
                        max_dm(item.attack.damages) + item.cost.iso().value),
                 unit=config.cofConfig.config['global']['cost']['unit']).iso(),
             'special_property': lambda item, magical_level: [sp for sp in item.special_property] +
@@ -837,7 +837,7 @@ weapons = {
                 critical=item.attack.critical
             ),
             'cost': lambda item, magical_level: cof.properties.Cost(
-                value=(2.0 * config.cofConfig.config['global']['cost']['hybberium'] *
+                value=(config.cofConfig.config['global']['cost']['hybberium'] *
                        max_dm(item.attack.damages) + item.cost.iso().value),
                 unit=config.cofConfig.config['global']['cost']['unit']).iso(),
         },

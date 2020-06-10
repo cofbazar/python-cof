@@ -13,7 +13,7 @@ import json
 import copy
 import cilogger.cilogger
 log = cilogger.cilogger.ccilogger(__name__)
-
+cilogger.cilogger.rootlogger.setLevel('DEBUG')
 
 def sanitize(t):
     sanitize_regex = re.compile(r'[\s\n]+', re.MULTILINE)
@@ -84,6 +84,7 @@ def max_dm(damages):
 
         if dm.count is not None:
             dm_max += dm.count * d * m
+    log.debug(f"Get max DM: {float(dm_max)}")
     return dm_max
 
 
@@ -122,4 +123,5 @@ def get_def_level(mod_list):
             if m.mtype == "+" and m.count > 0:
                 def_level += m.count
 
-    return def_level
+    log.debug(f"Get def level: {float(def_level)}")
+    return float(def_level)

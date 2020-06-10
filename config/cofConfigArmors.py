@@ -304,14 +304,15 @@ armors = {
                                             "très dur et particulièrement lourd. Elle augmente la DEF de +1 mais "
                                             "impose une pénalité d'armure de +2, ce qui n'est pas très "
                                             "avantageux.".format(item.full_description),
+
+            'skill': lambda item, magical_level: reduce_malus([m for m in item.skill], "Test", "DEX", -2),
+            'cost': lambda item, magical_level: Cost(
+                value=get_def_level(item.defense) * 2.0 * config.cofConfig.config['global']['cost']['durium'] + item.cost.iso().value,
+                unit=config.cofConfig.config['global']['cost']['unit']).iso(),
             'defense': lambda item, magical_level: [
                 Mod(label=m.label, target=m.target, mtype=m.mtype, die=m.die,
                     count=m.count + 1, limitation=m.limitation)
                 if m.label == "DEF" else m for m in item.defense],
-            'skill': lambda item, magical_level: reduce_malus([m for m in item.skill], "Test", "DEX", -2),
-            'cost': lambda item, magical_level: Cost(
-                value=get_def_level(item.defense) * 2 * config.cofConfig.config['global']['cost']['durium'],
-                unit=config.cofConfig.config['global']['cost']['unit']).iso()
         },
         'dalberath': {
             'category': lambda item, magical_level: 'Bazar du bizarre',
@@ -329,7 +330,7 @@ armors = {
                                             "sauvetage.".format(item.full_description),
             "special_property": lambda item, magical_level: item.special_property + ["Permet de surnager"],
             'cost': lambda item, magical_level: Cost(
-                value=get_def_level(item.defense) * 2 * config.cofConfig.config['global']['cost']['dalberath'],
+                value=get_def_level(item.defense) * 2 * config.cofConfig.config['global']['cost']['dalberath'] + item.cost.iso().value,
                 unit=config.cofConfig.config['global']['cost']['unit']).iso()
         },
         'mythral': {
@@ -347,7 +348,7 @@ armors = {
                                             "de 2 points.".format(item.full_description),
             'skill': lambda item, magical_level: reduce_malus([m for m in item.skill], "Test", "DEX", 2),
             'cost': lambda item, magical_level: Cost(
-                value=get_def_level(item.defense) * 2 * config.cofConfig.config['global']['cost']['mythral'],
+                value=get_def_level(item.defense) * 2 * config.cofConfig.config['global']['cost']['mythral'] + item.cost.iso().value,
                 unit=config.cofConfig.config['global']['cost']['unit']).iso()
         },
         'adamantium': {
@@ -368,7 +369,7 @@ armors = {
                 lambda item, magical_level: item.defense +
                                             [Mod(label="RD", target="rd", count=ceil(get_def_level(item.defense)/2))],
             'cost': lambda item, magical_level: Cost(
-                value=get_def_level(item.defense) * 2 * config.cofConfig.config['global']['cost']['adamantium'],
+                value=get_def_level(item.defense) * 2 * config.cofConfig.config['global']['cost']['adamantium'] + item.cost.iso().value,
                 unit=config.cofConfig.config['global']['cost']['unit']).iso()
         },
         'sombracier': {
@@ -403,7 +404,7 @@ armors = {
                     f"Non affecté par un sort si d20 < RM"
                 ],
             'cost': lambda item, magical_level: Cost(
-                value=get_def_level(item.defense) * 2 * config.cofConfig.config['global']['cost']['adamantium'],
+                value=get_def_level(item.defense) * 2 * config.cofConfig.config['global']['cost']['sombracier'] + item.cost.iso().value,
                 unit=config.cofConfig.config['global']['cost']['unit']).iso()
         },
     },
