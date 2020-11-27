@@ -135,7 +135,7 @@ config = {
     'potions': config.cofConfigPotions.potions,
     "Spell": "spells",
     'spells': config.cofConfigSpells.spells,
-    "MagicWand": "magicwands",
+    "MagicalWand": "magicwands",
     'magicwands': config.cofConfigMagicWands.magicwands,
     "Weapon": "weapons",
     'weapons': config.cofConfigWeapons.weapons,

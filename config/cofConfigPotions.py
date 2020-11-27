@@ -433,10 +433,8 @@ potions = {
                                 "permet aux victimes de diviser les DM par 2.",
         },
         'potion-elixir-de-guerison-mineur': {
-            "short_description": "La personne qui boit cette potion peut préparer un élixir qui soigne "
-                                 "[3d6 + Mod. d’INT] PV ou un empoisonnement.",
-            "full_description": "La personne qui boit cette potion peut préparer un élixir qui soigne "
-                                "[3d6 + Mod. d’INT] PV ou un empoisonnement.",
+            "short_description": "Un élixir qui soigne [3d6 + Mod. d’INT] PV ou un empoisonnement.",
+            "full_description": "Un élixir qui soigne [3d6 + Mod. d’INT] PV ou un empoisonnement.",
         },   
         'potion-elixir-de-guerison-moyen': {
             "short_description": "La personne qui boit cette potion peut préparer un élixir qui soigne "

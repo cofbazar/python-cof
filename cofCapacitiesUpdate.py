@@ -27,6 +27,8 @@ def main():
                                    'capacities-orig.json')
     capacities = cof.capacities.Capacities()
     capacities.load(capacities_file)
+    for c in config.cofConfig.config['capacities']['capacities']:
+        capacities.add(cof.capacities.Capacity(**c))
     for c in capacities:
         c.update(config.cofConfig.config['capacities']['addons'])
 

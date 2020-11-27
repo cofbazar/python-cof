@@ -3,6 +3,62 @@ from cof.properties import *
 from ClusterShell.NodeSet import RangeSet
 
 capacities = {
+    "capacities": [
+      {
+        "oid": "http://co-drs.org/capacites/nuees-de-criquets/",
+        "count": 1,
+        "full_description": "Cette capacité remplace la capacité «Nuée d’insectes». En réussissant "
+                            "un test d’attaque magique (portée 20 m), le druide libère sur sa cible "
+                            "une nuée de criquet affamés qui la dévorent à petit feu pendant "
+                            "[5 + Mod de SAG.] tours. La victime subit 2 points de DM par tour et "
+                            "un malus de -3 à toutes ses actions. Les DM de zone détruisent la nuée.",
+        "short_description": "Sur une attaque magique réussie, le druide libère sur sa cible une "
+                            "nuée de criquet affamés qui la dévorent à petit feu.",
+        "limited": True,
+        "name": "Nuées de criquets",
+        "range": Range(value=20, unit="m"),
+        "duration": Duration(value="5+[SAG]", unit="tr"),
+        "special_property": [
+              "Destruction: DM de zone uniquement",
+              "Cible: malus -3 à toutes ses actions",
+              "Cible: 2 DM / tr"
+        ],
+        "way_rank": 1,
+        "wid": "unknown-id_voie-des-vermines"
+      },
+      {
+        "oid": "http://co-drs.org/capacites/cone-de-froid/",
+        "count": 1,
+        "full_description": "Le cône de affecte toute les créatures dans un cône approximatif de "
+                            "20 mètres de long sur 10 mètres de large à son extrémité. Les "
+                            "victimes subissent [2d6+Mod d’INT] DM et sont Ralenties pour 1 tour "
+                            "si elles ratent un test de CON difficulté 13. Sinon, elles subissent "
+                            "seulement la moitié des DM et ne sont pas ralenties.",
+        "short_description": "Un cône de froid qui sort des mains de l'ensorceleur et affecte "
+                             "toutes créatures prises à l'intérieure.",
+        "limited": True,
+        "name": "Cône de froid",
+        "range": Range(value=20, unit="m"),
+        "area": Area(value=10, unit="m"),
+        "attack": Attack(
+          atype="magical",
+          damages=Damage(
+            base=[],
+            other=[Mod(die=6, count=2, target="froid"),
+                   Mod(target="INT", mtype="+")],
+          ),
+          critical=RangeSet([20])
+        ),
+        "duration": Duration(value="1", unit="tr"),
+        "special_property": [
+              "Test CON < 13: Ralenti",
+              "Test CON >= 12: DM / 2"
+        ],
+        "way_rank": 3,
+        "wid": "unknown-id_voie-du-gel"
+      }
+
+    ],
     'http://co-drs.org/capacites/aura-feerique/': {'wid': 'Unknown-id_aura-feerique'},
     'addons': {
       "http://co-drs.org/capacites/6eme-sens/": {
@@ -123,7 +179,21 @@ capacities = {
       },
       "http://co-drs.org/capacites/arme-d-argent/": {
         "short_description": "Ce miracle crée pour la durée du combat une arme d’argent et de lumière que seul "
-                             "le Prêtre peut utiliser."
+                             "le Prêtre peut utiliser.",
+        "duration": Duration(value="", unit="Combat"),
+        "attack": Attack(
+          atype='melee',
+          damages=Damage(
+            base=[],
+            other=[Mod(die=6, count=1),Mod(mtype="+", target="SAG")],
+          ),
+          critical=RangeSet([20])
+        ),
+        "special_property": [
+          "Démon: attaque +2, DM +1d6"
+          "Mort vivant: attaque +2, DM +1d6"
+        ]
+
       },
       "http://co-drs.org/capacites/arme-enflammee/": {
         "short_description": "Le Magicien peut enflammer une arme qui infige alors des dégâts "
@@ -411,8 +481,13 @@ capacities = {
                              "et sa monture obtient une DEF égale à celle du Chevalier."
       },
       "http://co-drs.org/capacites/cercle-de-protection/": {
-        "short_description": "Le Magicien peut tracer un cercle sur le sol pouvant contenir 3 personnes pour les "
-                             "protéger des sorts adverses."
+        "short_description": "Le Magicien peut tracer un cercle sur le sol pour se protéger des sorts adverses. "
+                             "Une fois par tour, lorsqu’un sort (attaque magique) prend pour cible un personnage "
+                             "situé dans le cercle, le Magicien fait un test d’attaque magique en opposition "
+                             "à celui de l’adversaire. En cas de succès le sort adverse n’a aucun effet.",
+        "special_property": [
+          "Cercle: Peut contenir 3 personnes"
+        ]
       },
       "http://co-drs.org/capacites/chair-a-canon/": {
         "short_description": "Une fois par tour, le PNJ peut décider qu’une attaque qui le visait touche à la "
@@ -612,8 +687,27 @@ capacities = {
                              "d’attaque opposé. S'il réussi, l’arme de son adversaire tombe au sol."
       },
       "http://co-drs.org/capacites/desintegration/": {
-        "short_description": "Le Magicien projette un rayon mortel dont la portée est de 20 mètres et qui "
-                             "annule la cohésion de la matière, ne laissant derrière lui qu’un amas de poussière."
+        "short_description": "Le Magicien projette un rayon mortel qui annule la cohésion de la matière, ne "
+                             "laissant derrière lui qu’un amas de poussière que la cible soit une créature "
+                             "ou un objet.",
+        "range": Range(value=20, unit="m"),
+        "attack": Attack(
+          atype='magical',
+          range=Range(value=30, unit="m"),
+          damages=Damage(
+            base=[],
+            other=[Mod(die=6, count=5),
+                   Mod(mtype="+", target="INT")],
+          ),
+          critical=RangeSet([20])
+        ),
+        "special_property": [
+          "Petit objet: attaque -5",
+          "Objet magique: insensible",
+          "Impossible sur objet > 50 Kg"
+          ]
+
+
       },
       "http://co-drs.org/capacites/destruction-des-morts-vivants/": {
         "short_description": "Le Prêtre peut faire un test de SAG difficulté 13. S’il réussit, tous les "
@@ -922,8 +1016,17 @@ capacities = {
         "short_description": "L’Ensorceleur produit un éclair sur une ligne de 10 mètres."
       },
       "http://co-drs.org/capacites/foudres-divines/": {
-        "short_description": "La foudre frappe toutes les créatures désignées dans un rayon de 10 mètres autour "
-                             "du Prêtre et leur inflige [1d6 + Mod. de SAG] de DM."
+        "short_description": "La foudre frappe toutes les créatures désignées autour du "
+                             "prêtre qui compare son test d'attaque à la DEF de chaque cible.",
+        "area": Area(value="10", unit="m"),
+        "attack": Attack(
+          atype='magical',
+          damages=Damage(
+            base=[],
+            other=[Mod(die=6, count=1),Mod(mtype="+", target="SAG")],
+          ),
+          critical=RangeSet([20])
+        ),
       },
       "http://co-drs.org/capacites/frappe-chirurgicale/": {
         "short_description": "Par sa science de l’escrime, le Voleur augmente de manière permanente ses chances "
@@ -1801,7 +1904,12 @@ capacities = {
           ]
       },
       "http://co-drs.org/capacites/teleportation/": {
-        "short_description": "Le Magicien disparaît et réapparaît à un autre endroit."
+        "short_description": "Le Magicien disparaît et réapparaît à un autre endroit.",
+        "range": Range(value="10x[INT]", unit="m"),
+        "special_property": [
+            "Lieu arrivée: en ligne de vue ou parfaitement connu",
+          ]
+
       },
       "http://co-drs.org/capacites/tenacite/": {
         "short_description": "Le nain augmente ses valeurs de CON et de SAG de +2."

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from cof.properties import *
-
+import config.cofConfig
 shields = {
     'cost': lambda item: Cost(
         value=item.magical_level * item.magical_level * config.cofConfig.config['global']['cost']['magical'],
@@ -12,6 +12,29 @@ shields = {
 #        'cloak-of-protection': {
 #        }
 #    },
+     'flavors': {
+        'magical': {
+            'magical_levels': [1, 2, 3, 4],
+        
+            'name': lambda item, magical_level: "{} +{}".format(item.name, magical_level),
+            'short_description': lambda item, magical_level: "{} Ce bouclier offre un bonus de DEF "
+                                                             "de +{}.".format(item.short_description,
+                                                                              magical_level),
+            'full_description':
+                lambda item, magical_level: "{} Ce bouclier est magique et offre un bonus de DEF de +{}.".format(
+                    item.full_description, magical_level),
+            'cost': lambda item, magical_level: Cost(
+                value=item.magical_level * item.magical_level * config.cofConfig.config['global']['cost']['magical'],
+                unit=config.cofConfig.config['global']['cost']['unit']).iso(),
+                    'category': lambda item, magical_level: 'Magique',
+            'material': lambda item, magical_level: item.material,
+            'flavor': lambda item, magical_level: item.flavor + [Flavor(ftype='magical', count=magical_level)],
+            'defense': lambda item, magical_level: [
+                Mod(label=m.label, target=m.target, mtype=m.mtype, die=m.die,
+                    count=m.count + magical_level, limitation=m.limitation)
+                if m.label == "DEF" else m for m in item.defense],
+        },
+     },
     'addons': {
         'petit-bouclier': {
            'base_item': 'petit-bouclier',

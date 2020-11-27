@@ -142,7 +142,7 @@ uniques = {
             'cost': Cost(value=10.0, unit=ccc['global']['cost']['unit']).iso(),
             'weight': Weight(value=0.0, unit='Kg'),
         },
-        'stone-quartz': {
+        'stone-morceaux-quartz': {
             'name': "Morceaux de quartz",
             'base_item': lambda item: item.oid,
             'short_description': "Quelques jolis morceaux de quartz. Ces morceaux sont sans grande valeur, sauf "
@@ -204,6 +204,9 @@ uniques = {
                 Scenario(
                     campaign="Anathazerïn", title="Le Sanctuaire", chapter="Le Sanctuaire de Trenner", numbering="3"
                 ),
+                Scenario(
+                    campaign="Anathazerïn", title="La bataille de Fleck", chapter="La vallée de Duïn", numbering="3"
+                ),
             ],
             'cost': Cost(value=100.0, unit=ccc['global']['cost']['unit']).iso(),
             'weight': Weight(value=0.0, unit='Kg'),
@@ -258,6 +261,21 @@ uniques = {
             'weight': Weight(value=0.0, unit='Kg'),
             'quantity': 1
         },
+        'stone-alexandrite': {
+            'name': "Alexandrite rare",
+            'base_item': "stone-alexandrite",
+            'short_description': "L'alexandrite est d'éclat vitreux. Sa couleur change avec l'éclairage : bleu-vert "
+                                 "à la lumière du jour, rose-rouge au feu de bois.",
+            'full_description': "L'alexandrite est d'éclat vitreux. Sa couleur change avec l'éclairage : bleu-vert "
+                                "à la lumière du jour, rose-rouge au feu de bois.",
+            'category': "quest",
+            'scenario': [
+                Scenario(campaign="Anathazerïn", title="Le Pic d'Andalf", chapter="Le sanctuaire", numbering="2")
+            ],
+            'cost': Cost(value=100.0, unit=ccc['global']['cost']['unit']).iso(),
+            'weight': Weight(value=0.0, unit='Kg'),
+            'quantity': 1
+        },
         'stone-agate': {
             'name': "Agate",
             'base_item': lambda item: item.oid,
@@ -285,9 +303,29 @@ uniques = {
                 Scenario(
                     campaign="Anathazerïn", title="La Vallée des Songes",
                     chapter="La Vallée des Songes", numbering="2"
-                )
+                ),
+                Scenario(
+                    campaign="Anathazerïn", title="La bataille de Fleck", chapter="La vallée de Duïn", numbering="3"
+                ),
             ],
             'cost': Cost(value=100.0, unit=ccc['global']['cost']['unit']).iso(),
+            'weight': Weight(value=0.0, unit='Kg'),
+            'quantity': 1
+        },
+        'stone-petit-jaspe': {
+            'name': "Petit jaspe",
+            'base_item': 'stone-jaspe',
+            'short_description': "Le jaspe peut avoir plusieurs aspects : tacheté, rubané, rouge, à taches rouges "
+                                 "sur fond vert, noir, etc.",
+            'full_description': "Le jaspe peut avoir plusieurs aspects : tacheté, rubané, rouge, à taches rouges "
+                                "sur fond vert, noir, etc.",
+            'category': "quest",
+            'scenario': [
+                Scenario(
+                    campaign="Anathazerïn", title="La bataille de Fleck", chapter="La vallée de Duïn", numbering="3"
+                ),
+            ],
+            'cost': Cost(value=50.0, unit=ccc['global']['cost']['unit']).iso(),
             'weight': Weight(value=0.0, unit='Kg'),
             'quantity': 1
         },
@@ -303,6 +341,9 @@ uniques = {
             'category': "quest",
             'scenario': [
                 Scenario(campaign="Anathazerïn", title="Le Pic d'Andalf", chapter="Voyage", numbering="1"),
+                Scenario(
+                    campaign="Anathazerïn", title="La bataille de Fleck", chapter="La vallée de Duïn", numbering="3"
+                ),
             ],
             'cost': Cost(value=100.0, unit=ccc['global']['cost']['unit']).iso(),
             'weight': Weight(value=0.0, unit='Kg'),
@@ -319,6 +360,9 @@ uniques = {
                                  "de la coquille, l'animal réagit en entourant l'objet d'une couche de nacre.",
             'category': "quest",
             'scenario': [
+                Scenario(
+                    campaign="Anathazerïn", title="La bataille de Fleck", chapter="La vallée de Duïn", numbering="3"
+                ),
             ],
             'cost': Cost(value=500.0, unit=ccc['global']['cost']['unit']).iso(),
             'weight': Weight(value=0.0, unit='Kg'),
@@ -384,8 +428,8 @@ uniques = {
                                  "argentés. Sa couleur se rapproche du gris acier. Certains spécimens ont "
                                  "une couleur presque noire.",
             'full_description': "L’Hématite est une pierre fine sombre et complétement opaque aux reflets "
-                                 "argentés. Sa couleur se rapproche du gris acier. Certains spécimens ont "
-                                 "une couleur presque noire.",
+                                "argentés. Sa couleur se rapproche du gris acier. Certains spécimens ont "
+                                "une couleur presque noire.",
             'category': "quest",
             'scenario': [
                 Scenario(
@@ -394,6 +438,305 @@ uniques = {
                 )
             ],
             'cost': Cost(value=100.0, unit=ccc['global']['cost']['unit']).iso(),
+            'weight': Weight(value=0.0, unit='Kg'),
+            'quantity': 1
+        },
+        'stone-citrine': {
+            'name': "Citrine",
+            'base_item': lambda item: item.oid,
+            'short_description': "La citrine est une variété de quartz, dont la couleur jaune est due à la "
+                                 "présence d'infimes quantités d'oxydes de fer dans le minéral.",
+            'full_description': "La citrine est une variété de quartz, dont la couleur jaune est due à la "
+                                "présence d'infimes quantités d'oxydes de fer dans le minéral.",
+            'category': "quest",
+            'scenario': [
+                Scenario(
+                    campaign="Anathazerïn", title="La bataille de Fleck", chapter="La vallée de Duïn", numbering="3"
+                ),
+            ],
+            'cost': Cost(value=50.0, unit=ccc['global']['cost']['unit']).iso(),
+            'weight': Weight(value=0.0, unit='Kg'),
+            'quantity': 1
+        },
+        'stone-aigue-marine': {
+            'name': "Aigue marine",
+            'base_item': lambda item: item.oid,
+            'short_description': "L'aigue-marine est une pierre transparente, de couleur bleu clair évoquant "
+                                 "l'eau de mer, d'apparence proche de la topaze.",
+            'full_description': "L'aigue-marine est une pierre transparente, de couleur bleu clair évoquant "
+                                "l'eau de mer, d'apparence proche de la topaze.",
+            'category': "quest",
+            'scenario': [
+                Scenario(
+                    campaign="Anathazerïn", title="La bataille de Fleck", chapter="La vallée de Duïn", numbering="3"
+                ),
+            ],
+            'cost': Cost(value=500.0, unit=ccc['global']['cost']['unit']).iso(),
+            'weight': Weight(value=0.0, unit='Kg'),
+            'quantity': 1
+        },
+        'stone-opale': {
+            'name': "Opale",
+            'base_item': lambda item: item.oid,
+            'short_description': "L'opale est une pierre fine très spéciale et, contrairement aux autres minéraux, "
+                                 "ses cristaux n'ont pas de forme particulière.",
+            'full_description': "L'opale est une pierre fine très spéciale et, contrairement aux autres minéraux, "
+                                "ses cristaux n'ont pas de forme particulière.",
+            'category': "quest",
+            'scenario': [
+                Scenario(
+                    campaign="Anathazerïn", title="La bataille de Fleck", chapter="La vallée de Duïn", numbering="3"
+                ),
+            ],
+            'cost': Cost(value=2000.0, unit=ccc['global']['cost']['unit']).iso(),
+            'weight': Weight(value=0.0, unit='Kg'),
+            'quantity': 1
+        },
+        'stone-petite-opale': {
+            'name': "Petite opale",
+            'base_item': "stone-opale",
+            'short_description': "L'opale est une pierre fine très spéciale et, contrairement aux autres minéraux, "
+                                 "ses cristaux n'ont pas de forme particulière.",
+            'full_description': "L'opale est une pierre fine très spéciale et, contrairement aux autres minéraux, "
+                                "ses cristaux n'ont pas de forme particulière.",
+            'category': "quest",
+            'scenario': [
+                Scenario(
+                    campaign="Anathazerïn", title="La bataille de Fleck", chapter="La vallée de Duïn", numbering="3"
+                ),
+            ],
+            'cost': Cost(value=1000.0, unit=ccc['global']['cost']['unit']).iso(),
+            'weight': Weight(value=0.0, unit='Kg'),
+            'quantity': 1
+        },
+        'stone-chrysoprase': {
+            'name': "Chrysoprase",
+            'base_item': lambda item: item.oid,
+            'short_description': "La chrysoprase est une variété gemme dont la couleur varie du vert pomme au vert "
+                                 "foncé.",
+            'full_description': "La chrysoprase est une variété gemme dont la couleur varie du vert pomme au vert "
+                                "foncé.",
+            'category': "quest",
+            'scenario': [
+                Scenario(
+                    campaign="Anathazerïn", title="La bataille de Fleck", chapter="La vallée de Duïn", numbering="3"
+                ),
+            ],
+            'cost': Cost(value=50.0, unit=ccc['global']['cost']['unit']).iso(),
+            'weight': Weight(value=0.0, unit='Kg'),
+            'quantity': 1
+        },
+        'stone-peridot': {
+            'name': "Péridot",
+            'base_item': lambda item: item.oid,
+            'short_description': "Le péridot est une variété gemme de couleur verte qui est considérée comme ayant "
+                                 "un pouvoir magique.",
+            'full_description': "Le péridot est une variété gemme de couleur verte qui est considérée comme ayant "
+                                "un pouvoir magique.",
+            'category': "quest",
+            'scenario': [
+                Scenario(
+                    campaign="Anathazerïn", title="La bataille de Fleck", chapter="La vallée de Duïn", numbering="3"
+                ),
+            ],
+            'cost': Cost(value=500.0, unit=ccc['global']['cost']['unit']).iso(),
+            'weight': Weight(value=0.0, unit='Kg'),
+            'quantity': 1
+        },
+        'stone-spinelle': {
+            'name': "Spinelle",
+            'base_item': lambda item: item.oid,
+            'short_description': "Le spinelle est une espèce minérale de couleur rouge. C'est une pierre fine utilisée "
+                                 "en joaillerie car elle ressemble au rubis.",
+            'full_description': "Le spinelle est une espèce minérale de couleur rouge. C'est une pierre fine utilisée "
+                                "en joaillerie car elle ressemble au rubis.",
+            'category': "quest",
+            'scenario': [
+                Scenario(
+                    campaign="Anathazerïn", title="La bataille de Fleck", chapter="La vallée de Duïn", numbering="3"
+                ),
+            ],
+            'cost': Cost(value=500.0, unit=ccc['global']['cost']['unit']).iso(),
+            'weight': Weight(value=0.0, unit='Kg'),
+            'quantity': 1
+        },
+        'stone-chrysoberyl': {
+            'name': "Chrysobéryl",
+            'base_item': lambda item: item.oid,
+            'short_description': "Le chrysobéryl est une espèce minérale peut être de différentes couleurs qui sont "
+                                 "dues à de petites quantités de fer pour le jaune ou le vert pour la variété connue "
+                                 "sous le nom d'alexandrite, qui est verte à la lumière du jour et rouge à la lumière "
+                                 "artificielle.",
+            'full_description': "Le chrysobéryl est une espèce minérale peut être de différentes couleurs qui sont "
+                                "dues à de petites quantités de fer pour le jaune ou le vert pour la variété connue "
+                                "sous le nom d'alexandrite, qui est verte à la lumière du jour et rouge à la lumière "
+                                "artificielle.",
+            'category': "quest",
+            'scenario': [
+                Scenario(
+                    campaign="Anathazerïn", title="La bataille de Fleck", chapter="La vallée de Duïn", numbering="3"
+                ),
+            ],
+            'cost': Cost(value=100.0, unit=ccc['global']['cost']['unit']).iso(),
+            'weight': Weight(value=0.0, unit='Kg'),
+            'quantity': 1
+        },
+        'stone-onyx': {
+            'name': "Onyx",
+            'base_item': lambda item: item.oid,
+            'short_description': "L’onyx est une agate dont les bandes sont circulaires et concentriques.",
+            'full_description': "L’onyx est une agate dont les bandes sont circulaires et concentriques.",
+            'category': "quest",
+            'scenario': [
+                Scenario(
+                    campaign="Anathazerïn", title="La bataille de Fleck", chapter="La vallée de Duïn", numbering="3"
+                ),
+            ],
+            'cost': Cost(value=50.0, unit=ccc['global']['cost']['unit']).iso(),
+            'weight': Weight(value=0.0, unit='Kg'),
+            'quantity': 1
+        },
+        'stone-topaze': {
+            'name': "Topaze",
+            'base_item': lambda item: item.oid,
+            'short_description': "La topaze est un cristal utilisé en joaillerie, classée comme pierre fine. "
+                                 "La topaze se présente en une large variété de couleurs à l'état naturel.",
+            'full_description': "La topaze est un cristal utilisé en joaillerie, classée comme pierre fine. "
+                                "La topaze se présente en une large variété de couleurs à l'état naturel.",
+            'category': "quest",
+            'scenario': [
+                Scenario(
+                    campaign="Anathazerïn", title="La bataille de Fleck", chapter="La vallée de Duïn", numbering="3"
+                ),
+            ],
+            'cost': Cost(value=500.0, unit=ccc['global']['cost']['unit']).iso(),
+            'weight': Weight(value=0.0, unit='Kg'),
+            'quantity': 1
+        },
+        'stone-opale-de-feu': {
+            'name': "Opale de feu",
+            'base_item': lambda item: item.oid,
+            'short_description': "l'opale de feu est une opale, transparente, jaune orange ou rouge, avec ou "
+                                 "sans jeux de couleurs.",
+            'full_description': "l'opale de feu est une opale, transparente, jaune orange ou rouge, avec ou "
+                                 "sans jeux de couleurs.",
+            'category': "quest",
+            'scenario': [
+                Scenario(
+                    campaign="Anathazerïn", title="La bataille de Fleck", chapter="La vallée de Duïn", numbering="3"
+                ),
+            ],
+            'cost': Cost(value=1000.0, unit=ccc['global']['cost']['unit']).iso(),
+            'weight': Weight(value=0.0, unit='Kg'),
+            'quantity': 1
+        },
+        'stone-grenat': {
+            'name': "Grenat",
+            'base_item': lambda item: item.oid,
+            'short_description': "Les grenats rassemblent plusieurs minéraux proches et forment un groupe "
+                                 "dans lequel on retrouve des gemmes de toutes les couleurs. Les grenats "
+                                 "rouges sont les plus célèbres, mais il existe également des grenats verts, "
+                                 "oranges, violets et même des grenats bleus.",
+            'full_description': "Les grenats rassemblent plusieurs minéraux proches et forment un groupe "
+                                "dans lequel on retrouve des gemmes de toutes les couleurs. Les grenats "
+                                "rouges sont les plus célèbres, mais il existe également des grenats verts, "
+                                "oranges, violets et même des grenats bleus.",
+            'category': "quest",
+            'scenario': [
+                Scenario(
+                    campaign="Anathazerïn", title="La bataille de Fleck", chapter="La vallée de Duïn", numbering="3"
+                ),
+            ],
+            'cost': Cost(value=500.0, unit=ccc['global']['cost']['unit']).iso(),
+            'weight': Weight(value=0.0, unit='Kg'),
+            'quantity': 1
+        },
+        'stone-pierre-de-sang': {
+            'name': "Pierre de sang",
+            'base_item': lambda item: item.oid,
+            'short_description': "Une pierre qui donne des éclats de couleur de sang lorsqu’elle est "
+                                 "disposée dans un vase rempli d’eau sous la lumière du soleil.",
+            'full_description': "Une pierre qui donne des éclats de couleur de sang lorsqu’elle est "
+                                 "disposée dans un vase rempli d’eau sous la lumière du soleil.",
+            'category': "quest",
+            'scenario': [
+                Scenario(
+                    campaign="Anathazerïn", title="La bataille de Fleck", chapter="La vallée de Duïn", numbering="3"
+                ),
+            ],
+            'cost': Cost(value=50.0, unit=ccc['global']['cost']['unit']).iso(),
+            'weight': Weight(value=0.0, unit='Kg'),
+            'quantity': 1
+        },
+        'stone-saphir': {
+            'name': "Saphir",
+            'base_item': lambda item: item.oid,
+            'short_description': "Le saphir est une pierre précieuse. C'est une variété gemme pouvant "
+                                 "présenter de multiples couleurs, sauf la couleur rouge qui désigne "
+                                 "alors uniquement le rubis.",
+            'full_description': "Le saphir est une pierre précieuse. C'est une variété gemme pouvant "
+                                "présenter de multiples couleurs, sauf la couleur rouge qui désigne "
+                                "alors uniquement le rubis.",
+            'category': "quest",
+            'scenario': [
+                Scenario(
+                    campaign="Anathazerïn", title="La bataille de Fleck", chapter="La vallée de Duïn", numbering="3"
+                ),
+            ],
+            'cost': Cost(value=1000.0, unit=ccc['global']['cost']['unit']).iso(),
+            'weight': Weight(value=0.0, unit='Kg'),
+            'quantity': 1
+        },
+        'stone-quartz': {
+            'name': "Quartz",
+            'base_item': lambda item: item.oid,
+            'short_description': "Le quartz rose se présente en grands cristaux à la fois roses et translucides.",
+            'full_description': "Le quartz rose se présente en grands cristaux à la fois roses et translucides.",
+            'category': "quest",
+            'scenario': [
+                Scenario(
+                    campaign="Anathazerïn", title="La bataille de Fleck", chapter="La vallée de Duïn", numbering="3"
+                ),
+            ],
+            'cost': Cost(value=50.0, unit=ccc['global']['cost']['unit']).iso(),
+            'weight': Weight(value=0.0, unit='Kg'),
+            'quantity': 5
+        },
+        'stone-quartz-rose': {
+            'name': "Quartz rose",
+            'base_item': lambda item: item.oid,
+            'short_description': "Le quartz se présente sous la forme ou bien de grands cristaux incolores, "
+                                 "colorés ou fumés, ou bien de cristaux microscopiques d'aspect translucide.",
+            'full_description': "Le quartz se présente sous la forme ou bien de grands cristaux incolores, "
+                                 "colorés ou fumés, ou bien de cristaux microscopiques d'aspect translucide.",
+            'category': "quest",
+            'scenario': [
+                Scenario(
+                    campaign="Anathazerïn", title="La bataille de Fleck", chapter="La vallée de Duïn", numbering="3"
+                ),
+            ],
+            'cost': Cost(value=50.0, unit=ccc['global']['cost']['unit']).iso(),
+            'weight': Weight(value=0.0, unit='Kg'),
+            'quantity': 5
+        },
+        'stone-perle-noire': {
+            'name': "Perle noire",
+            'base_item': lambda item: item.oid,
+            'short_description': "Une perle est une concrétion calcaire, généralement de couleur blanche, "
+                                 "fabriquée par certains mollusques. Quand un objet irritant passe à l'intérieur "
+                                 "de la coquille, l'animal réagit en entourant l'objet d'une couche de nacre. "
+                                 "La perle noire est considérée comme un véritable symbole de sagesse.",
+            'full_description': "Une perle est une concrétion calcaire, généralement de couleur blanche, "
+                                 "fabriquée par certains mollusques. Quand un objet irritant passe à l'intérieur "
+                                 "de la coquille, l'animal réagit en entourant l'objet d'une couche de nacre. "
+                                 "La perle noire est considérée comme un véritable symbole de sagesse.",
+            'category': "quest",
+            'scenario': [
+                Scenario(
+                    campaign="Anathazerïn", title="La bataille de Fleck", chapter="La vallée de Duïn", numbering="3"
+                ),
+            ],
+            'cost': Cost(value=5000.0, unit=ccc['global']['cost']['unit']).iso(),
             'weight': Weight(value=0.0, unit='Kg'),
             'quantity': 1
         },
@@ -677,6 +1020,22 @@ uniques = {
             'cost': Cost(value=0.0, unit=ccc['global']['cost']['unit']).iso(),
             'weight': Weight(value=0.0, unit='Kg'),
         },
+        'lettre-officielle-de-nicolai': {
+            'name': "Lettre officielle, de Nicolaï",
+            'base_item': lambda item: item.oid,
+            'short_description': "Une lette officielle munie du sceau de Nicolaï qui mandate sont possesseur pour "
+                                 "escorter la caravane de soutien logistique jusqu'à Flerk.",
+            'full_description': "Une lette officielle munie du sceau de Nicolaï qui mandate sont possesseur pour "
+                                 "escorter la caravane de soutien logistique jusqu'à Flerk.",
+            'category': "quest",
+            'scenario': [
+                Scenario(
+                    campaign="Anathazerïn", title="La bataille de Fleck", chapter="Voyage", numbering="1"
+                ),
+            ],
+            'cost': Cost(value=0.0, unit=ccc['global']['cost']['unit']).iso(),
+            'weight': Weight(value=0.0, unit='Kg'),
+        },
         'symbole-beni-d-abalath': {
             'name': "Symbole béni, d'Abalath",
             'base_item': lambda item: item.oid,
@@ -863,6 +1222,11 @@ uniques = {
                 value=item.magical_level * item.magical_level * ccc['global']['cost']['magical'],
                 unit=ccc['global']['cost']['unit']).iso(),
             'weight': Weight(value=1.0, unit='Kg'),
+            'scenario': [
+                Scenario(
+                    campaign="Anathazerïn", title="La bataille de Fleck", chapter="La vallée de Duïn", numbering="3"
+                ),
+            ],
         },
         'petit-parchemin-camp-orque-1': {
             'name': "Petit parchemin",
@@ -961,6 +1325,264 @@ uniques = {
             'cost': Cost(value=0.0, unit=ccc['global']['cost']['unit']).iso(),
             'weight': Weight(value=0.0, unit='Kg'),
             'special_property': ["Soin: 3d6 PV (si mangée)", "Soin: 1d6 PV (si infusée)", "Infusion: 8 personnes max"]
+        },
+        'lanterne-elfique': {
+            'name': "Lanterne elfique",
+            'base_item': lambda item: item.oid,
+            'short_description': "Une jolie lanterne réhaussée de petites pierres.",
+            'full_description': "Une jolie lanterne réhaussée de petites pierres.",
+            'category': "quest",
+            'scenario': [
+                Scenario(
+                    campaign="Anathazerïn", title="La bataille de Fleck", chapter="La vallée de Duïn", numbering="3"
+                ),
+            ],
+            'cost': Cost(value=250.0, unit=ccc['global']['cost']['unit']).iso(),
+            'weight': Weight(value=0.5, unit='Kg'),
+        },
+        'loupe': {
+            'name': "Une loupe",
+            'base_item': lambda item: item.oid,
+            'short_description': "Une loupe.",
+            'full_description': "Une loupe.",
+            'category': "quest",
+            'scenario': [
+                Scenario(
+                    campaign="Anathazerïn", title="La bataille de Fleck", chapter="La vallée de Duïn", numbering="3"
+                ),
+            ],
+            'cost': Cost(value=50.0, unit=ccc['global']['cost']['unit']).iso(),
+            'weight': Weight(value=0.3, unit='Kg'),
+        },
+        'symbole-maudit-d-azazel': {
+            'name': "Symbole maudit, d'Azazel",
+            'base_item': lambda item: item.oid,
+            'short_description': "Le symbole maudit d'Azazel, dieu de la Douleur et de la cruauté.",
+            'full_description': "Le symbole maudit d'Azazel, dieu de la Douleur et de la cruauté.",
+            'category': "quest",
+            'scenario': [
+                Scenario(
+                    campaign="Anathazerïn", title="La bataille de Fleck", chapter="La vallée de Duïn", numbering="3"
+                ),
+            ],
+            'cost': Cost(value=50.0, unit=ccc['global']['cost']['unit']).iso(),
+            'weight': Weight(value=0.0, unit='Kg'),
+        },
+        'petit-coffret-en-platine': {
+            'name': "Petit coffret, en platine",
+            'base_item': lambda item: item.oid,
+            'short_description': "Un petit coffret en platine en très mauvais état.",
+            'full_description': "Un petit coffret en platine en très mauvais état.",
+            'category': "quest",
+            'scenario': [
+                Scenario(
+                    campaign="Anathazerïn", title="La bataille de Fleck", chapter="La vallée de Duïn", numbering="3"
+                ),
+            ],
+            'cost': Cost(value=500.0, unit=ccc['global']['cost']['unit']).iso(),
+            'weight': Weight(value=0.3, unit='Kg'),
+        },
+        'tube-a-parchemin-en-ivoire': {
+            'name': "Tube à parchemin, en ivoire",
+            'base_item': lambda item: item.oid,
+            'short_description': "Un tube à parchemin en ivoire gravé.",
+            'full_description': "Un tube à parchemin en ivoire gravé.",
+            'category': "quest",
+            'scenario': [
+                Scenario(
+                    campaign="Anathazerïn", title="La bataille de Fleck", chapter="La vallée de Duïn", numbering="3"
+                ),
+            ],
+            'cost': Cost(value=75.0, unit=ccc['global']['cost']['unit']).iso(),
+            'weight': Weight(value=0.1, unit='Kg'),
+            'quantity': 1
+        },
+        'manteau-en-peau-de-chat-sauvage': {
+            'name': "Manteau, en peau de chat",
+            'base_item': lambda item: item.oid,
+            'short_description': "Un manteau en peau de chat sauvage.",
+            'full_description': "Un manteau en peau de chat sauvage.",
+            'category': "quest",
+            'scenario': [
+                Scenario(
+                    campaign="Anathazerïn", title="La bataille de Fleck", chapter="La vallée de Duïn", numbering="3"
+                ),
+            ],
+            'cost': Cost(value=125.0, unit=ccc['global']['cost']['unit']).iso(),
+            'weight': Weight(value=0.3, unit='Kg'),
+        },
+        'fiole-encre-rare': {
+            'name': "Fiole d'encre",
+            'base_item': lambda item: item.oid,
+            'short_description': "Une fiole d'encre rare.",
+            'full_description': "Une fiole d'encre rare.",
+            'category': "quest",
+            'scenario': [
+                Scenario(
+                    campaign="Anathazerïn", title="La bataille de Fleck", chapter="La vallée de Duïn", numbering="3"
+                ),
+            ],
+            'cost': Cost(value=25.0, unit=ccc['global']['cost']['unit']).iso(),
+            'weight': Weight(value=0.1, unit='Kg'),
+        },
+        'collier-maison-eilserv': {
+            'name': "Collier, de la maison Eilserv",
+            'base_item': lambda item: item.oid,
+            'short_description': "Un collier avec un baton cuivré, symbole de la maison Eilserv.",
+            'full_description': "Un collier avec un baton cuivré, symbole de la maison Eilserv.",
+            'category': "quest",
+            'scenario': [
+                Scenario(
+                    campaign="Anathazerïn", title="La bataille de Fleck", chapter="La vallée de Duïn", numbering="3"
+                ),
+            ],
+            'cost': Cost(value=25.0, unit='pp').iso(),
+            'weight': Weight(value=0.1, unit='Kg'),
+        },
+        'symbole-de-maedra': {
+            'name': "Symbole, de Maëdra",
+            'base_item': lambda item: item.oid,
+            'short_description': "Le symbole de Maëdra déesse de l’Obéissance et des Insectes.",
+            'full_description': "Le symbole de Maëdra déesse de l’Obéissance et des Insectes.",
+            'category': "quest",
+            'scenario': [
+                Scenario(
+                    campaign="Anathazerïn", title="La bataille de Fleck", chapter="La vallée de Duïn", numbering="3"
+                ),
+            ],
+            'cost': Cost(value=0.0, unit=ccc['global']['cost']['unit']).iso(),
+            'weight': Weight(value=0.0, unit='Kg'),
+        },
+        'collier-maison-kar-lothian': {
+            'name': "Collier, de la maison Eilserv",
+            'base_item': lambda item: item.oid,
+            'short_description': "Un collier avec une rune, symbole de la maison Kar'Lothian.",
+            'full_description': "Un collier avec une rune, symbole de la maison Kar'Lothian.",
+            'category': "quest",
+            'scenario': [
+                Scenario(
+                    campaign="Anathazerïn", title="La bataille de Fleck", chapter="La vallée de Duïn", numbering="3"
+                ),
+            ],
+            'cost': Cost(value=0.0, unit=ccc['global']['cost']['unit']).iso(),
+            'weight': Weight(value=0.1, unit='Kg'),
+        },
+        'bouteille-liqueur-orque': {
+            'name': "Une bouteille de liqueur",
+            'base_item': lambda item: item.oid,
+            'short_description': "Une bouteille contenant de la liqueur assez sucrée mais très fruitée.",
+            'full_description': "Une bouteille contenant de la liqueur assez sucrée mais très fruitée.",
+            'category': "quest",
+            'scenario': [
+                Scenario(
+                    campaign="Anathazerïn", title="La bataille de Fleck", chapter="La vallée de Duïn", numbering="3"
+                ),
+            ],
+            'cost': Cost(value=2.0, unit=ccc['global']['cost']['unit']).iso(),
+            'weight': Weight(value=0.75, unit='Kg'),
+            'quantity': 1
+        },
+        'lingot-or': {
+            'name': "Un lingot d'or",
+            'base_item': lambda item: item.oid,
+            'short_description': "Une petite barre d'or.",
+            'full_description': "Une petite barre d'or.",
+            'category': "quest",
+            'scenario': [
+                Scenario(
+                    campaign="Anathazerïn", title="La bataille de Fleck", chapter="La vallée de Duïn", numbering="3"
+                ),
+            ],
+            'cost': Cost(value=500.0, unit=ccc['global']['cost']['unit']).iso(),
+            'weight': Weight(value=1, unit='Kg'),
+            'quantity': 1
+        },
+        'gobelet-electrum': {
+            'name': "Un gobelet, en électrum",
+            'base_item': lambda item: item.oid,
+            'short_description': "Un gobelet en électrum, un alliage composé d'or et d'argent.",
+            'full_description': "Un gobelet en électrum, un alliage composé d'or et d'argent.",
+            'category': "quest",
+            'scenario': [
+                Scenario(
+                    campaign="Anathazerïn", title="La bataille de Fleck", chapter="La vallée de Duïn", numbering="3"
+                ),
+            ],
+            'cost': Cost(value=25.0, unit=ccc['global']['cost']['unit']).iso(),
+            'weight': Weight(value=0.1, unit='Kg'),
+            'quantity': 1
+        },
+        'couverts-en-argent': {
+            'name': "Couverts, en argent",
+            'base_item': lambda item: item.oid,
+            'short_description': "Un service de couverts en argent.",
+            'full_description': "Un service de couverts en argent.",
+            'category': "quest",
+            'scenario': [
+                Scenario(
+                    campaign="Anathazerïn", title="La bataille de Fleck", chapter="La vallée de Duïn", numbering="3"
+                ),
+            ],
+            'cost': Cost(value=25.0, unit=ccc['global']['cost']['unit']).iso(),
+            'weight': Weight(value=0.1, unit='Kg'),
+        },
+        'assiette-porcelaine': {
+            'name': "Une assiette, en porcelaine",
+            'base_item': lambda item: item.oid,
+            'short_description': "Une assiette en porcelaine.",
+            'full_description': "Une assiette en porcelaine.",
+            'category': "quest",
+            'scenario': [
+                Scenario(
+                    campaign="Anathazerïn", title="La bataille de Fleck", chapter="La vallée de Duïn", numbering="3"
+                ),
+            ],
+            'cost': Cost(value=5.0, unit=ccc['global']['cost']['unit']).iso(),
+            'weight': Weight(value=0.1, unit='Kg'),
+            'quantity': 20
+        },
+        'mirroir-en-argent': {
+            'name': "Un mirroir, en argent",
+            'base_item': lambda item: item.oid,
+            'short_description': "Un miroir d’argent au cadre plaqué or.",
+            'full_description': "Un miroir d’argent au cadre plaqué or.",
+            'category': "quest",
+            'scenario': [
+                Scenario(
+                    campaign="Anathazerïn", title="La bataille de Fleck", chapter="La vallée de Duïn", numbering="3"
+                ),
+            ],
+            'cost': Cost(value=350.0, unit=ccc['global']['cost']['unit']).iso(),
+            'weight': Weight(value=0.2, unit='Kg'),
+        },
+        'coupe-en-or': {
+            'name': "Coupe en or.",
+            'base_item': lambda item: item.oid,
+            'short_description': "Une coupe en or serties de pierres précieuses.",
+            'full_description': "Une coupe en or serties de pierres précieuses.",
+            'category': "quest",
+            'scenario': [
+                Scenario(
+                    campaign="Anathazerïn", title="La bataille de Fleck", chapter="La vallée de Duïn", numbering="3"
+                ),
+            ],
+            'cost': Cost(value=700.0, unit=ccc['global']['cost']['unit']).iso(),
+            'weight': Weight(value=0.2, unit='Kg'),
+            'quantity': 1
+        },
+        'cassette-platine': {
+            'name': "Une cassette , en platine.",
+            'base_item': lambda item: item.oid,
+            'short_description': "Une jolie petite boite en platine.",
+            'full_description': "Une jolie petite boite en platine.",
+            'category': "quest",
+            'scenario': [
+                Scenario(
+                    campaign="Anathazerïn", title="La bataille de Fleck", chapter="La vallée de Duïn", numbering="3"
+                ),
+            ],
+            'cost': Cost(value=700.0, unit=ccc['global']['cost']['unit']).iso(),
+            'weight': Weight(value=0.3, unit='Kg'),
         },
     },
     "Bracer": {
@@ -1185,7 +1807,7 @@ uniques = {
             "capacity": "http://co-drs.org/capacites/soins-legers/",
             "short_description": "La personne qui boit cette potion récupère alors [1d8 + niveau] PV perdus."
                                  "Effet secondaire : tous les poils du personnage (cheveux, barbe, sourcils, "
-                                 "avant-bras...) poussentde dix centimètres.",
+                                 "avant-bras...) poussent de dix centimètres.",
             "full_description": "La personne qui boit cette potion récupère alors [1d8 + niveau] PV perdus. "
                                 "Effet secondaire : tous les poils du personnage (cheveux, barbe, sourcils, "
                                 "avant-bras...) poussent de dix centimètres.",
@@ -1200,6 +1822,94 @@ uniques = {
             'cost': lambda item: Cost(
                 value=200,
                 unit=ccc['global']['cost']['unit']).iso(),
+        },
+        'potion-de-resistance-au-feu': {
+            'name': "Potion de résistance, au feu",
+            'base_item': lambda item: item.oid,
+            'short_description': "Une fois bue, cette potion procure, pour un petit laps de temps, un bonus "
+                                 "de résistance aux dégats de feu.",
+            'full_description': "Une fois bue, cette potion divise par 2 tous les DM de feu reçus pendant "
+                                "10 minutes",
+            'category': "quest",
+            'scenario': [
+                Scenario(
+                    campaign="Anathazerïn", title="La bataille de Fleck", chapter="La vallée de Duïn", numbering="3"
+                ),
+            ],
+            'cost': lambda item: Cost(
+                value=ccc['global']['cost']['potions'],
+                unit=ccc['global']['cost']['unit']).iso(),
+            'quantity': 1,
+            'weight': Weight(value=0.1, unit='Kg'),
+            'duration': Duration(value=10, unit="min"),
+            'special_property': [
+                "RD: DM feu / 2",
+            ],
+        },
+        'potion-antidote': {
+            'name': "Potion d'antidote",
+            'base_item': lambda item: item.oid,
+            'short_description': "Cette potion peut être ingurgitée pour soigner ou prévenir un empoisonnement.",
+            'full_description': "Cette potion peut être ingurgitée pour soigner un empoisonnement ou préventivement. "
+                                "Dans ce cas, elle donne un bonus de +5 aux tests de CON pour résister aux poisons "
+                                "et divise par deux les effets des poisons (DM ou durée) pendant 10 minutes.",
+            'category': "quest",
+            'scenario': [
+                Scenario(
+                    campaign="Anathazerïn", title="La bataille de Fleck", chapter="La vallée de Duïn", numbering="3"
+                ),
+            ],
+            'cost': lambda item: Cost(
+                value=ccc['global']['cost']['potions'],
+                unit=ccc['global']['cost']['unit']).iso(),
+            'quantity': 1,
+            'use': 3,
+            'weight': Weight(value=0.1, unit='Kg'),
+            'duration': Duration(value=10, unit="min"),
+            'special_property': [
+                "Préventif: +5 test CON",
+                "Préventif: DM poison / 2",
+                "Préventif: durée poison / 2",
+            ],
+        },
+        'potion-guerison': {
+            "name": "Potion, de guérison",
+            "capacity": "http://co-drs.org/capacites/guerison/",
+            "short_description": "La personne qui boit cette potion récupère tous ses PV. Elle est aussi guérie des "
+                                 "poisons, maladies et affaiblissements de Caractéristiques.",
+            "full_description": "La personne qui boit cette potion récupère tous ses PV. Elle est aussi guérie des "
+                                "poisons, maladies et affaiblissements de Caractéristiques.",
+            'category': "quest",
+            'base_item': 'potion-guerison',
+            'scenario': [
+                Scenario(
+                    campaign="Anathazerïn", title="La bataille de Fleck", chapter="La vallée de Duïn", numbering="3"
+                ),
+            ],
+            'quantity': 1,
+        },
+        'potion-de-resistance-acide': {
+            'name': "Potion de résistance, à l'acide",
+            'base_item': lambda item: item.oid,
+            'short_description': "Une fois bue, cette potion procure, pour un petit laps de temps, un bonus "
+                                 "de résistance aux dégats d'acide.",
+            'full_description': "Une fois bue, cette potion divise par 2 tous les DM d'acide' reçus pendant "
+                                "10 minutes",
+            'category': "quest",
+            'scenario': [
+                Scenario(
+                    campaign="Anathazerïn", title="La bataille de Fleck", chapter="La vallée de Duïn", numbering="3"
+                ),
+            ],
+            'cost': lambda item: Cost(
+                value=ccc['global']['cost']['potions'],
+                unit=ccc['global']['cost']['unit']).iso(),
+            'quantity': 1,
+            'weight': Weight(value=0.1, unit='Kg'),
+            'duration': Duration(value=10, unit="min"),
+            'special_property': [
+                "RD: DM acide / 2",
+            ],
         },
     },
     "Spell": {
@@ -1413,6 +2123,112 @@ uniques = {
             ],
             'quantity': 1
         },
+        'spell-nuees-de-criquets': {
+            'capacity': "http://co-drs.org/capacites/nuees-de-criquets/",
+            "full_description": "En réussissant un test d’attaque magique (portée 20 m), la personne "
+                                "qui utilise ce parchemin libère sur sa cible une nuée de criquet "
+                                "affamés qui la dévorent à petit feu pendant [5 + Mod de SAG.] tours. "
+                                "La victime subit 2 points de DM par tour et un malus de -3 à toutes "
+                                "ses actions. Les DM de zone détruisent la nuée.",
+            "short_description": "Sur une attaque magique réussie, la personne qui utilise ce parchemin "
+                                 "libère sur sa cible une nuée de criquet affamés qui la dévorent à "
+                                 "petit feu.",
+            'category': "quest",
+            'scenario': [
+                Scenario(
+                    campaign="Anathazerïn", title="La bataille de Fleck", chapter="Fleck", numbering="2"
+                ),
+            ],
+            'quantity': 1
+        },
+        'spell-cercle-de-protection': {
+            "capacity": "http://co-drs.org/capacites/cercle-de-protection/",
+            "full_description": "L'utilisateur de ce parchemin peut tracer un cercle sur le sol pouvant "
+                                "contenir 3 personnes. Une fois par tour, lorsqu’un sort prend pour cible "
+                                "un personnage situé dans le cercle (par un test d’attaque magique), "
+                                "l'utilisateur de ce parchemin fait un test d’attaque magique en opposition "
+                                "à celui de l’adversaire. Si le test est réussi, le sort adverse est annulé "
+                                "et n’a aucun effet.",
+            "short_description": "L'utilisateur de ce parchemin peut tracer un cercle sur le sol pour se "
+                                 "protéger des sorts adverses. Une fois par tour, lorsqu’un sort (attaque "
+                                 "magique) prend pour cible un personnage situé dans le cercle, l'utilisateur "
+                                 "fait un test d’attaque magique en opposition à celui de l’adversaire. En "
+                                 "cas de succès le sort adverse n’a aucun effet.",
+            'category': "quest",
+            'scenario': [
+                Scenario(
+                    campaign="Anathazerïn", title="La bataille de Fleck", chapter="Fleck", numbering="2"
+                ),
+            ],
+            'quantity': 1
+        },
+        'spell-arme-argent': {
+            "capacity": "http://co-drs.org/capacites/arme-d-argent/",
+            "full_description": "Ce miracle crée pour la durée du combat une arme d’argent et de lumière "
+                                "que seul l'utilisateur de ce parchemin peut utiliser. Cette arme inflige "
+                                "[1d6 + Mod. de SAG] de DM. Contre les démons et les mort-vivants, elle "
+                                "offre un bonus de +2 en attaque et ajoute +1d6 aux DM.",
+            "short_description": "Ce miracle crée pour la durée du combat une arme d’argent et de lumière "
+                                 "que seul l'utilisateur de ce parchemin peut utiliser.",
+            'category': "quest",
+            'scenario': [
+                Scenario(
+                    campaign="Anathazerïn", title="La bataille de Fleck", chapter="La vallée de Duïn", numbering="3"
+                ),
+            ],
+            'quantity': 1
+        },
+        'spell-foudres-divines': {
+            "capacity": "http://co-drs.org/capacites/foudres-divines/",
+            "full_description": "La foudre frappe toutes les créatures désignées dans un rayon de 10 mètres "
+                                "autour de l'utilisateur de ce parchemin et leur inflige [1d6 + Mod. de SAG] "
+                                "de DM. L'utilisateur compare son test d’attaque magique à la DEF de chaque "
+                                "cible.",
+            "short_description": "La foudre frappe toutes les créatures désignées autour de l'utilisateur de "
+                                 "ce parchemin.",
+            'category': "quest",
+            'scenario': [
+                Scenario(
+                    campaign="Anathazerïn", title="La bataille de Fleck", chapter="La vallée de Duïn", numbering="3"
+                ),
+            ],
+            'quantity': 1
+        },
+        'spell-teleportation': {
+            "capacity": "http://co-drs.org/capacites/teleportation/",
+            "full_description": "La personne qui utilise ce parchemin disparaît et réapparaît à un autre endroit "
+                                "situé à moins de [INT x 10] mètres. Le lieu d’arrivée doit être soit en ligne de "
+                                "vue, soit parfaitement connu par cette personne.",
+            "short_description": "La personne qui utilise ce parchemin disparaît et réapparaît à un autre endroit.",
+            'category': "quest",
+            'scenario': [
+                Scenario(
+                    campaign="Anathazerïn", title="La bataille de Fleck", chapter="La vallée de Duïn", numbering="3"
+                ),
+            ],
+            'quantity': 1
+        },
+        'spell-desintegration': {
+            "capacity": "http://co-drs.org/capacites/desintegration/",
+            "full_description": "La personne qui utilise ce parchemin projette un rayon mortel dont la portée est de "
+                                "20 mètres et qui annule la cohésion de la matière, ne laissant derrière lui qu’un "
+                                "amas de poussière. Un test d’attaque magique réussi permet de toucher une créature "
+                                "et d’infliger [5d6 + Mod. d’INT] DM. Si l'utilisateur vise un objet porté par une "
+                                "créature, le jet d’attaque subit un malus de -5. Les objets magiques sont insensibles "
+                                "à ce sort, les objets normaux sont réduits en poussière. Aucun objet de plus de 50 kg "
+                                "ne peut être affecté par ce sort : inutile donc de tenter de creuser un tunnel par ce "
+                                "biais. En revanche, vous pourrez ainsi désintégrer une porte (ou même une pierre dans "
+                                "un mur).",
+            "short_description": "L'utilisateur projette un rayon mortel qui réduit la matière en un amas de poussière "
+                                 "que la cible soit une créature ou un objet.",
+            'category': "quest",
+            'scenario': [
+                Scenario(
+                    campaign="Anathazerïn", title="La bataille de Fleck", chapter="La vallée de Duïn", numbering="3"
+                ),
+            ],
+            'quantity': 1
+        },  
     },
     "MagicalWand": {
         'magic-wand-defoliation': {
@@ -1437,6 +2253,31 @@ uniques = {
             'use': 12,
             'hands': 1,
             'special_property': ["Attaque: 4d6 (créature végétale)"]
+        },
+        'magic-wand-de-givre': {
+            'capacity': "http://co-drs.org/capacites/cone-de-froid/",
+            "full_description": "Le cône de affecte toute les créatures dans un cône approximatif de "
+                                "20 mètres de long sur 10 mètres de large à son extrémité. Les "
+                                "victimes subissent [2d6+Mod d’INT] DM et sont Ralenties pour 1 tour "
+                                "si elles ratent un test de CON difficulté 13. Sinon, elles subissent "
+                                "seulement la moitié des DM et ne sont pas ralenties. Cette baguette "
+                                "contient 10 charges.",
+            "short_description": "Un cône de froid sort de la baguette et affecte les créatures "
+                                 "prises à l'intérieur.",
+            'name': "Baguette - de givre",
+            'base_item': lambda item: item.oid,
+            'category': "quest",
+            'scenario': [
+                Scenario(
+                    campaign="Anathazerïn", title="La bataille de Fleck", chapter="La vallée de Duïn", numbering="3"
+                ),
+            ],
+            'cost': lambda item: Cost(value=item.way_rank * item.way_rank * item.use * ccc['global']['cost']['spells'],
+                                      unit=ccc['global']['cost']['unit']).iso(),
+            'weight': Weight(value=0.1, unit='Kg'),
+            'quantity': 1,
+            'use': 6,
+            'hands': 1,
         },
         'sceptre-de-puissance-ogre-mage': {
             'name': "Sceptre de puissance, d'Ogre-mage",
@@ -1514,8 +2355,8 @@ uniques = {
             ),
             'special_property': ["Force minimum > 14"]
         },
-        'dague-sacrificielle-de-grundush': {
-            'name': "Dague sacrificielle, de Grundush",
+        'dague-sacrificielle': {
+            'name': "Dague sacrificielle",
             'base_item': lambda item: item.oid,
             'short_description': "Une dague dont la garde en forme de tête de mort enserre une lame forgée dans "
                                  "un métal noir.",
@@ -1527,7 +2368,10 @@ uniques = {
             'scenario': [
                 Scenario(
                     campaign="Anathazerïn", title="Le Sanctuaire", chapter="Le Sanctuaire de Trenner", numbering="3"
-                )
+                ),
+                Scenario(
+                    campaign="Anathazerïn", title="La bataille de Fleck", chapter="La vallée de Duïn", numbering="3"
+                ),
             ],
             'cost': Cost(value=12.0 * ccc['global']['cost']['cold-iron'] + 60.0,
                          unit=ccc['global']['cost']['unit']).iso(),
@@ -1816,8 +2660,7 @@ uniques = {
                 ),
                 critical=RangeSet([20])
             ),
-            'material': 'krontaar',
-            'flavor': [Flavor(ftype='krontaar', count=1)],
+            'material': 'krontaar'
         },
         'dague-garde-turquoise': {
             'name': "Dague +1, incrustée de turquoises",
@@ -1847,6 +2690,7 @@ uniques = {
             ),
         },
         'epee-elfique+2': {
+            "magical_level": 2,
             'name': "Épée elfique +2",
             'base_item': 'epee-elfique+2',
             'short_description': "Une épée de facture elfique qui permet d'utiliser son bonus de dextérité en "
@@ -1878,6 +2722,297 @@ uniques = {
             'flavor': [Flavor(ftype='magical', count=2)],
             'special_property': ["Attaque ou DM: +[DEX]"]
         },
+        'cimeterre-large': {
+            'name': "Cimeterre large",
+            'base_item': 'cimeterre',
+            'short_description': "Un cimeterre est un type de sabre lourd avec une lame courbée.",
+            'full_description': "Un cimeterre est un type de sabre lourd avec une lame courbée. Avec sa "
+                                "large lame celui-ci inflique 1d8 dégâts.",
+            'category': "quest",
+            'scenario': [
+                Scenario(
+                    campaign="Anathazerïn", title="La bataille de Fleck", chapter="Voyage", numbering="1"
+                ),
+            ],
+            'cost': lambda item: Cost(
+                value=12,
+                unit=ccc['global']['cost']['unit']).iso(),
+            'weight': Weight(value=1.5, unit='Kg'),
+            'hands': 1,
+            'attack': Attack(
+                atype='melee',
+                damages=Damage(
+                    base=[Mod(die=8, count=1, target=['punctured', 'sharp'])],
+                    other=[]
+                ),
+                critical=RangeSet([20])
+            )
+        },
+        'faux': {
+            'name': "Faux",
+            'base_item': 'faux',
+            'short_description': "La faux est formée d'une longue lame effilée et arquée, fixée "
+                                 "perpendiculairement sur un manche en bois ou en métal, relativement "
+                                 "long.",
+            'full_description': "La faux est formée d'une longue lame effilée et arquée, fixée "
+                                "sur un manche en bois ou en métal, relativement "
+                                "long. Cette faux inflique 1d12 dégâts. Il faut au moins 12 en "
+                                "FOR pour manier cette faux.",
+            'category': "quest",
+            'scenario': [
+                Scenario(
+                    campaign="Anathazerïn", title="La bataille de Fleck", chapter="Voyage", numbering="1"
+                ),
+            ],
+            'cost': Cost(
+                value=10,
+                unit=ccc['global']['cost']['unit']).iso(),
+            'weight': Weight(value=4.0, unit='Kg'),
+            'hands': 2,
+            'attack': Attack(
+                atype='melee',
+                mod=3,
+                damages=Damage(
+                    base=[Mod(die=12, count=1, target=['punctured', 'sharp'])],
+                    other=[]
+                ),
+                critical=RangeSet([20])
+            ),
+            'flavor': [Flavor(ftype='magical', count=3)],
+            'special_property': ["Nécessite: FOR > 12"]
+        },
+        'epee-boutetroll': {
+            "magical_level": 2,
+            'name': "Boutetroll",
+            'base_item': 'epee-boutetroll',
+            'short_description': "Cette magnifique épée courte en bronze ressemble à un glaive celtique.",
+            'full_description': "Cette magnifique épée courte en bronze ressemble à un glaive celtique. Elle "
+                                "possède un bonus à l'attaque de +2 et inflique 1d6 +2 dégâts.",
+            'category': "quest",
+            'scenario': [
+                Scenario(
+                    campaign="Anathazerïn", title="La bataille de Fleck", chapter="La vallée de Duïn", numbering="3"
+                ),
+            ],
+            'cost': lambda item: Cost(
+                value=8000,
+                unit=ccc['global']['cost']['unit']).iso(),
+            'weight': Weight(value=1.0, unit='Kg'),
+            'hands': 1,
+            'attack': Attack(
+                atype='melee',
+                mod=2,
+                damages=Damage(
+                    base=[Mod(die=6, count=1, target=['punctured', 'sharp']),
+                          Mod(mtype="+", count=2, target="magical")],
+                    other=[]
+                ),
+                critical=RangeSet([20])
+            ),
+            'flavor': [Flavor(ftype='magical', count=2)],
+        },
+        'epee-boutetroll-kelorn': {
+            "magical_level": 2,
+            'name': "Boutetroll",
+            'base_item': 'epee-boutetroll',
+            'short_description': "Cette magnifique épée courte en bronze ressemble à un glaive celtique. Elle "
+                                 "s’enflamme si le mot de commande « Kelorn » est prononcé.",
+            'full_description': "Cette magnifique épée courte en bronze ressemble à un glaive celtique. Elle possède "
+                                "un bonus à l'attaque de +2 et inflique 1d6 +2 dégâts. Elle s’enflamme si le mot de "
+                                "commande « Kelorn » (« brûle » en elfe sombre) est prononcé et inflige alors 1d6 DM "
+                                "de feu supplémenantaires.",
+            'category': "quest",
+            'scenario': [
+                Scenario(
+                    campaign="Anathazerïn", title="La bataille de Fleck", chapter="La vallée de Duïn", numbering="3"
+                ),
+            ],
+            'cost': Cost(
+                value=32000,
+                unit=ccc['global']['cost']['unit']).iso(),
+            'weight': Weight(value=1.0, unit='Kg'),
+            'hands': 1,
+            'attack': Attack(
+                atype='melee',
+                mod=2,
+                damages=Damage(
+                    base=[Mod(die=6, count=1, target=['punctured', 'sharp']),
+                          Mod(mtype="+", count=2, target="magical")],
+                    other=[Mod(mtype="+", count=1, die=6, target="fire", limitation="Nécessite le mot de commande")]
+                ),
+                critical=RangeSet([20])
+            ),
+            'flavor': [Flavor(ftype='magical', count=2),Flavor(ftype='fire', count=1)],
+        },
+        'masse-serpent': {
+            'name': "Masse serpent",
+            'base_item': 'masse-serpent',
+            'short_description': "Cette masse serpent inocule du poison à sa victime à chaque attaque.",
+            'full_description': "Cette masse serpent inocule du poison à sa victime à chaque attaque. "
+                                "Elle doit faire un test de CON difficulté 12 ou sombrer dans "
+                                "l’inconscience immédiatement pour une durée de 1d6 minutes. La masse "
+                                "serpent ne prend vie qu’entre les mains d’une prêtresse de Maëdra.",
+            'category': "quest",
+            'scenario': [
+                Scenario(
+                    campaign="Anathazerïn", title="La bataille de Fleck", chapter="La vallée de Duïn", numbering="3"
+                ),
+            ],
+            'cost': lambda item: Cost(
+                value=100,
+                unit=ccc['global']['cost']['unit']).iso(),
+            'weight': Weight(value=2.0, unit='Kg'),
+            'hands': 1,
+            'attack': Attack(
+                atype='melee',
+                mod=2,
+                damages=Damage(
+                    base=[Mod(die=6, count=1, target=['blunt'])],
+                    other=[]
+                ),
+                critical=RangeSet([20])
+            ),
+            'special_property': [
+                "Test CON < 12: Inconscient",
+                "Utilisable: Prêtresse de Maëdra"
+            ]
+        },
+        'dague-sacrificielle+1': {
+            'name': "Dague sacrificielle +1",
+            'base_item': "dague-sacrificielle",
+            'short_description': "Une dague dont la garde en forme de tête de mort enserre une lame forgée dans "
+                                 "un métal noir.",
+            'full_description': "Une dague dont la garde en forme de tête de mort enserre une lame forgée dans un "
+                                "métal noir. Elle n’octroie aucun bonus magique, mais toute victime d’une blessure "
+                                "par cette lame doit réussir un test de CON difficulté 10 ou être Affaibli pendant "
+                                "un tour (d12 à tous les tests). Cette dague est clairement d'origine maléfique.",
+            'category': "quest",
+            'scenario': [
+                Scenario(
+                    campaign="Anathazerïn", title="La bataille de Fleck", chapter="La vallée de Duïn", numbering="3"
+                ),
+            ],
+            'cost': Cost(value=12.0 * ccc['global']['cost']['cold-iron'] + 60.0 + 2000.0,
+                         unit=ccc['global']['cost']['unit']).iso(),
+            'weight': Weight(value=0.5, unit='Kg'),
+            'hands': 1,
+            'attack': Attack(
+                atype='melee',
+                mod=1,
+                damages=Damage(
+                    base=[Mod(die=4, count=1, target=['punctured', 'sharp']),
+                         Mod(mtype="+", count=1, target="magical")],
+                    other=[]
+                ),
+                critical=RangeSet([20])
+            ),
+            'flavor': [Flavor(ftype='magical', count=1)],
+            'material': "gorndar",
+            'special_property': ["Test CON <= 10 (si attaque réussie): Affaibli (d12) pendant 1 tour"],
+            'flavor': [Flavor(ftype="gorndar", count=1)],
+            "magical_level": 1,
+        },
+        'masse-sanglante+1': {
+            'name': "Masse sanglante +1",
+            "magical_level": 1,
+            'base_item': 'masse-sanglante',
+            'short_description': "Cette masse +1 est composée d’un manche de bois noir et d’une tête de mort "
+                                "en argent courroné d'un cercle de fer aux pointes acérées.",
+            'full_description': "Cette masse +1 est composée d’un manche de bois noir et d’une tête de mort "
+                                "en argent. Le crâne est couronné d’un cercle de fer aux pointes acérées. Les "
+                                "blessures causées par les pointes produisent un effet de saignement qui "
+                                "inflige +1d6 DM de saignement pendant 3 tours. Les DM de saignement de "
+                                "plusieurs blessures ne sont pas cumulables.",
+            'category': "quest",
+            'scenario': [
+                Scenario(
+                    campaign="Anathazerïn", title="La bataille de Fleck", chapter="La vallée de Duïn", numbering="3"
+                ),
+            ],
+            'cost': lambda item: Cost(
+                value=item.magical_level * item.magical_level * ccc['global']['cost']['magical'],
+                unit=ccc['global']['cost']['unit']).iso(),
+            'weight': Weight(value=2.0, unit='Kg'),
+            'hands': 1,
+            'attack': Attack(
+                atype='melee',
+                mod=2,
+                damages=Damage(
+                    base=[Mod(die=6, count=1, target=['blunt','punctured']),
+                          Mod(mtype="+", count=1, target="magical")],
+                    other=[]
+                ),
+                critical=RangeSet([20])
+            ),
+            'flavor': [Flavor(ftype='magical', count=1)],
+            'special_property': [
+                "Saignement: 1d6 pendant 3 tr",
+                "DM saignement non cumulable"
+            ]
+        },
+        'masse-de-fantassin+1': {
+            'category': 'quest',
+            'base_item': 'masse-fantassin',
+            'name': "Masse +1, de fantassin",
+            'full_description': "La masse de fantassin est une arme contondante constituée d'une masse lourde "
+                                "accrochée au bout d'un long manche permettant de l'utiliser à cheval. Elle "
+                                "s'utilise à deux main et inflige 1d8 +1 dégâts mais avec un malus à l'attaque "
+                                "de -1 à cause de son long manche. Utilisée sur un cheval, après une action "
+                                "de mouvement, cette attaque est sans malus et inflige +1d8 dégats "
+                                "supplémentaires.",
+            'short_description': "La masse de fantassin est constituée d'un long manche terminé par une lourde "
+                                 "masse. Elle montre son potentiel lors de charges (mouvement + attaque) "
+                                 "à cheval.",
+            'weight': cof.properties.Weight(value=3.0, unit='Kg'),
+            'hands': 3,
+            'attack': Attack(
+                atype='melee',
+                mod=-1,
+                damages=Damage(
+                    base=[Mod(die=8, count=1, target=['blunt'])],
+                    other=[Mod(mtype="+", count=1, target="magical" )]
+                ),
+                critical=RangeSet([20])
+            ),
+            'cost': Cost(
+                value=2000,
+                unit=ccc['global']['cost']['unit']).iso(),
+            'flavor': [Flavor(ftype='magical', count=1)],
+            'special_property': [
+                "Charge cheval: une seule main",
+                "Charge cheval: pas de malus",
+                "Charge cheval: +1d8 DM"
+                ]
+        },
+        'tranchegrand': {
+            "magical_level": 2,
+            'category': 'quest',
+            'base_item': 'tranchegrand',
+            'name': "Tranchegrand",
+            'full_description': "Une magnifique hache +2 à double tranchant de facture naine, décorée de runes. "
+                                "Tranchegrand est une faucheuse de géants : elle inflige +1d6 DM contre les "
+                                "créatures de taille grande et +2d6 contre celles de taille énorme ou supérieure!",
+            'short_description': "Une magnifique hache à double tranchant de facture naine, décorée de runes "
+                                 "spécialement conçue pour tuer de grandes créatures.",
+            'weight': cof.properties.Weight(value=3.5, unit='Kg'),
+            'hands': 1,
+            'attack': Attack(
+                atype='melee',
+                damages=Damage(
+                    base=[Mod(die=8, count=1, target=['sharp'])],
+                    other=[]
+                ),
+                critical=RangeSet([20])
+            ),
+            'cost': lambda item: Cost(
+                value=item.magical_level * item.magical_level * ccc['global']['cost']['magical'],
+                unit=ccc['global']['cost']['unit']).iso(),
+            'flavor': [Flavor(ftype='magical', count=2)],
+            'special_property': [
+                "Grande créature: +1d6 DM",
+                "Énorme créature: +2d6 DM"]
+        },
+        
     },
     "Boots": {
         'boots-sprint': {
@@ -1926,7 +3061,7 @@ uniques = {
                     campaign="Anathazerïn", title="La justices des Elfes", chapter="Le procès", numbering="3")
             ],
             'cost': Cost(value=10.0, unit=ccc['global']['cost']['unit']).iso(),
-            'weight': Weight(value=0.0, unit='Kg'),
+            'weight': Weight(value=0.2, unit='Kg'),
         },
     },
     "Helmet": {
@@ -2010,6 +3145,28 @@ uniques = {
             'scenario': [
                 Scenario(campaign="Anathazerïn", title="Le Pic d'Andalf", chapter="Le sanctuaire", numbering="2")
             ],
+        },
+        'heavy-helmet-silver': {
+            'base_item': 'heavy-helmet-silver',
+            'category': 'quest',
+            'skill': [
+                Mod(label="Test", target="view", count=8, mtype="-"), 
+                Mod(label="Test", target="hearing", count=8, mtype="-"),
+                Mod(label="Test", target="embuscade", count=8, mtype="-")
+                ],
+            'defense': [Mod(label="RD", target="rd", count=8, limitation="Seulement contre les critiques")],
+            'magical_level': 0,
+            'name': "Heaume sculpté, en argent",
+            'short_description': "Un heaume sculpté et rehaussé d’argent qui protègera énormément la tête de "
+                                 "l'aventurier mais réduira sa perception quasiment à néant.",
+            'full_description': "Un heaume magnifiquement sculpté et rehaussé d’argent. Le heaume est l'élément "
+                                "indispensable pour compléter une armure de demi-plaques. "
+                                "Il offre une RD de 8 lorsque l'on subit un coup critique. Le port de de ce casque "
+                                "inflige une pénalité de -8 a tous les tests de SAG destinés à simuler la perception, "
+                                "détecter un bruit ou une créature cachée, échaper à une embuscade, etc.",
+            'cost': lambda item: cof.properties.Cost(value=300.0,
+                                                     unit=ccc['global']['cost']['unit']).iso(),
+            'weight': cof.properties.Weight(value=2.0, unit='Kg')
         },
     },
     "Robe": {
@@ -2205,7 +3362,7 @@ uniques = {
                                 "Le PJ parle l’orque, mais ne sait plus parler le commun. On ne peut pas retirer "
                                 "l'anneau avant le temps imparti.",
             'category': "quest",
-            "magical_level": lambda item: item.way_rank,
+            "magical_level": 2,
             'scenario': [
                 Scenario(
                     campaign="Anathazerïn", title="La justices des Elfes", chapter="Rejoindre la Thuléa", numbering="2")
@@ -2218,6 +3375,59 @@ uniques = {
             'special_property': ["[CHA]: -2 (contre autre que orque)",
                                  "Language: orque",
                                  "Ne peut plus parler le commun"]
+        },
+        'ring-haute-magie': {
+            "name": "Anneau de haute magie",
+            "short_description": "Ce simple anneau d’argent donne un bonus de à tous les tests d’attaque magique "
+                                 "et augmente les DM de tous les sorts.",
+            "full_description": "Ce simple anneau d’argent donne un bonus de +2 à tous les tests d’attaque magique "
+                                "et augmente de +1d6 les DM de tous les sorts. Ce bonus est particulièrement "
+                                "déterminant lorsqu’il s’agit d’un sort qui inflige habituellement de faibles "
+                                "DM (comme projectile magique, par exemple).",
+            'category': "quest",
+            "magical_level": 2,
+            'scenario': [
+                Scenario(
+                    campaign="Anathazerïn", title="La bataille de Fleck", chapter="La vallée de Duïn", numbering="3"
+                ),
+            ],
+            'cost': lambda item: Cost(
+                value=18000,
+                unit=ccc['global']['cost']['unit']).iso(),
+            'weight': Weight(value=0.0, unit='Kg'),
+            'special_property': [
+                "Attaque magique: +2",
+                "Sorts: +1d6 DM"
+            ]
+        },
+        'ring-sceau-de-feu': {
+            "name": "Sceau de feu",
+            "short_description": "Cet anneau d’or décoré d’un beau rubis permet d’apposer une rune de feu "
+                                 "qui se ferme.",
+            "full_description": "Cet anneau d’or décoré d’un beau rubis permet d’apposer une rune de feu "
+                                "une fois par jour sur un objet qui se ferme (coffre, porte) pour une "
+                                "durée de 24 eures. Un test de SAG (trouver les pièges) difficulté 15 est "
+                                "nécessaire pour remarquer la rune rouge sur l'objet. S’il est ouvert, la "
+                                "rune explose et inflige 4d6 DM de Feu dans un rayon de 3 mètres. Un "
+                                "test de DEX difficulté 15 permet de diviser les DM par 2.",
+            'category': "quest",
+            "magical_level": 2,
+            'scenario': [
+                Scenario(
+                    campaign="Anathazerïn", title="La bataille de Fleck", chapter="La vallée de Duïn", numbering="3"
+                ),
+            ],
+            "duration": Duration(value="24", unit="h"),
+            "area": Duration(value="3", unit="m"),
+            'cost': Cost(
+                value=500,
+                unit=ccc['global']['cost']['unit']).iso(),
+            'weight': Weight(value=0.0, unit='Kg'),
+            'special_property': [
+                "Detection rune: test SAG >= 15",
+                "Ouverture : 4d6 DM de feu",
+                "Test DEX >= 15 : DM / 2"
+            ]
         },
     },
     "Shield": {
@@ -2240,6 +3450,32 @@ uniques = {
             'defense': [Mod(label="DEF", mtype="+", count=1)],
             'special_property': ["DM feu (souffle, zone) / 2"],
             'flavor': [Flavor(ftype='fire', count=1)],
+        },
+        'bouclier-a-pointes': {
+            'name': "Bouclier à pointes",
+            'base_item': lambda item: item.oid,
+            'short_description': "Un très ancien bouclier à pointe fabriqué dans un métal d’un gris mat et sombre.",
+            'full_description': "Un très ancien bouclier à pointe de l’époque du Roi-Sorcier de Tor-Angul, "
+                                "fabriqué dans un métal d’un gris mat et sombre. Bouclier +2 et, si le "
+                                "bouclier est utilisé pour attaquer, il inflige 1d8 DM létaux (au lieu de "
+                                "1d4 temporaires).",
+            'category': "quest",
+            'scenario': [
+                Scenario(
+                    campaign="Anathazerïn", title="La bataille de Fleck", chapter="La vallée de Duïn", numbering="3"
+                ),
+            ],
+            'magical_level': 2,
+            'cost': lambda item: Cost(
+                value=item.magical_level * item.magical_level * ccc['global']['cost']['magical'],
+                unit=ccc['global']['cost']['unit']).iso(),
+            'weight': Weight(value=2, unit='Kg'),
+            'hands': 1,
+            'defense': [Mod(label="DEF", mtype="+", count=2)],
+            'special_property': [
+                "Attaque bouclier: 1d8",
+                "DM du bouclier létaux"],
+            'flavor': [Flavor(ftype='magical', count=2)],
         }
     },
     "Bullet": {
@@ -2298,6 +3534,27 @@ uniques = {
             'weight': Weight(value=0.3, unit='Kg'),
             'special_property': ["DM: +2d6"],
             'quantity': 1,
+            'use': 4
+        },
+        'carreau-poison': {
+            'name': "Carreau empoisonné",
+            'base_item': lambda item: item.oid,
+            'short_description': "Ces carreaux d’arbalète sont enduits de poison. La victime d’une attaque "
+                                 "réussie doit résister au poison ou ou sombrer petit à petit dans l’inconscience.",
+            'full_description': "Ces carreaux d’arbalète sont enduits de poison. La victime d’une attaque réussie "
+                                "doit faire un test de CON difficulté 12 ou sombrer dans l’inconscience en 1d6 "
+                                "tours pour une durée de 1d6 minutes",
+            'category': "quest",
+            'scenario': [
+                Scenario(campaign="Anathazerïn", title="Le Pic d'Andalf", chapter="Le sanctuaire", numbering="2")
+            ],
+            'cost': Cost(
+                value=240.0,
+                unit=ccc['global']['cost']['unit']).iso(),
+            'weight': Weight(value=0.3, unit='Kg'),
+            'special_property': ["Inconscient: CON < 12"],
+            'quantity': 1,
+            "duration": Duration(value="1d6", unit="tr"),
             'use': 4
         },
         'fleche': {
@@ -2466,6 +3723,29 @@ uniques = {
             'quantity': 1,
             'special_property': [f"Explosion: 3d6 DM "],
         },
+        'fleche-de-guerre+2': {
+            'name': "Flêches de guerre +2",
+            'base_item': 'fleche-de-guerre',
+            'short_description': "Cinq flêches de guerre qui procurent un bonus aux dégâts.",
+            'full_description': "Ces flêches de guerre procurent un bonus de +2 aux "
+                                "dégâts, mais ne sont utilisables qu'avec un arc long.  Il en "
+                                "reste 5 dans ce carqois.",
+            'category': "quest",
+            'scenario': [
+                Scenario(
+                    campaign="Anathazerïn", title="La bataille de Fleck", chapter="La vallée de Duïn", numbering="3"
+                ),
+            ],
+            'cost': Cost(
+                value=1000.0,
+                unit=ccc['global']['cost']['unit']).iso(),
+            'weight': Weight(value=0.3, unit='Kg'),
+            'special_property': ["DM: +2",
+                                 "Uniquement avec un arc long"],
+            'quantity': 1,
+            'use': 5,
+            'flavor': [Flavor(ftype='magical', count=2)],
+        },
     },
     "Armor": {
         'armure-cuir-peau-dragon': {
@@ -2529,6 +3809,77 @@ uniques = {
                 unit=ccc['global']['cost']['unit']).iso(),
             'flavor': lambda item, flavor: [Flavor(ftype=f"dragon-{flavor['color']}",
                                                    count=flavor['magical_level'] - 2)],
+        },
+        'chemise-de-maille-des-elfes-noirs': {
+            'name': "Chemise de mailles, des elfes noirs",
+            'base_item': "chemise-de-maille-des-elfes-noirs",
+            'oid': "chemise-de-maille-des-elfes-noirs",
+            'full_description': "Les chemises de maille des elfes noirs sont si légères et souples "
+                                "qu’elles sont considérées comme des armures de cuir (pénalité de -2 "
+                                "de base). Elles peuvent être portées par les voleurs, les bardes, "
+                                "les rôdeurs ou les barbare comme s’il s’agissait d’armure de cuir "
+                                "(mais pas par les druides ou forgesorts, qui sont des lanceurs de "
+                                "sort).",
+            'short_description': "Les chemises de maille des elfes noirs sont si légères et souples "
+                                 "qu’elles sont considérées comme des armures de cuir.",
+            'weight': Weight(value=6.0, unit='Kg'),
+            'defense': [
+                Mod(label="DEF", target="", mtype="+", count=4)
+            ],
+            'skill': [Mod(label="Test", target="DEX", count=2, mtype="-")],
+            'scenario': [
+                Scenario(
+                    campaign="Anathazerïn", title="La bataille de Fleck", chapter="La vallée de Duïn", numbering="3"
+                ),
+            ],
+            'category': 'quest',
+            'cost': Cost(
+                value=115,
+                unit=ccc['global']['cost']['unit']).iso(),
+            'flavor': [Flavor(ftype="drow",count=1)],
+            'special_property': ["Utilisable: voleur, barde rôdeur et barbare"],
+        },
+        'chemise-de-maille-des-elfes-noirs': {
+            'flavors': [
+                {"magical_level": 1},
+                {"magical_level": 2},
+                {"magical_level": 3},
+                {"magical_level": 4},
+            ],
+            'magical_level': lambda item, flavor: flavor['magical_level'],
+            'name': lambda item, flavor: f"Chemise de mailles +{flavor['magical_level']}, des elfes noirs",
+            'base_item': "chemise-de-maille-des-elfes-noirs",
+            'oid': lambda item, flavor: f"chemise-de-maille-des-elfes-noirs+{flavor['magical_level']}",
+            'full_description': 
+                lambda item, flavor: f"Les chemises de maille des elfes noirs sont si légères et souples "
+                                      "qu’elles sont considérées comme des armures de cuir (pénalité de -2 "
+                                      "de base). Elles peuvent être portées par les voleurs, les bardes, "
+                                      "les rôdeurs ou les barbare comme s’il s’agissait d’armure de cuir "
+                                      "(mais pas par les druides ou forgesorts, qui sont des lanceurs de "
+                                      "sort). Cette armure est magique et offre un bonus de DEF de "
+                                     f"+{flavor['magical_level']} et réduit de {flavor['magical_level']} "
+                                      "les pénalités qu'elle inflige.",
+            'short_description': 
+                lambda item, flavor: f"Les chemises de maille des elfes noirs sont si légères et souples "
+                                      "qu’elles sont considérées comme des armures de cuir.",
+            'weight': Weight(value=6.0, unit='Kg'),
+            'defense': lambda item, flavor: [
+                Mod(label="DEF", target="", mtype="+", count=4 + flavor['magical_level'])
+            ],
+            'skill': lambda item, flavor: [Mod(label="Test", target="DEX", count=2 - flavor['magical_level'], mtype="-")] if 2 - flavor['magical_level'] > 0 else None,
+            'scenario': lambda item, magical_level: [
+                Scenario(
+                    campaign="Anathazerïn", title="La bataille de Fleck", chapter="La vallée de Duïn", numbering="3"
+                ),
+            ],
+            'category': 'quest',
+            'cost': lambda item, flavor: Cost(
+                value=100 + flavor['magical_level'] * flavor['magical_level'] * ccc['global']['cost']['magical'],
+                unit=ccc['global']['cost']['unit']).iso(),
+            'flavor': lambda item, flavor: [
+                Flavor(ftype="magical",count=flavor['magical_level']),
+            ],
+            'special_property': ["Utilisable: voleur, barde rôdeur et barbare"],
         },
         'robe-tissu-elfique': {
             'name': "Robe, en tissu elfique",

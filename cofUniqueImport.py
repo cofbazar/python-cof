@@ -51,6 +51,7 @@ def main():
 
                     item.name = f"{item.itype} - {cap.name}"
                     item.base_item = item.oid
+                    log.debug(f"Item [{item.name}] base ({item.base_item}) itype '{item.itype}''")
                     if 'cost' in ccofC[ccofC[itype]]:
                         item.cost = ccofC[ccofC[itype]]['cost'](item)
                     if 'weight' in ccofC[ccofC[itype]]:
@@ -95,6 +96,12 @@ def main():
     item_file = os.path.join(ccofC['global']['path']['root'],
                              ccofC['global']['path']['data'],
                              'uniques.json')
+
+    # check
+    for i in ilist:
+        #log.debug(f"[{i.name}] Cost : {i.cost}")
+        if i.cost is None or (not isinstance(i.cost.value, float) and not isinstance(i.cost.value, int)):
+            log.error(f'No cost value for item "{i.name}" ({i.oid})')
     ilist.save(item_file)
 
 

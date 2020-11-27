@@ -38,18 +38,18 @@ materials = {
         'couverture': {
             'base_item': 'couverture',
             'category': 'Standard',
-            'full_description': "Une couverture bien épaise qui tient chaux lorsque l'on dort à la belle étoile.",
-            'short_description': "Une couverture bien épaise qui tient chaux lorsque l'on dort à la belle étoile.",
+            'full_description': "Une couverture bien épaisse qui tient chaud lorsque l'on dort à la belle étoile.",
+            'short_description': "Une couverture bien épaisse qui tient chaud lorsque l'on dort à la belle étoile.",
             'weight': cof.properties.Weight(value=1.0, unit='Kg')
         },
         'grappin': {
             'base_item': 'grappin',
             'category': 'Standard',
             'full_description': "Un grappin est un outil composé de plusieurs crochets, généralement attaché à une "
-                                "corde ou autre filin. Il permettra de venir a bout de n'importe "
-                                "quelle falaise du moment que l'on ai pas le vertige. Ce grapin fait 15m de long.",
+                                "corde ou autre filin. Il permettra de venir à bout de n'importe "
+                                "quelle falaise du moment que l'on ai pas le vertige. Ce grappin fait 15m de long.",
             'short_description': "Un grappin d'une longueur de 15m composé de plusieurs crochets qui permettra "
-                                 "de venir a bout de n'importe quelle falaise du moment que l'on ai pas le vertige.",
+                                 "de venir à bout de n'importe quelle falaise du moment que l'on ai pas le vertige.",
             'weight': cof.properties.Weight(value=1.0, unit='Kg'),
             'range': Range(value=15, unit="m"),
             'quantity': 1,
@@ -102,7 +102,7 @@ materials = {
             'base_item': 'ration',
             'category': 'Standard',
             'full_description': "Tous les aliments nécessaires pour subvenir aux besoins de son corps pendant "
-                                "1 semaine. Avec quelques unes de ces rations en poche, vous êtes sûre de ne "
+                                "1 semaine. Avec quelques unes de ces rations en poche, vous êtes sûr de ne "
                                 "jamais avoir faim lorsque vous partez à l'aventure.",
             'short_description': "Aliments nécessaires pour subvenir aux besoins de son corps pendant 1 semaine. ",
             'weight': cof.properties.Weight(value=1.0, unit='Kg'),

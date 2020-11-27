@@ -184,10 +184,10 @@ magicwands = {
         },
         'magic-wand-guerison': {
             "short_description": "L'utilisateur de cette baguette peut toucher une cible qui récupère alors "
-                                 "tous ses PV. Elle est aussi guérie des poisons, maladies et affaiblissements "
+                                 "tous ses PV. Il est aussi guéri des poisons, maladies et affaiblissements "
                                  "de Caractéristiques.",
             "full_description": "L'utilisateur de cette baguette peut toucher une cible qui récupère alors "
-                                 "tous ses PV. Elle est aussi guérie des poisons, maladies et affaiblissements "
+                                 "tous ses PV. Il est aussi guéri des poisons, maladies et affaiblissements "
                                  "de Caractéristiques.",
         },
         'magic-wand-delivrance': {
