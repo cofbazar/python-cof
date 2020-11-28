@@ -1454,7 +1454,7 @@ uniques = {
             'weight': Weight(value=0.0, unit='Kg'),
         },
         'collier-maison-kar-lothian': {
-            'name': "Collier, de la maison Eilserv",
+            'name': "Collier, de la maison Kar'Lothian",
             'base_item': lambda item: item.oid,
             'short_description': "Un collier avec une rune, symbole de la maison Kar'Lothian.",
             'full_description': "Un collier avec une rune, symbole de la maison Kar'Lothian.",
@@ -2771,7 +2771,6 @@ uniques = {
             'hands': 2,
             'attack': Attack(
                 atype='melee',
-                mod=3,
                 damages=Damage(
                     base=[Mod(die=12, count=1, target=['punctured', 'sharp'])],
                     other=[]
@@ -3261,7 +3260,7 @@ uniques = {
         'gloves-force': {
             'name': lambda item: f"Gantelets, de force +{item.magical_level}",
             'base_item': lambda item: f"{item.oid}",
-            'special_property': lambda item: [f"[DEX]: +{item.magical_level}"],
+            'special_property': lambda item: [f"[FOR]: +{item.magical_level}"],
             'flavor': lambda item: [Flavor(ftype='magical', count=item.magical_level)],
             'short_description': "Ces gantelets apportent un bonus au Mod. de force de la personne qui les porte.",
             'full_description': lambda item: f"Ces gantelets apportent un bonus de +{item.magical_level} au Mod. de "
