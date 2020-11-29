@@ -2935,7 +2935,7 @@ uniques = {
             'hands': 1,
             'attack': Attack(
                 atype='melee',
-                mod=2,
+                mod=1,
                 damages=Damage(
                     base=[Mod(die=6, count=1, target=['blunt','punctured']),
                           Mod(mtype="+", count=1, target="magical")],
