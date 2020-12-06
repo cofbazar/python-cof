@@ -1436,7 +1436,7 @@ uniques = {
                     campaign="Anathazerïn", title="La bataille de Fleck", chapter="La vallée de Duïn", numbering="3"
                 ),
             ],
-            'cost': Cost(value=25.0, unit='pp').iso(),
+            'cost': Cost(value=0.0, unit='pa').iso(),
             'weight': Weight(value=0.1, unit='Kg'),
         },
         'symbole-de-maedra': {
