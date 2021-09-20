@@ -162,9 +162,9 @@ materials = {
             'base_item': 'leather-skin',
             'category': 'Cofbazar',
             'full_description': "Une peau d'animal qui peut servir à fabriquer des couvertures ou des habits bien "
-                                "chaud.",
+                                "chauds.",
             'short_description': "Une peau d'animal qui peut servir à fabriquer des couvertures ou des habits bien "
-                                 "chaud.",
+                                 "chauds.",
             'weight': cof.properties.Weight(value=1.0, unit='Kg'),
             'cost': lambda item: cof.properties.Cost(value=10.0,
                                                      unit=config.cofConfig.config['global']['cost']['unit']).iso(),

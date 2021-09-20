@@ -7,6 +7,25 @@ from ClusterShell.NodeSet import RangeSet
 
 uniques = {
     'Material': {
+        'broche-sagesse+2': {
+            'name': "Broche en argent",
+            'short_description': "Un magnifique broche en argent représentant une feuille de houx.",
+            'full_description': "Un magnifique broche en argent représentant une feuille de houx. Cette broche "
+                                "confère un bonus au Mod. de SAG de +2.",
+            'category': "quest",
+            'special_property': [
+                "Mod. SAG: +2",
+            ],
+            'weight': Weight(value=0.1, unit='Kg'),
+            'cost': lambda item: Cost(
+                value=18000,
+                unit=ccc['global']['cost']['unit']).iso(),
+            'scenario': [
+                Scenario(
+                    campaign="Anathazerïn", title="Les jardins de l'Amertume", chapter="Les jardins de Ma'ishar", numbering="2"
+                ),
+            ],
+        },
         'etoile-d-honneur-en-argent': {
             'name': "Étoile d'honneur, en argent",
             'base_item': lambda item: item.oid,
@@ -59,7 +78,7 @@ uniques = {
                                 "l'ai dégusté.",
             'category': "quest",
             'scenario': [
-                Scenario(title="Retour à clairval", chapter="Une nuit à Clairval", numbering="2")
+                Scenario(campaign="Scénarios uniques", title="Retour à clairval", chapter="Une nuit à Clairval", numbering="2")
             ],
             'skill': [Mod(label="Test", count=2, mtype="+")],
             'cost': Cost(value=2.0, unit=ccc['global']['cost']['unit']).iso(),
@@ -73,7 +92,7 @@ uniques = {
             'full_description': "Un magnifique costume taillé sur mesure par Albik de Clairval.",
             'category': "quest",
             'scenario': [
-                Scenario(title="Retour à clairval", chapter="Amis pour la vie", numbering="5")
+                Scenario(campaign="Scénarios uniques", title="Retour à clairval", chapter="Amis pour la vie", numbering="5")
             ],
             'cost': Cost(value=5.0, unit=ccc['global']['cost']['unit']).iso(),
             'weight': Weight(value=0.0, unit='Kg'),
@@ -151,7 +170,7 @@ uniques = {
                                  "pour un collectionneur.",
             'category': "quest",
             'scenario': [
-                Scenario(title="Retour à clairval", chapter="Baston chez les Crânes-creux", numbering="4")
+                Scenario(campaign="Scénarios uniques", title="Retour à clairval", chapter="Baston chez les Crânes-creux", numbering="4")
             ],
             'cost': Cost(value=0.0, unit=ccc['global']['cost']['unit']).iso(),
             'weight': Weight(value=0.0, unit='Kg'),
@@ -306,6 +325,24 @@ uniques = {
                 ),
                 Scenario(
                     campaign="Anathazerïn", title="La bataille de Fleck", chapter="La vallée de Duïn", numbering="3"
+                ),
+                Scenario(
+                    campaign="Anathazerïn", title="Les jardins de l'Amertume", chapter="Les jardins de Ma'ishar", numbering="2"
+                ),
+            ],
+            'cost': Cost(value=100.0, unit=ccc['global']['cost']['unit']).iso(),
+            'weight': Weight(value=0.0, unit='Kg'),
+            'quantity': 1
+        },
+         'stone-jade': {
+            'name': "Jade",
+            'base_item': lambda item: item.oid,
+            'short_description': "Le jade est une pierre gemme très dure et tenace généralement de couleur verte.",
+            'full_description': "Le jade est une pierre gemme très dure et tenace généralement de couleur verte.",
+            'category': "quest",
+            'scenario': [
+                Scenario(
+                    campaign="Anathazerïn", title="Les jardins de l'Amertume", chapter="Les jardins de Ma'ishar", numbering="2"
                 ),
             ],
             'cost': Cost(value=100.0, unit=ccc['global']['cost']['unit']).iso(),
@@ -740,6 +777,76 @@ uniques = {
             'weight': Weight(value=0.0, unit='Kg'),
             'quantity': 1
         },
+        'pierre-de-mort': {
+            'name': "Pierre de Mort",
+            'base_item': lambda item: item.oid,
+            'short_description': "Une pierre magique qui semble posséder une puissante aura de mort.",
+            'full_description': "Une pierre magique qui semble posséder une puissante aura de mort",
+            'category': "quest",
+            'scenario': [
+                Scenario(
+                    campaign="Anathazerïn", title="Les jardins de l'Amertume", chapter="Les jardins de Ma'ishar", numbering="2"
+                ),
+            ],
+            'cost': Cost(value=0.0, unit=ccc['global']['cost']['unit']).iso(),
+            'weight': Weight(value=0.5, unit='Kg'),
+        },
+        'pierre-du-feu': {
+            'name': "Pierre du Feu",
+            'base_item': lambda item: item.oid,
+            'short_description': "Une pierre magique qui semble irradier d'une puissante chaleur.",
+            'full_description': "Une pierre magique qui semble irradier d'une puissante chaleur.",
+            'category': "quest",
+            'scenario': [
+                Scenario(
+                    campaign="Anathazerïn", title="Les jardins de l'Amertume", chapter="Les jardins de Ma'ishar", numbering="2"
+                ),
+            ],
+            'cost': Cost(value=0.0, unit=ccc['global']['cost']['unit']).iso(),
+            'weight': Weight(value=0.5, unit='Kg'),
+        },
+        'pierre-de-terre': {
+            'name': "Pierre de Terre",
+            'base_item': lambda item: item.oid,
+            'short_description': "Une pierre magique d'où semble s'émananer de fines volutes empoisonnées.",
+            'full_description': "Une pierre magique d'où semble s'émananer de fines volutes empoisonnées.",
+            'category': "quest",
+            'scenario': [
+                Scenario(
+                    campaign="Anathazerïn", title="Les jardins de l'Amertume", chapter="Les jardins de Ma'ishar", numbering="2"
+                ),
+            ],
+            'cost': Cost(value=0.0, unit=ccc['global']['cost']['unit']).iso(),
+            'weight': Weight(value=0.5, unit='Kg'),
+        },
+        'pierre-d-esprit': {
+            'name': "Pierre d'Esprit",
+            'base_item': lambda item: item.oid,
+            'short_description': "Une pierre magique fascinante dont il est difficile de détourner le regard.",
+            'full_description': "Une pierre magique fascinante dont il est difficile de détourner le regard.",
+            'category': "quest",
+            'scenario': [
+                Scenario(
+                    campaign="Anathazerïn", title="Les jardins de l'Amertume", chapter="Les jardins de Ma'ishar", numbering="2"
+                ),
+            ],
+            'cost': Cost(value=0.0, unit=ccc['global']['cost']['unit']).iso(),
+            'weight': Weight(value=0.5, unit='Kg'),
+        },
+        'pierre-de-vent': {
+            'name': "Pierre de Vent",
+            'base_item': lambda item: item.oid,
+            'short_description': "Une pierre magique empreinte de tellement de puissance qu'elle semble vibrer.",
+            'full_description': "Une pierre magique empreinte de tellement de puissance qu'elle semble vibrer.",
+            'category': "quest",
+            'scenario': [
+                Scenario(
+                    campaign="Anathazerïn", title="Les jardins de l'Amertume", chapter="Les jardins de Ma'ishar", numbering="2"
+                ),
+            ],
+            'cost': Cost(value=0.0, unit=ccc['global']['cost']['unit']).iso(),
+            'weight': Weight(value=0.5, unit='Kg'),
+        },
         'flute-d-amarange': {
             'name': "Flûte, d'Amarange",
             'base_item': lambda item: item.oid,
@@ -937,6 +1044,48 @@ uniques = {
             'cost': Cost(value=10.0, unit=ccc['global']['cost']['unit']).iso(),
             'weight': Weight(value=5, unit='Kg'),
         },
+        'sac-de-pommes': {
+            'name': "Un grand sac de pommes",
+            'base_item': lambda item: item.oid,
+            'short_description': "Un un grand sac rempli de pommes.",
+            'full_description': "Un un grand sac rempli de pommes qui ont l'air très appétissantes.",
+            'category': "quest",
+            'scenario': [
+                Scenario(
+                    campaign="Anathazerïn", title="Les jardins de l'Amertume", chapter="Forêt Sombre", numbering="1"
+                ),
+            ],
+            'cost': Cost(value=10.0, unit=ccc['global']['cost']['unit']).iso(),
+            'weight': Weight(value=10, unit='Kg'),
+        },
+        'bourse-fruits-seches': {
+            'name': "Une bourse contenant des fruits séchés",
+            'base_item': lambda item: item.oid,
+            'short_description': "Une bourse avec des baies pour prendre 5 repas. "
+                                 "Un repas nourrit la personne pour 24 heures, guerit les blessures et "
+                                 "soigne tout empoisonnement.",
+            'full_description': "Une bourse de fruits séchés aux propriétés magiques. Chaque bourse contient "
+                                "une quantité suffisante de baies pour prendre 5 repas. Chaque repas nourrit "
+                                "la personne pour 24 heures, permet de guérir 3d6 PV et soigne tout "
+                                "empoisonnement. Un personnage ne peut bénéficier de cet effet plus d’une fois "
+                                "par jour.",
+            'category': "quest",
+            'scenario': [
+                Scenario(
+                    campaign="Anathazerïn", title="Les jardins de l'Amertume", chapter="Forêt Sombre", numbering="1"
+                ),
+            ],
+            'special_property': [
+                "Soigne: 3d6 PV",
+                "Soigne: Empoisonnement",
+                "Effet: 1 seule fois par jour"
+            ],
+            'cost': Cost(value=200.0, unit=ccc['global']['cost']['unit']).iso(),
+            'weight': Weight(value=1.5, unit='Kg'),
+            'quantity': 1,
+            'use': 5
+            
+        },
         'vetements-sombres': {
             'name': "Vêtements sombres",
             'base_item': lambda item: item.oid,
@@ -995,6 +1144,22 @@ uniques = {
             'scenario': [
                 Scenario(
                     campaign="Anathazerïn", title="Les Faux Monnayeurs", chapter="Monastir", numbering="3"
+                ),
+            ],
+            'cost': Cost(value=0.0, unit=ccc['global']['cost']['unit']).iso(),
+            'weight': Weight(value=0.0, unit='Kg'),
+        },
+        'recette-amphore-de-soin': {
+            'name': "Recette amphore de soin",
+            'base_item': lambda item: item.oid,
+            'short_description': "Sur cette plaquette de cire est gravée (en Uraqi) la methode utilisé par les Uraqi "
+                                 "pour produire une amphore de soin. L'ingrédient principal semble être ... du sang humain ...",
+            'full_description': "Sur cette plaquette de cire est gravée (en Uraqi) la methode utilisé par les Uraqi "
+                                "pour produire une amphore de soin. L'ingrédient principal semble être ... du sang humain ...",
+            'category': "quest",
+            'scenario': [
+                Scenario(
+                    campaign="Anathazerïn", title="Les jardins de l'Amertume", chapter="Les jardins de Ma'ishar", numbering="2"
                 ),
             ],
             'cost': Cost(value=0.0, unit=ccc['global']['cost']['unit']).iso(),
@@ -1184,6 +1349,29 @@ uniques = {
             ],
             'weight': Weight(value=0.3, unit='Kg'),
             'special_property': lambda item: item.special_property + ["Utilisation: 3 fois par jour"],
+        },
+        'gland-de-pouvoir': {
+            "capacity": "http://co-drs.org/capacites/gland-de-pouvoir/",
+            'name': "Gland de pouvoir",
+            'short_description': "Avec une attaque à distance réussie, celui qui lance ce gland transforme la "
+                                 "victime en statue de bois. Sous cette forme elle ne peut agir et "
+                                 "ne ressent rien. Sa DEF passe à 10 et il obtient une RD de 10. Le sort s’achève "
+                                 "dès que la cible perd plus de 10 PV. En cas d'échec, on peut le récupérer "
+                                 "avec un test de SAG de 10 ou 20 selon la nature du sol).",
+            'full_description': "Une fois par combat, la personne peut lancer un gland sur une cible (portée 10 m). En cas "
+                                "d’attaque à distance réussie, la victime se transforme en statue de bois pendant [2d6 + Mod. "
+                                "de SAG] tours. Sous cette forme elle ne peut agir et ne ressent rien. Sa DEF passe à 10 "
+                                "mais elle gagne une réduction des DM de 10. Le sort s’achève dès que la cible perd "
+                                "plus de 10 PV. S'il rate sa cible, il peut être récupéré avec un test de sagesse de difficulté 10 "
+                                "ou 20 selon la nature du sol.",
+            'category': "quest",
+            'base_item': lambda item: item.oid,
+            'scenario': [
+                Scenario(
+                    campaign="Anathazerïn", title="Les jardins de l'Amertume", chapter="Les jardins de Ma'ishar", numbering="2"
+                ),
+            ],
+            'weight': Weight(value=0.0, unit='Kg'),
         },
         'magnum-de-brandy-de-ferrance': {
             'name': "Magnum de brandy, de Ferrance",
@@ -1555,6 +1743,20 @@ uniques = {
             'cost': Cost(value=350.0, unit=ccc['global']['cost']['unit']).iso(),
             'weight': Weight(value=0.2, unit='Kg'),
         },
+        'psyche-en-argent': {
+            'name': "Un psyché, en argent",
+            'base_item': lambda item: item.oid,
+            'short_description': "Un magifique miroir en argent.",
+            'full_description': "Un magifique miroir en argent.",
+            'category': "quest",
+            'scenario': [
+                Scenario(
+                    campaign="Anathazerïn", title="Les jardins de l'Amertume", chapter="Les jardins de Ma'ishar", numbering="2"
+                ),
+            ],
+            'cost': Cost(value=120.0, unit=ccc['global']['cost']['unit']).iso(),
+            'weight': Weight(value=1.0, unit='Kg'),
+        },
         'coupe-en-or': {
             'name': "Coupe en or.",
             'base_item': lambda item: item.oid,
@@ -1588,6 +1790,26 @@ uniques = {
     "Bracer": {
     },
     'Potion': {
+        'amphore-de-soin': {
+            'name': "Petite amphore de soin",
+            'base_item': lambda item: item.oid,
+            'short_description': "Une petite amphone contenant un liquide qui permet de soigner les "
+                                "blessures.",
+            'full_description': "Une poterie en forme de petite amphone contenant un liquide qui permet de soigner les "
+                                "blessures. La personne qui boit cette potion récupère alors [2d8 + niveau] PV perdus.",
+            'category': "quest",
+            'scenario': [
+                Scenario(
+                    campaign="Anathazerïn", title="Les jardins de l'Amertume", chapter="Les jardins de Ma'ishar", numbering="2"
+                ),
+            ],
+            'cost': lambda item: Cost(
+                value=200.0,
+                unit=ccc['global']['cost']['unit']).iso(),
+            'special_property': ["Soigne: 2d8 PV + niveau"],
+            'weight': Weight(value=0.5, unit='Kg'),
+            'quantity': 1
+        },
         'elixir-de-soin': {
             'name': "Élixir de soin",
             'base_item': lambda item: item.oid,
@@ -1597,7 +1819,7 @@ uniques = {
                                 "les blessures. Chaque gorgée de cet élixir soigne [1d8+5 PV].",
             'category': "quest",
             'scenario': [
-                Scenario(title="Retour à clairval", chapter="La chasse au gobelin", numbering="3")
+                Scenario(campaign="Scénarios uniques", title="Retour à clairval", chapter="La chasse au gobelin", numbering="3")
             ],
             'use': 3,
             'cost': lambda item: Cost(
@@ -1617,13 +1839,42 @@ uniques = {
                                 "sanglante d'une arme enduite de ce poison se voit infliger 1d8+5 DM.",
             'category': "quest",
             'scenario': [
-                Scenario(title="Retour à clairval", chapter="Baston chez les Crânes-creux", numbering="4")
+                Scenario(campaign="Scénarios uniques", title="Retour à clairval", chapter="Baston chez les Crânes-creux", numbering="4")
             ],
             'use': 1,
             'cost': lambda item: Cost(
                 value=ccc['global']['cost']['potions'] * item.use,
                 unit=ccc['global']['cost']['unit']).iso(),
             'special_property': ["DM: 1d8 + 5"],
+            'weight': Weight(value=0.1, unit='Kg'),
+            'quantity': 1
+        },
+        'pot-acide': {
+            'name': "Pot d'acide",
+            'base_item': lambda item: item.oid,
+            'short_description': "Un pot contenant un acide très puissant qui permet de cibler un ennemi et éclabousse "
+                                 "ceux à proximité.",
+            'full_description': "Un pot contenant un acide très puissant. Ce pot peut être jeté sur les adversaires "
+                                "pour les dissoudre. La créature visée et touchée perd 3d6 PV le premier tour, 2d6 PV "
+                                "le second et 1d6 PV au troisième tour. Toutes les créatures éclaboussées (3 mètres de "
+                                "diamètre) souffrent de 1d6 points de dégâts au premier tour uniquement.",
+            'category': "quest",
+            'area': Area(value=3, unit="m"),
+            'scenario': [
+                Scenario(
+                    campaign="Anathazerïn", title="Les jardins de l'Amertume", chapter="Les jardins de Ma'ishar", numbering="2"
+                ),
+            ],
+            'use': 1,
+            'cost': lambda item: Cost(
+                value=250,
+                unit=ccc['global']['cost']['unit']).iso(),
+            'special_property': [
+                "DM (creature): 3d6 (1er tour)",
+                "DM (creature): 2d6 (2ième tour)",
+                "DM (creature): 1d6 (3ième tour)",
+                "DM (zone): 1d6 (1er tour)"
+            ],
             'weight': Weight(value=0.1, unit='Kg'),
             'quantity': 1
         },
@@ -1805,7 +2056,7 @@ uniques = {
         'potion-soins-legers-coup-double': {
             "name": "Potion de soins légers, de chez Coup-Double",
             "capacity": "http://co-drs.org/capacites/soins-legers/",
-            "short_description": "La personne qui boit cette potion récupère alors [1d8 + niveau] PV perdus."
+            "short_description": "La personne qui boit cette potion récupère alors [1d8 + niveau] PV perdus. "
                                  "Effet secondaire : tous les poils du personnage (cheveux, barbe, sourcils, "
                                  "avant-bras...) poussent de dix centimètres.",
             "full_description": "La personne qui boit cette potion récupère alors [1d8 + niveau] PV perdus. "
@@ -1928,7 +2179,6 @@ uniques = {
                 Scenario(campaign="Anathazerïn", title="Fort Boueux", chapter="La bataille de vireux", numbering="3")
             ],
             'range': Range(value=100, unit="km"),
-            'special_property': [],
             'quantity': 1
         },
         'spell-fleche-enflammee': {
@@ -2228,7 +2478,203 @@ uniques = {
                 ),
             ],
             'quantity': 1
-        },  
+        },
+        'spell-detection-de-linvisible': {
+            "capacity": "http://co-drs.org/capacites/detection-de-l-invisible/",
+            "short_description": "La personne qui utilise ce parchemin détecte les créatures invisibles ou cachées "
+                                 "et si un sort de Clairvoyance affecte l’endroit.",
+            "full_description": "Pendant [5 + Mod. de CHA] tours, la personne qui utilise ce parchemin détecte les "
+                                "créatures invisibles ou cachées à moins de 30 mètres et détecte si un sort de "
+                                "Clairvoyance affecte l’endroit. Aveuglé, ce sort lui permet de voir normalement.",
+            'category': "quest",
+            'scenario': [
+                Scenario(
+                    campaign="Anathazerïn", title="Les jardins de l'Amertume", chapter="Les jardins de Ma'ishar", numbering="2"
+                ),
+            ],
+            'cost': lambda item: Cost(
+                value=0.0,
+                unit=ccc['global']['cost']['unit']).iso(),
+            'use': 3
+                            
+        }, 
+        'spell-clairvoyance': {
+            "capacity": "http://co-drs.org/capacites/clairvoyance/",
+            "short_description": "La personne qui utilise ce parchemin peut voir et entendre "
+                                 "ce qui se passe dans un lieu qu’elle connait, tant qu’elle reste "
+                                 "concentrée. Les créatures présentes peuvent se sentir observées.",
+            "full_description": "La personne qui utilise ce parchemin peut voir et entendre à distance "
+                                "ce qui se passe dans un lieu qu’il connait, tant qu’elle reste "
+                                "concentré (action limitée à chaque tour). Les créatures présentes "
+                                "ont droit à un test de SAG difficulté [12 + Mod. de CHA] : en cas "
+                                "de réussite, elles se sentent observées.",
+            'category': "quest",
+            'scenario': [
+                Scenario(
+                    campaign="Anathazerïn", title="Les jardins de l'Amertume", chapter="Les jardins de Ma'ishar", numbering="2"
+                ),
+            ],
+            'cost': lambda item: Cost(
+                value=0.0,
+                unit=ccc['global']['cost']['unit']).iso(),
+            'use': 3
+                            
+        },
+       'spell-main-déployee': {
+            "name": "Main déployée (L)",
+            'short_description': "Un jet de flamme qui "
+                                "touche toutes les créatures au contact dans un arc de 180°.",
+            'full_description': "La personne qui lance ce sort à ses mains qui deviennent brûlantes. Un jet de flamme "
+                                "affecte toutes les créatures au contact du porteur dans un arc de 180°. Elles subissent "
+                                "3d6 DM ou la moitié si elles réussissent un test de DEX difficulté 12.",
+            'category': "quest",
+             "attack": Attack(
+                atype="magical",
+                damages=Damage(
+                    base=[],
+                    other=[Mod(die=6, count=3, target="fire")],
+                ),
+                critical=RangeSet([20])
+            ),
+            'special_property': [
+                "Utilisable: 3 fois par jour",
+                "Test DEX >= 12: DM / 2"
+            ],
+            'category': "quest",
+            'scenario': [
+                Scenario(
+                    campaign="Anathazerïn", title="Les jardins de l'Amertume", chapter="Les jardins de Ma'ishar", numbering="2"
+                ),
+            ],
+            'use': 3,
+            'cost': lambda item: Cost(
+                value=0.0,
+                unit=ccc['global']['cost']['unit']).iso(),
+        },
+        'spell-pointer-du-doigt': {
+            "name": "Pointer du doigt (L)",
+            "capacity": "http://co-drs.org/capacites/projectile-magique/",
+            "short_description": "La personne qui utilise ce parchemin peut cibler une cible qui encaisse alors "
+                                 "automatiquement des dégâts.",
+            "full_description": "La personne qui utilise ce parchemin choisit une cible visible située à moins de "
+                                "50 mètres. Elle encaisse automatiquement 1d4 points de dégâts (pas de test "
+                                "d’attaque nécessaire).",
+            "range": Range(value=50, unit="m"),
+            'category': "quest",
+            'special_property': lambda item: [p for p in item.special_property] + [
+                "Utilisable: 3 fois par jour",
+            ],
+            'scenario': [
+                Scenario(
+                    campaign="Anathazerïn", title="Les jardins de l'Amertume", chapter="Les jardins de Ma'ishar", numbering="2"
+                ),
+            ],
+            'cost': lambda item: Cost(
+                value=0.0,
+                unit=ccc['global']['cost']['unit']).iso(),
+            'use': 3
+                            
+        },
+        'spell-paume-ouverte': {
+            "name": "Paume ouverte (L)",
+            'short_description': "La personne qui lance ce sort peut immobiliser des personnes ou des monstres.",
+            'full_description': "La personne qui lance ce sort peut immobiliser des personnes ou des monstres, la "
+                                "créature doit faire un test de SAG difficulté 15 ou être immobilisée pendant 1 tour "
+                                "(d12 et pas de déplacement).",
+            'category': "quest",
+            "duration": Duration(value="1", unit="tr"),
+            'special_property': [
+                "Utilisable: 3 fois par jour",
+                "Immobilisé: d12 au lieu du d20",
+                "Test SAG < 15: Immobilisé"
+            ],
+            'category': "quest",
+            'scenario': [
+                Scenario(
+                    campaign="Anathazerïn", title="Les jardins de l'Amertume", chapter="Les jardins de Ma'ishar", numbering="2"
+                ),
+            ],
+            'cost': lambda item: Cost(
+                value=0.0,
+                unit=ccc['global']['cost']['unit']).iso(),
+            'use': 3,
+        },
+        'spell-caresse-joue': {
+            "capacity": "http://co-drs.org/capacites/peau-de-pierre-2/",
+            "name": "Caresse sur la joue (L)",
+            'short_description': "La personne qui lance ce sort obtient une réduction des DM pendant plusiuers "
+                                 "tours ou jusqu’à ce que le sort ait absorbé un certain nombre de dégâts.",
+            'full_description': "La personne qui lance ce sort obtient une réduction des DM égale à [5 + Mod. d’INT] pendant [5+ Mod. "
+                                 "d’INT] tours ou jusqu’à ce que le sort ait absorbé 40 points de dégâts.",
+            'category': "quest",
+            'special_property': lambda item: [p for p in item.special_property] + [
+                "Utilisable: 3 fois par jour",
+            ],
+            'category': "quest",
+            'scenario': [
+                Scenario(
+                    campaign="Anathazerïn", title="Les jardins de l'Amertume", chapter="Les jardins de Ma'ishar", numbering="2"
+                ),
+            ],
+            'use': 3,
+        },
+        'spell-cercle-de-la-main': {
+            "capacity": "http://co-drs.org/capacites/mur-de-force/",
+            "name": "Cercle de la main (L)",
+            'short_description': "La personne qui lance ce sort crée un mur de force indestructible (5m haut par 3m de long), ou bien une hémisphère centrée "
+                             "sur lui-même (3m de rayon).",
+            'full_description': "La personne qui lance ce sort crée un mur de force indestructible (portée 10 m, maximum 5 m de haut "
+                                "et 10 m de long), ou bien une hémisphère de 3 m de rayon centrée sur lui-même. Le sort dure "
+                                "pendant [5 + Mod. de CHA] tours.",
+            'category': "quest",
+            'special_property': lambda item: [p for p in item.special_property] + [
+                "Utilisable: 3 fois par jour",
+            ],
+            'category': "quest",
+            'scenario': [
+                Scenario(
+                    campaign="Anathazerïn", title="Les jardins de l'Amertume", chapter="Les jardins de Ma'ishar", numbering="2"
+                ),
+            ],
+            'cost': lambda item: Cost(
+                value=0.0,
+                unit=ccc['global']['cost']['unit']).iso(),
+            'use': 3,
+        },
+        'spell-coup-de-poing': {
+            "capacity": "http://co-drs.org/capacites/boule-de-feu/",
+            "name": "Coup de poing (L)",
+            'short_description': "Une boule de feu blessant toutes personnes "
+                                 "dans la zone d'effet.",
+            'full_description': "La personne qui lance ce sort crée un mur de force indestructible (portée 10 m, maximum 5 m de haut "
+                                "et 10 m de long), ou bien une hémisphère de 3 m de rayon centrée sur lui-même. Le sort dure "
+                                "pendant [5 + Mod. de CHA] tours.",
+            'category': "quest",
+            'special_property': lambda item: [p for p in item.special_property] + [
+                "Utilisable: 3 fois par jour",
+            ],
+            "attack": Attack(
+                atype='magical',
+                area=Area(value=6, unit="m"),
+                range=Range(value=30, unit="m"),
+                damages=Damage(
+                    base=[],
+                    other=[Mod(die=6, count=6, target="feu"),
+                        Mod(target="INT", mtype="+", label="(Échec: DM / 2)")],
+                ),
+                critical=RangeSet([20])
+            ),
+            'category': "quest",
+            'scenario': [
+                Scenario(
+                    campaign="Anathazerïn", title="Les jardins de l'Amertume", chapter="Les jardins de Ma'ishar", numbering="2"
+                ),
+            ],
+            'cost': lambda item: Cost(
+                value=0.0,
+                unit=ccc['global']['cost']['unit']).iso(),
+            'use': 3,
+        },
     },
     "MagicalWand": {
         'magic-wand-defoliation': {
@@ -2301,6 +2747,35 @@ uniques = {
         },
     },
     "Weapon": {
+        'arbalete-automatique': {
+            'category': 'standard',
+            'name': "Arbalète automatique, du forgesort",
+            'base_item': 'arbalete-automatique',
+            'full_description': "Le forgesort fabrique une arbalète complexe qu'il est le seul à pouvoir "
+                                "utiliser. Elle est dotée d'un chargeur de 10 carraux et permet de tirer "
+                                "un carreau au prix d'une action de mouvement (il est donc possible de "
+                                "tirer plusieurs carreaux par tour). Elle inflige [2d4 + Mod de DEX] DM à "
+                                "une portée de 50 mètres. Il faut un tour complet pour la recharger.",
+            'short_description': "Arbalète automatique du forgesort.",
+            'weight': cof.properties.Weight(value=9.0, unit='Kg'),
+            'hands': 2,
+            'attack': Attack(
+                atype='ranged',
+                damages=Damage(
+                    base=[Mod(die=4, count=2, target=['punctured'])],
+                    other=[Mod(mtype="+", target="DEX")],
+                ),
+                range=Range(value=50, unit='m'),
+                critical=RangeSet([20])
+            ),
+            'use': 5,
+            'special_property': [
+                "Attaque: Action mouvement",
+                "Capacité : 10 munitions",
+                "Rechargement: 1 tour",
+            ],
+            'cost': Cost(value=0.0, unit=ccc['global']['cost']['unit']).iso(),
+        },
         'epee-longue-de-kolik': {
             'name': "Épée longue, de Kolik",
             'base_item': lambda item: item.oid,
@@ -2311,7 +2786,7 @@ uniques = {
                                 " Elle procure un bonus de +1 en attaque et inflige 1d8 de dégâts.",
             'category': "quest",
             'scenario': [
-                Scenario(title="Retour à clairval", chapter="Baston chez les Crânes-creux", numbering="4")
+                Scenario(campaign="Scénarios uniques", title="Retour à clairval", chapter="Baston chez les Crânes-creux", numbering="4")
             ],
             'cost': Cost(value=500.0, unit=ccc['global']['cost']['unit']).iso(),
             'weight': Weight(value=1.5, unit='Kg'),
@@ -2400,7 +2875,7 @@ uniques = {
                                 "contre le fées et les démons.",
             'category': "quest",
             'scenario': [
-                Scenario(title="Retour à clairval", chapter="Baston chez les Crânes-creux", numbering="4")
+                Scenario(campaign="Scénarios uniques", title="Retour à clairval", chapter="Baston chez les Crânes-creux", numbering="4")
             ],
             'cost': Cost(value=12.0 * ccc['global']['cost']['cold-iron'] + 60.0,
                          unit=ccc['global']['cost']['unit']).iso(),
@@ -2418,6 +2893,36 @@ uniques = {
             'material': 'cold-iron',
             'special_property': ["DM: x2 (fées et démons)"],
             'flavor': [Flavor(ftype='cold-iron', count=1)],
+        },
+        'faucille-magique-en-argent': {
+            'name': "Faucille magique, en argent",
+            'base_item': lambda item: item.oid,
+            'short_description': "Une magnifique faucille en argent gravée de runes druidiques.",
+            'full_description': "Une magnifique faucille en argent gravée de runes druidiques. "
+                                "Il s’agit d’une faucille magique +1 (DM de base 1d6) qui inflige "
+                                "+1d6 DM contre les plantes.",
+            'category': "quest",
+            'scenario': [
+                Scenario(
+                    campaign="Anathazerïn", title="Les jardins de l'Amertume", chapter="Forêt Sombre", numbering="1"
+                ),
+            ],
+            'cost': Cost(value=12.0 * ccc['global']['cost']['silver'],
+                         unit=ccc['global']['cost']['unit']).iso(),
+            'weight': Weight(value=1.0, unit='Kg'),
+            'hands': 1,
+            'attack': Attack(
+                atype='melee',
+                mod=1,
+                damages=Damage(
+                    base=[Mod(die=6, count=1, target=['punctured', 'sharp'])],
+                    other=[Mod(mtype="+", count=1, target="magical")]
+                ),
+                critical=RangeSet([20])
+            ),
+            'material': 'silver',
+            'special_property': ["DM: +1d6 contre les plantes"],
+            'flavor': [Flavor(ftype='silver', count=1), Flavor(ftype='magical', count=1)],
         },
         'rapiere-elfique-+1-en-argent': {
             'name': "Rapière elfique +1, en argent",
@@ -2446,7 +2951,7 @@ uniques = {
                     base=[Mod(die=6, count=1, target=['punctured', 'sharp'])],
                     other=[Mod(mtype="+", count=1, target="magical")]
                 ),
-                critical=RangeSet([20])
+                critical=RangeSet([19,20])
             ),
             'material': 'silver',
             'special_property': ["DM: x2 (sensible à l'argent)", "RD: ignoré (sensible à l'agent)"],
@@ -2482,6 +2987,37 @@ uniques = {
             'material': 'wood',
             'special_property': ["Attaque magique: +1"],
             'flavor': [Flavor(ftype='magical', count=1)],
+        },
+        'baton+2-de-defense': {
+            'name': "Bâton +2, de défense",
+            'base_item': lambda item: item.oid,
+            'short_description': "Un bâton magique +2 en chêne. Ce bâton noueux "
+                                 "procure également un bonus de défense.",
+            'full_description': "Un bâton magique +2 (bonus en attaque au contact et aux DM) en chêne. Ce bâton noueux "
+                                "procure également un bonus de DEF de +2. Il inflige donc 1d4 +2 DM.",
+            'category': "quest",
+            'magical_level': 2,
+            'scenario': [
+                Scenario(
+                    campaign="Anathazerïn", title="Les jardins de l'Amertume", chapter="Les jardins de Ma'ishar", numbering="2"
+                ),
+            ],
+            'cost': Cost(value=9000.0,
+                         unit=ccc['global']['cost']['unit']).iso(),
+            'weight': Weight(value=1.0, unit='Kg'),
+            'hands': 2,
+            'attack': Attack(
+                atype='melee',
+                mod=2,
+                damages=Damage(
+                    base=[Mod(die=4, count=1, target=['blunt'])],
+                    other=[Mod(mtype="+", count=2, target="magical")]
+                ),
+                critical=RangeSet([20])
+            ),
+            'material': 'wood',
+            'special_property': ["DEF: +2"],
+            'flavor': [Flavor(ftype='magical', count=2)],
         },
         'baton-lance-+1': {
             'name': "Bâton-lance +1",
@@ -2541,6 +3077,40 @@ uniques = {
             'material': 'durium',
             'flavor': [Flavor(ftype='quality', count=1), Flavor(ftype='durium', count=1)],
         },
+        'francisque+1-de-lancer': {
+            'name': "Francisque +1, de lancer",
+            'base_item': lambda item: item.oid,
+            'short_description': "Cette hache peut être lancée et revient dans la main de "
+                                 "son lanceur. Il peut alors ajouter son Mod. de FOR.",
+            'full_description': "Cette hache peut être lancée à une portée de 20 mètres et elle "
+                                "revient dans la main de son lanceur. Elle inflige 1d6 DM et le "
+                                "personnage peut ajouter "
+                                "son Mod. de FOR aux DM qu’il inflige lors d’une attaque à distance "
+                                "avec cette arme.",
+            'category': "quest",
+            'range': Range(value=20, unit="m"),
+            'magical_level': 1,
+            'scenario': [
+                Scenario(
+                    campaign="Anathazerïn", title="Les jardins de l'Amertume", chapter="Les jardins de Ma'ishar", numbering="2"
+                ),
+            ],
+            'cost': Cost(value=8500,
+                         unit=ccc['global']['cost']['unit']).iso(),
+            'weight': Weight(value=1.5, unit='Kg'),
+            'hands': 1,
+            'special_property': [
+                "DM (distance) : +[FOR]",
+                "Revient dans la main de son lanceur"],
+            'attack': Attack(
+                atype='melee',
+                damages=Damage(
+                    base=[Mod(die=6, count=1, target=['sharp'])],
+                ),
+                critical=RangeSet([20])
+            ),
+            'flavor': [Flavor(ftype='magical', count=1)],
+        },
         'epee-longue-en-durium-de-urgashn': {
             'name': "Épée longue en durium, d'Urgashn",
             'base_item': lambda item: item.oid,
@@ -2592,10 +3162,39 @@ uniques = {
                     base=[Mod(die=6, count=1, target=['punctured', 'sharp'])],
                     other=[Mod(mtype="+", count=2, target="magical")]
                 ),
-                critical=RangeSet([20])
+                critical=RangeSet([19,20])
             ),
             'defense': [Mod(label="DEF", count=2, mtype="+")],
-            'material': 'silver',
+            'flavor': [Flavor(ftype='magical', count=2)],
+        },
+        'rapiere-+2-de-haute-dexterite': {
+            'name': "Rapière +2, de haute dextérité",
+            'base_item': lambda item: item.oid,
+            'short_description': "Une rapière magique qui améliore la dextérité de son porteur.",
+            'full_description': "Cette rapière magique de haute dextérité apporte un bonus de +2 a son Mod. de DEX. " 
+                                "Elle est magique et apporte un bonus de +2 en attaque et aux dégâts",
+            'category': "quest",
+            'magical_level': 4,
+            'scenario': [
+                Scenario(
+                    campaign="Anathazerïn", title="Les jardins de l'Amertume", chapter="Les jardins de Ma'ishar", numbering="2"
+                ),
+            ],
+            'cost': lambda item: Cost(
+                value=item.magical_level * item.magical_level * ccc['global']['cost']['magical'],
+                unit=ccc['global']['cost']['unit']).iso(),
+            'weight': Weight(value=1.0, unit='Kg'),
+            'hands': 1,
+            'attack': Attack(
+                atype='melee',
+                mod=2,
+                damages=Damage(
+                    base=[Mod(die=6, count=1, target=['punctured', 'sharp'])],
+                    other=[Mod(mtype="+", count=2, target="magical")]
+                ),
+                critical=RangeSet([19,20])
+            ),
+            'special_property': ["[DEX] : +2"],
             'flavor': [Flavor(ftype='magical', count=2)],
         },
         'dague-maudite': {
@@ -2845,7 +3444,7 @@ uniques = {
         },
         'masse-serpent': {
             'name': "Masse serpent",
-            'base_item': 'masse-serpent',
+            'base_item': lambda item: item.oid,
             'short_description': "Cette masse serpent inocule du poison à sa victime à chaque attaque.",
             'full_description': "Cette masse serpent inocule du poison à sa victime à chaque attaque. "
                                 "Elle doit faire un test de CON difficulté 12 ou sombrer dans "
@@ -2875,6 +3474,74 @@ uniques = {
                 "Test CON < 12: Inconscient",
                 "Utilisable: Prêtresse de Maëdra"
             ]
+        },
+        'masse-destruction-des-morts': {
+            'name': "Masse +2, de destruction des morts",
+            'base_item': lambda item: item.oid,
+            'short_description': "Cette masse magique semble annimée d'une énergie qui se transmets à son "
+                                 "porteur lui permettant de faire des dégâts supplémentaires.",
+            'full_description': "Cette masse magique semble annimée d'une énergie qui se transmets à son "
+                                "porteur lui permettant de faire des dégâts supplémentaires. Elle possede "
+                                "un bonus à l'attaque au contact de +2 et inflige 2d6 DM.",
+            'category': "quest",
+            'scenario': [
+                Scenario(
+                    campaign="Anathazerïn", title="Les jardins de l'Amertume", chapter="Les jardins de Ma'ishar", numbering="2"
+                ),
+            ],
+            'cost': lambda item: Cost(
+                value=20000,
+                unit=ccc['global']['cost']['unit']).iso(),
+            'weight': Weight(value=2.0, unit='Kg'),
+            'hands': 1,
+            'attack': Attack(
+                atype='melee',
+                mod=2,
+                damages=Damage(
+                    base=[Mod(die=6, count=2, target=['blunt'])],
+                    other=[Mod(count=2, target='magical', mtype="+")]
+                ),
+                critical=RangeSet([20])
+            ),
+            'flavor': [Flavor(ftype='magical', count=2)],
+            "magical_level": 2,
+        },
+        'etoile-du-matin+3-de-feu': {
+            'name': "Étoile du matin +3, de feu",
+            'base_item': lambda item: item.oid,
+            'short_description': "L'étoile du matin est une masse d'arme particulière constituée d'une masse lourde, "
+                                "présentant généralement des aspérités ou des lames Cette arme est magique avec un "
+                                "bonus de +3. Cette arme fait des dégâts supplémentaires de feu.",
+            'full_description': "L'étoile du matin est une masse d'arme particulière constituée d'une masse lourde, "
+                                "présentant généralement des aspérités ou des lames, accrochée au bout d'un bâton "
+                                "plus ou moins long. Elle s'utilise à une main et inflige 1d6 dégâts. Cette arme "
+                                "est magique et offre un bonus de +3 en attaque et aux dégats. Cette arme fait des "
+                                "dégâts supplémentaires de +1d6 DM de feu.",
+            'category': "quest",
+            'scenario': [
+                Scenario(
+                    campaign="Anathazerïn", title="Les jardins de l'Amertume", chapter="Les jardins de Ma'ishar", numbering="2"
+                ),
+            ],
+            'cost': lambda item: Cost(
+                value=50000,
+                unit=ccc['global']['cost']['unit']).iso(),
+            'weight': Weight(value=2.0, unit='Kg'),
+            'hands': 1,
+            'attack': Attack(
+                atype='melee',
+                mod=3,
+                damages=Damage(
+                    base=[Mod(die=6, count=1, target=['blunt'])],
+                    other=[
+                        Mod(count=3, target=['magical'], mtype="+"),
+                        Mod(die=6, count=1, target='fire', mtype="+"),
+                    ]
+                ),
+                critical=RangeSet([20])
+            ),
+            'flavor': [Flavor(ftype='magical', count=3),Flavor(ftype='fire', count=2)],
+            "magical_level": 5,
         },
         'dague-sacrificielle+1': {
             'name': "Dague sacrificielle +1",
@@ -2906,10 +3573,11 @@ uniques = {
                 critical=RangeSet([20])
             ),
             'flavor': [Flavor(ftype='magical', count=1)],
+            "magical_level": 1,
             'material': "gorndar",
             'special_property': ["Test CON <= 10 (si attaque réussie): Affaibli (d12) pendant 1 tour"],
             'flavor': [Flavor(ftype="gorndar", count=1)],
-            "magical_level": 1,
+            
         },
         'masse-sanglante+1': {
             'name': "Masse sanglante +1",
@@ -3030,7 +3698,7 @@ uniques = {
         },
         'boots-course-des-airs': {
             "capacity": "http://co-drs.org/capacites/course-des-airs/",
-            "name": "Bottes de cuir souple",
+            "name": "Bottes de course, dans les airs",
             "short_description": "La personne qui porte ces bottes défie les lois de la pesanteur et peut se "
                                  "déplacer sur des surfaces qui ne devraient pas supporter son poids. Il peut "
                                  "se déplacer sur l’eau, la neige, le feuillage des arbres ou courir sur un mur "
@@ -3049,6 +3717,31 @@ uniques = {
                 unit=ccc['global']['cost']['unit']).iso(),
             'weight': Weight(value=0.3, unit='Kg'),
         },
+        'boots-marche-des-plans': {
+            "capacity": "http://co-drs.org/capacites/marche-des-plans/",
+            "name": "Bottes de sept lieues",
+            "short_description": "La personne qui porte ces bottes se déplace dans une dimension entre les plans "
+                                "d’existence où le paysage défile à toute vitesse. Le lieu de "
+                                "sortie n’est cependant pas très précis.",
+            "full_description": "La personne qui porte ces bottes peut passer dans une dimension entre les plans "
+                                "d’existence où le temps et l’espace sont déformés. Il se déplace dans une sorte "
+                                "de brouillard gris où le paysage défile à toute vitesse une fois par jour et "
+                                "pour une durée maximale de [3 + Mod. de SAG] tours. Pour chaque tour "
+                                "de « Marche des plans », il se déplace en réalité de 10 km. Le lieu de "
+                                "sortie n’est cependant pas très précis et le MJ doit déterminer une position "
+                                "au hasard autour du point visé (à 1d6 km près).",
+            'category': "quest",
+            "magical_level": lambda item: item.way_rank,
+           'scenario': [
+                Scenario(
+                    campaign="Anathazerïn", title="Les jardins de l'Amertume", chapter="Les jardins de Ma'ishar", numbering="2"
+                ),
+            ],
+            'cost': lambda item: Cost(
+                value=item.magical_level * item.magical_level * ccc['global']['cost']['magical'],
+                unit=ccc['global']['cost']['unit']).iso(),
+            'weight': Weight(value=0.3, unit='Kg'),
+        },
         'bottes-elfique': {
             'name': "Bottes elfique",
             'base_item': lambda item: item.oid,
@@ -3061,6 +3754,25 @@ uniques = {
             ],
             'cost': Cost(value=10.0, unit=ccc['global']['cost']['unit']).iso(),
             'weight': Weight(value=0.2, unit='Kg'),
+        },
+        'bottes-elfe': {
+            'name': "Bottes d'elfe",
+            'base_item': 'bottes-elfique',
+            'short_description': "Bottes d'elfe.",
+            'full_description': "Bottes d'elfe qui apportent un bonus de plus 5 en discretion.",
+            'category': "quest",
+            'scenario': [
+                Scenario(
+                    campaign="Anathazerïn", title="Les jardins de l'Amertume", chapter="Les jardins de Ma'ishar", numbering="2"
+                ),
+            ],
+            'flavor': [Flavor(ftype='magical', count=1)],
+            "magical_level": 1,
+            'cost': Cost(value=2000.0, unit=ccc['global']['cost']['unit']).iso(),
+            'weight': Weight(value=0.2, unit='Kg'),
+            'special_property': [
+                "Discretion: +5"
+            ],
         },
     },
     "Helmet": {
@@ -3146,7 +3858,8 @@ uniques = {
             ],
         },
         'heavy-helmet-silver': {
-            'base_item': 'heavy-helmet-silver',
+            'base_item': lambda item: f"{item.oid}",
+            'flavor': [Flavor(ftype='silver', count=1)],
             'category': 'quest',
             'skill': [
                 Mod(label="Test", target="view", count=8, mtype="-"), 
@@ -3166,6 +3879,71 @@ uniques = {
             'cost': lambda item: cof.properties.Cost(value=300.0,
                                                      unit=ccc['global']['cost']['unit']).iso(),
             'weight': cof.properties.Weight(value=2.0, unit='Kg')
+        },
+        'heaume-de-vision': {
+            'base_item': lambda item: f"{item.oid}",
+            'category': 'quest',
+           'skill': [
+                Mod(label="Test", target="view", count=5, mtype="+"), 
+                Mod(label="Test", target="hearing", count=5, mtype="+")
+                ],
+            'magical_level': 0,
+            'name': "Heaume, de vision",
+            'short_description': "Ce haume de vision, qui porte le symbole du Roi-Sorcier, permet de voir "
+                                 "dans le noir la fumée ou la brume et donne un bonus aux tests de détection. "
+                                 "Son porteur peut utiliser Détection de l’invisibilité et Clairvoyance 3 "
+                                 "fois par jour.",
+            'full_description': "L'heaume de vision accorde à son porteur la vision dans le noir (50 mètres) "
+                                "et à travers toute sorte de fumée ou de brume et un bonus de +5 à tous les tests de "
+                                "détection. Son porteur peut utiliser Détection de l’invisibilité et Clairvoyance "
+                                "trois fois par jour. "
+                                "Cet objet porte le symbole du Roi-Sorcier.",
+            'cost': lambda item: cof.properties.Cost(value=300.0,
+                                                     unit=ccc['global']['cost']['unit']).iso(),
+            'weight': cof.properties.Weight(value=2.0, unit='Kg'),
+            "area": Area(value="50", unit="m"),
+            'special_property': [
+                "Vision dans le noir, brume et fumée"
+            ],
+            'scenario': [
+                Scenario(
+                    campaign="Anathazerïn", title="Les jardins de l'Amertume", chapter="Les jardins de Ma'ishar", numbering="2"
+                ),
+            ],
+        },
+        'heaume-maudit-de-vision': {
+            'base_item': "heaume-de-vision",
+            'category': 'quest',
+            'skill': [
+                Mod(label="Test", target="view", count=5, mtype="+"), 
+                Mod(label="Test", target="hearing", count=5, mtype="+")
+                ],
+            'magical_level': 0,
+            'name': "Heaume maudit, de vision",
+            'short_description': "Ce haume maudit de vision, qui porte le symbole du Roi-Sorcier, permet de voir "
+                                 "dans le noir la fumée ou la brume et "
+                                 "donne un bonus aux tests de détection. Son porteur peut utiliser Détection de "
+                                 "l’invisibilité et Clairvoyance 3 fois par jour. Il pervertit "
+                                 "progressivement l’esprit déformant la réalité de ce qu’il perçoit pour le rendre "
+                                 "maléfique.",
+            'full_description': "L'heaume maudit de vision accorde à son porteur la vision dans le noir (50 mètres) "
+                                "et à travers toute sorte de fumée ou de brume et un bonus de +5 à tous les tests de "
+                                "détection. Son porteur peut utiliser Détection de l’invisibilité et Clairvoyance "
+                                "trois fois par jour. Le heaume pervertit progressivement l’esprit du porteur en "
+                                "déformant la réalité de ce qu’il perçoit (paroles, vision) pour le rendre maléfique. "
+                                "Cet objet porte le symbole du Roi-Sorcier.",
+            'cost': lambda item: cof.properties.Cost(value=300.0,
+                                                     unit=ccc['global']['cost']['unit']).iso(),
+            'weight': cof.properties.Weight(value=2.0, unit='Kg'),
+            "area": Area(value="50", unit="m"),
+            'special_property': [
+                "Vision dans le noir, brume et fumée"
+            ],
+             'scenario': [
+                Scenario(
+                    campaign="Anathazerïn", title="Les jardins de l'Amertume", chapter="Les jardins de Ma'ishar", numbering="2"
+                ),
+            ],
         },
     },
     "Robe": {
@@ -3221,6 +3999,7 @@ uniques = {
             'weight': Weight(value=0.1, unit='Kg'),
         },
         'collier-de-charisme': {
+            'base_item': lambda item: f"{item.oid}",
             'name': "Collier de charisme +1",
             'special_property': ["[CHA]: +1"],
             'flavor': [Flavor(ftype='magical', count=1)],
@@ -3235,6 +4014,46 @@ uniques = {
                 unit=ccc['global']['cost']['unit']).iso(),
             'scenario': [
                 Scenario(campaign="Anathazerïn", title="Le Pic d'Andalf", chapter="Le sanctuaire", numbering="2")
+            ],
+            'weight': Weight(value=0.1, unit='Kg'),
+        },
+        'talisman-de-protection-contre-le-poison': {
+            'base_item': lambda item: f"{item.oid}",
+            'name': "Talisman de protection, contre le poison",
+            'special_property': ["Immunité: poison"],
+            'short_description': "De ce manifique talismant semble se dégager une aura protectrice et bienveillante. "
+                                 "Ce talimant procure une immunité totale contre tout type de poison.",
+            'full_description': "De ce manifique talismant semble se dégager une aura protectrice et bienveillante. "
+                                "Ce talimant procure une immunité totale contre tout type de poison.",
+            'category': "quest",
+            'cost': lambda item: Cost(
+                value=8000,
+                unit=ccc['global']['cost']['unit']).iso(),
+            'scenario': [
+                Scenario(
+                    campaign="Anathazerïn", title="Les jardins de l'Amertume", chapter="Les jardins de Ma'ishar", numbering="2"
+                ),
+            ],
+            'weight': Weight(value=0.1, unit='Kg'),
+        },
+         'pendentif-aigle': {
+            'name': "Pendentif, représentant un aigle",
+            'special_property': [
+                "Soigne : 1d8 PV + niveau"
+                "Utilisable: 3 fois par jour"],
+            'short_description': "Ce pendentif représentant un aigle est un fétiche de guérison qui donne la capacité "
+                                ": Soins légers.",
+            'full_description': "Ce pendentif représentant un aigle est un fétiche de guérison qui donne la capacité"
+                                "de rang 1 de la voie du prêtre : Soins légers. Cette capacité est utilisable "
+                                "3 fois par jour.",
+            'category': "quest",
+            'cost': lambda item: Cost(
+                value=8000,
+                unit=ccc['global']['cost']['unit']).iso(),
+            'scenario': [
+                Scenario(
+                    campaign="Anathazerïn", title="Les jardins de l'Amertume", chapter="Les jardins de Ma'ishar", numbering="2"
+                ),
             ],
             'weight': Weight(value=0.1, unit='Kg'),
         },
@@ -3274,6 +4093,65 @@ uniques = {
             'weight': Weight(value=0.1, unit='Kg'),
 
         },
+        'gloves-einistar': {
+            'name': "L’Einistar, le gant de lumière",
+            'base_item': lambda item: f"{item.oid}",
+            'special_property': [ 
+                "Test de Caract. (tous): +2",
+                "Permanent: -10% PV (total)"
+            ],
+            'flavor': lambda item: [Flavor(ftype='magical', count=item.magical_level),Flavor(ftype='mythral', count=1)],
+            'short_description': "L’Einistar est aussi nommé le Gardien de la cité de Lune et d’Or (Anathazerïn). "
+                                 "L’Einistar comporte des sortes de bagues au niveau des phalanges et "
+                                "chacune d’entre elles porte une rune. L’Einistar s’adapte à tout type de main droite.",
+            'full_description': "L’Einistar, aussi nommé le Gardien de la cité de Lune et d’Or (Anathazerïn), est un gant en "
+                                "maille de mithral remontant jusqu’à moitié de l’avant-bras. Le métal dont il est fait renvoie "
+                                "des reflets nacrés quand il est en pleine lumière. L’Einistar comporte des sortes de "
+                                "bagues au niveau des phalanges. Assez discrètes, elles sont également en mithral et "
+                                "chacune d’entre elles porte une rune. L’Einistar s’adapte à tout type de main droite.",
+            'magical_level': 4,
+            'category': "quest",
+            'defense': [Mod(label="DEF", mtype="+", count=2)],
+            'scenario': [
+                Scenario(
+                    campaign="Anathazerïn", title="Les jardins de l'Amertume", chapter="Les jardins de Ma'ishar", numbering="2"
+                ),
+            ],
+            'cost': lambda item: Cost(
+                value=(item.magical_level +6) * (item.magical_level +6) * ccc['global']['cost']['magical'],
+                unit=ccc['global']['cost']['unit']).iso(),
+            'weight': Weight(value=0.1, unit='Kg'),
+            'material': "mythral",
+
+        },
+        'gloves-einistar-mauvais': {
+            'name': "L’Einistar, le gant de lumière",
+            'base_item': "gloves-einistar",
+            'special_property': [ "Permanent: affaibli"
+            ],
+            'flavor': lambda item: [Flavor(ftype='magical', count=item.magical_level),Flavor(ftype='mythral', count=1)],
+            'short_description': "L’Einistar est aussi nommé le Gardien de la cité de Lune et d’Or (Anathazerïn). "
+                                 "L’Einistar comporte des sortes de bagues au niveau des phalanges et "
+                                "chacune d’entre elles porte une rune. L’Einistar s’adapte à tout type de main droite.",
+            'full_description': "L’Einistar, aussi nommé le Gardien de la cité de Lune et d’Or (Anathazerïn), est un gant en "
+                                "maille de mithral remontant jusqu’à moitié de l’avant-bras. Le métal dont il est fait renvoie "
+                                "des reflets nacrés quand il est en pleine lumière. L’Einistar comporte des sortes de "
+                                "bagues au niveau des phalanges. Assez discrètes, elles sont également en mithral et "
+                                "chacune d’entre elles porte une rune. L’Einistar s’adapte à tout type de main droite.",
+            'magical_level': 4,
+            'category': "quest",
+            'scenario': [
+                Scenario(
+                    campaign="Anathazerïn", title="Les jardins de l'Amertume", chapter="Les jardins de Ma'ishar", numbering="2"
+                ),
+            ],
+            'cost': lambda item: Cost(
+                value=(item.magical_level +6) * (item.magical_level +6) * ccc['global']['cost']['magical'],
+                unit=ccc['global']['cost']['unit']).iso(),
+            'weight': Weight(value=0.1, unit='Kg'),
+            'material': "mythral",
+
+        },
     },
     "Belt": {
         'belt-force': {
@@ -3287,6 +4165,28 @@ uniques = {
             'magical_levels': [1, 2, 3, 4],
             'category': "Magical",
             'magical_level': lambda item: 1 + item.magical_level,
+            'cost': lambda item: Cost(
+                value=item.magical_level * item.magical_level * ccc['global']['cost']['magical'],
+                unit=ccc['global']['cost']['unit']).iso(),
+            'weight': Weight(value=0.1, unit='Kg'),
+        },
+        'belt-force-geant': {
+            'name': "Ceinture de force de géant",
+            'base_item': lambda item: f"{item.oid}",
+            'special_property': ["[FOR]: +2"],
+            'flavor': [Flavor(ftype='magical', count=2)],
+            'short_description': "Cete ceinture en bronze décorée d’un large motif de taureau aux yeux "
+                                "de rubis apporte un bonus au Mod. de force de la personne qui la porte.",
+            'full_description': "Cete ceinture en bronze décorée d’un large motif de taureau aux yeux "
+                                "de rubis apporte un bonus de +2 au Mod. de "
+                                "force de la personne qui la porte.",
+            'scenario': [
+                Scenario(
+                    campaign="Anathazerïn", title="Les jardins de l'Amertume", chapter="Les jardins de Ma'ishar", numbering="2"
+                ),
+            ],
+            'category': "quest",
+            'magical_level': 2,
             'cost': lambda item: Cost(
                 value=item.magical_level * item.magical_level * ccc['global']['cost']['magical'],
                 unit=ccc['global']['cost']['unit']).iso(),
@@ -3312,6 +4212,89 @@ uniques = {
                          unit=ccc['global']['cost']['unit']).iso(),
             'weight': Weight(value=0.0, unit='Kg'),
             'material': 'gold',
+        },
+        'protective-elements': {
+            'defense': [
+                Mod(label="RD", target="fire", count=5),
+                Mod(label="RD", target="lightning", count=5),
+                Mod(label="RD", target="coldness", count=5),
+                Mod(label="RD", target="acid", count=5),
+            ],
+            'category': "quest",
+            'base_item': lambda item: item.oid,
+            'magical_level': 1,
+            'scenario': [
+                Scenario(
+                    campaign="Anathazerïn", title="Les jardins de l'Amertume", chapter="Les jardins de Ma'ishar", numbering="2"
+                ),
+            ],
+            'name': "Anneau de résistance, aux éléments",
+            'short_description': "Un anneau de résistance aux éléments qui réduit tous les DM de feu, d’électricité, de froid ou d’acide.",
+            'full_description': "Un anneau de résistance aux éléments qui réduit de 5 points tous les DM de feu, d’électricité, de froid ou d’acide.",
+            'cost': Cost(value=32000.0,
+                         unit=ccc['global']['cost']['unit']).iso(),
+            'weight': Weight(value=0.0, unit='Kg'),
+        },
+        'puissance-des-arcanes': {
+            'category': "quest",
+            'base_item': lambda item: item.oid,
+            'magical_level': 1,
+            'scenario': [
+                Scenario(
+                    campaign="Anathazerïn", title="Les jardins de l'Amertume", chapter="Les jardins de Ma'ishar", numbering="2"
+                ),
+            ],
+            'name': "Anneau de puissance, des arcanes",
+            'short_description': "Cet anneau de puissance des arcanes double les effets de sorts de rang 1 et 2, 3 fois par jours.",
+            'full_description': "Un large anneau d’or couvert de runes. Cet anneau de puissance des arcanes de rang 1 et 2 double la durée "
+                                "ou les DM ou les soins produits par les sorts de rang 1 ou 2, trois fois par jour pour chaque rang)",
+            'cost': Cost(value=18000.0,
+                         unit=ccc['global']['cost']['unit']).iso(),
+            'weight': Weight(value=0.0, unit='Kg'),
+            'special_property': [
+                "Sort: rang 1 ou 2",
+                "DM x2 ou soin x2 ou durée x2",
+                "Utilisation: 3 fois par jour"
+            ]
+        },
+        'puissance-des-arcanes-forgesort': {
+            'category': "quest",
+            'base_item': lambda item: item.oid,
+            'magical_level': 1,
+            'scenario': [
+                Scenario(
+                    campaign="Anathazerïn", title="Les jardins de l'Amertume", chapter="Les jardins de Ma'ishar", numbering="2"
+                ),
+            ],
+            'name': "Anneau de préparation, des arcanes",
+            'short_description': "Cet anneau de préparation des arcanes double les effets de 3 potions préparées  pour chaque rang 1 et 2.",
+            'full_description': "Un large anneau d’or couvert de runes. Cet anneau de préparation des arcanes permet de préparer 3 "
+                                "potions pour les rangs 1 et 2 dont la durée ou les DM ou les soins produits sont doublés.",
+            'cost': Cost(value=18000.0,
+                         unit=ccc['global']['cost']['unit']).iso(),
+            'weight': Weight(value=0.0, unit='Kg'),
+            'special_property': [
+                "Potion: rang 1 ou 2",
+                "DM x2 ou soin x2 ou durée x2",
+                "Quantité: 3 potions / rang"
+            ]
+        },
+        'anneau-de-marche-sur-l-eau': {
+            'special_property': ["Permanent: Marcher sur l'eau"],
+            'category': "quest",
+            'base_item': lambda item: item.oid,
+            'magical_level': 1,
+            'scenario': [
+                Scenario(
+                    campaign="Anathazerïn", title="Les jardins de l'Amertume", chapter="Les jardins de Ma'ishar", numbering="2"
+                ),
+            ],
+            'name': "Anneau de marche, sur l'eau",
+            'short_description': "Un anneau qui permet de marcher sur l'eau.",
+            'full_description': "Un anneau qui permet de marcher sur l'eau.",
+            'cost': Cost(value=2500.0,
+                         unit=ccc['global']['cost']['unit']).iso(),
+            'weight': Weight(value=0.0, unit='Kg'),
         },
         'bague-en-agate-de-manahim': {
             'category': "quest",
@@ -3388,7 +4371,7 @@ uniques = {
             'scenario': [
                 Scenario(
                     campaign="Anathazerïn", title="La bataille de Fleck", chapter="La vallée de Duïn", numbering="3"
-                ),
+                )
             ],
             'cost': lambda item: Cost(
                 value=18000,
@@ -3699,6 +4682,7 @@ uniques = {
                 value=ccc['global']['cost']['mythral'] + item.use * ccc['global']['cost']['bullets'],
                 unit=ccc['global']['cost']['unit']).iso(),
             'weight': Weight(value=0.3, unit='Kg'),
+            'material': "mythral",
             'quantity': 1
         },
         'carreau-explosif-coup-double': {
@@ -3809,6 +4793,33 @@ uniques = {
             'flavor': lambda item, flavor: [Flavor(ftype=f"dragon-{flavor['color']}",
                                                    count=flavor['magical_level'] - 2)],
         },
+        'cuirasse-de-bronze+1': {
+            'name': "Cuirasse de bronze +1",
+            'base_item': lambda item: item.oid,
+            'full_description': "Fait de plusieurs plaques de bronze rigides, cette cuirasse protègera "
+                                "par devant votre torse avec le plaston et par derrière votre dos avec "
+                                "la dossière. Elle protège donc l'ensemble du "
+                                "corps et procure un bonus de DEF +5. Cette armure est magique et offre "
+                                "un bonus de DEF de +1 et réduit de 1 les pénalités qu'elle inflige.",
+            'short_description': "Cuirrasse faite de plusieurs plaques de bronze rigides qui protègent "
+                                 "l'ensemble du corps. Cette armure magique offre un bonus de DEF de +1.",
+            'weight': Weight(value=20.0, unit='Kg'),
+            'defense': [
+                Mod(label="DEF", target="", mtype="+", count=6)
+            ],
+            'skill': [Mod(label="Test", target="DEX", count=4, mtype="-")],
+            'scenario': [
+                Scenario(
+                    campaign="Anathazerïn", title="Les jardins de l'Amertume", chapter="Les jardins de Ma'ishar", numbering="2"
+                ),
+            ],
+            'category': 'quest',
+            'cost': Cost(
+                value=2100,
+                unit=ccc['global']['cost']['unit']).iso(),
+            'flavor': [Flavor(ftype="drow",count=1)],
+            'special_property': ["Utilisable: voleur, barde rôdeur et barbare"],
+        },
         'chemise-de-maille-des-elfes-noirs': {
             'name': "Chemise de mailles, des elfes noirs",
             'base_item': "chemise-de-maille-des-elfes-noirs",
@@ -3880,6 +4891,44 @@ uniques = {
             ],
             'special_property': ["Utilisable: voleur, barde rôdeur et barbare"],
         },
+        'chemise-de-mailles+2-mythral-free-action': {
+            'base_item': 'chemise-de-mailles',
+            'name': "Chemise de mailles +2, d'action libre en mythral",
+            'magical_level': 3,
+            'material': 'mythral',
+            'full_description': "Fait d'anneaux métalliques entrecroisés, la chemise de mailles est utilisée "
+                                "entre des couches de vêtements ou de cuir. Cette armure offre une protection "
+                                "modeste pour le haut du corps et permet au son provoqué par les anneaux frottant "
+                                "l'un contre l'autre d'être atténué par les couches de vêtements extérieures. Elle "
+                                "procure un bonus de DEF +4. Cette armure est magique et offre un bonus de DEF de +2 et réduit "
+                                "de 2 les pénalités qu'elle inflige. Cette armure est faite en mythral, un métal très léger de couleur "
+                                "argent. Cette armure voit sa pénalité d'armure réduite "
+                                "de 2 points. Dans cette armure le personnage ne peut pas être ralenti, immobilisé "
+                                "ou paralysé par la magie. Il obtient un bonus de +5 à tous les tests " 
+                                "pour résister à ce type d'effet préjudiciable s'il s'agit d'une "
+                                "contrainte physique.",
+            'short_description': "Armure composée de d'anneaux métalliques qui protège surtout le "
+                                 "haut du corps. Cette armure magique offre un bonus de DEF "
+                                 "de +2, réduit la pénalité d'armure et dans cette armure on ne peut pas être entravé pas magie.",
+            'weight': Weight(value=20.0, unit='Kg'),
+            'flavor': [Flavor(ftype='magical', count=2), Flavor(ftype='mythral', count=1), Flavor(ftype='free-action', count=1)],
+            'defense': [Mod(label="DEF", mtype="+", count=6)],
+            'cost': Cost(
+                value=6 * 2 * ccc['global']['cost']['mythral'] + 15,
+                unit=ccc['global']['cost']['unit']).iso(),
+            'special_property': ["Immunité : ralenti, paralysé, immobilisé par la magie"],
+            'skill': [
+                Mod(label="Test", target="slowdown-resistance", mtype="+", count="5", limitation="Contraintes physiques uniquement"),
+                Mod(label="Test", target="immobilized-resistance", mtype="+", count="5", limitation="Contraintes physiques uniquement"),
+                Mod(label="Test", target="paralysed-resistance", mtype="+", count="5", limitation="Contraintes physiques uniquement")
+            ],
+            'scenario': [
+                Scenario(
+                    campaign="Anathazerïn", title="Les jardins de l'Amertume", chapter="Les jardins de Ma'ishar", numbering="2"
+                ),
+            ],
+            'category': 'quest',
+        },
         'robe-tissu-elfique': {
             'name': "Robe, en tissu elfique",
             'base_item': "robe-elfique-naesk",
@@ -3900,7 +4949,7 @@ uniques = {
         },
         'malandre-elfique': {
             'name': "Malandre, en tissu elfique",
-            'base_item': "malandre-elfique",
+            'base_item': lambda item: item.oid,
             'full_description': "Cette tunique en tissue elfique est constituée de plusieurs couches de tissus en "
                                 "fibre de naësk. La naësk est une araignée géante dont le fil, une fois débarrassée "
                                 "de de sa substance collante, produit la fibre la plus résistante du monde connu. "
@@ -3943,6 +4992,25 @@ uniques = {
             'weight': Weight(value=0.0, unit='Kg'),
             "special_property": ["Discretion: +2 (en forêt)"]
         },
+        'cape-elfe': {
+            'name': "Cape d'elfe",
+            'base_item': 'cape-elfique',
+            'short_description': "Cape d'elfe.",
+            'full_description': "Cape d'elfe qui apporte un bonus de plus 5 en discretion.",
+            'category': "quest",
+            'scenario': [
+                Scenario(
+                    campaign="Anathazerïn", title="Les jardins de l'Amertume", chapter="Les jardins de Ma'ishar", numbering="2"
+                ),
+            ],
+            'flavor': [Flavor(ftype='magical', count=1)],
+            "magical_level": 1,
+            'cost': Cost(value=2000.0, unit=ccc['global']['cost']['unit']).iso(),
+            'weight': Weight(value=0.2, unit='Kg'),
+            'special_property': [
+                "Discretion: +5"
+            ],
+        },
     }
 }
 #        'x': {
@@ -3951,7 +5019,7 @@ uniques = {
 #            'short_description': ".",
 #            'full_description': ".",
 #            'category': "quest",
-#            'scenario': Scenario(title="Retour à clairval", chapter="", numbering=""),
+#            'scenario': Scenario(campaign="Scénarios uniques", title="Retour à clairval", chapter="", numbering=""),
 #            'cost': Cost(value=0.0, unit=ccc['global']['cost']['unit']).iso(),
 #            'weight': Weight(value=0.0, unit='Kg'),
 #            'quantity': 1,

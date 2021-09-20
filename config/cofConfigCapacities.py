@@ -1050,7 +1050,12 @@ capacities = {
       },
       "http://co-drs.org/capacites/gland-de-pouvoir/": {
         "short_description": "Une fois par combat, le Druide peut lancer un gland sur une cible. En cas d’attaque "
-                             "magique réussie, la victime se transforme en statue de bois."
+                             "magique réussie, la victime se transforme en statue de bois.",
+        "range": Range(value=10,unit='m'),
+        "duration": Duration(value="2d6+[SAG]", unit="tr"),
+        "special_property": [    
+          "Utilisation: Une fois par combat",
+        ]
       },
       "http://co-drs.org/capacites/gober/": {
         "short_description": "Lorsqu’elle utilise sa capacité Dévorer, la créature peut avaler toute entière une "
@@ -1288,7 +1293,12 @@ capacities = {
       },
       "http://co-drs.org/capacites/marche-des-plans/": {
         "short_description": "Une fois par jour, le Prêtre peut passer dans une dimension entre les plans "
-                             "d’existence où le temps et l’espace sont déformés."
+                             "d’existence où le temps et l’espace sont déformés.",
+        "special_property":[
+          "Déplacement: 10 km/tour (entre les plans)",
+          "Précision: 1d6 km (lieu visé)"
+        ],
+        "duration": Duration(value="3+[SAG]", unit="tr")
       },
       "http://co-drs.org/capacites/marche-sylvestre/": {
         "short_description": "Le Druide ne subit aucune pénalité de déplacement en terrain difficile et obtient "
@@ -1373,8 +1383,11 @@ capacities = {
                              "paralyse ses ennemis de terreur et galvanise tous ses alliés en vue."
       },
       "http://co-drs.org/capacites/mur-de-force/": {
-        "short_description": "L’Ensorceleur crée un mur de force indestructible, ou bien une hémisphère centrée "
-                             "sur lui-même."
+        "short_description": "L’Ensorceleur crée un mur de force indestructible (5m haut par 3m de long), ou bien une hémisphère centrée "
+                             "sur lui-même (3m de rayon).",
+        
+        "duration": Duration(value="5+[CHA]", unit="tr"),
+        "range": Range(value=10, unit="m"),
       },
       "http://co-drs.org/capacites/murmures-dans-le-vent/": {
         "short_description": "L’Ensorceleur  chuchote un message d’une dizaine de mots "
@@ -1470,7 +1483,12 @@ capacities = {
       },
       "http://co-drs.org/capacites/peau-de-pierre-2/": {
         "short_description": "Le Magicien obtient une réduction des DM égale à [5 + Mod. d’INT] pendant [5+ Mod. "
-                             "d’INT] tours ou jusqu’à ce que le sort ait absorbé 40 points de dégâts."
+                             "d’INT] tours ou jusqu’à ce que le sort ait absorbé 40 points de dégâts.",
+        'defense': [
+          Mod(label="RD", target="rd", count="5+[INT]"),  
+        ],
+        'special_property': ["Absorbe: 40 DM (maximum)"],
+        "duration": Duration(value="5+[INT]", unit="tr"),
       },
       "http://co-drs.org/capacites/peau-d-acier/": {
         "short_description": "Le Barbare ne sent plus la douleur et ignore les égratignures, il réduit tous les "
@@ -1567,7 +1585,11 @@ capacities = {
       },
       "http://co-drs.org/capacites/projectile-magique/": {
         "short_description": "Le Magicien choisit une cible visible située à moins de 50 mètres. Elle encaisse "
-                             "automatiquement 1d4 points de dégâts."
+                             "automatiquement 1d4 points de dégâts.",
+        'special_property': [
+                "DM (automatique): 1d4",
+        ],
+        "range": Range(value=50, unit="m"),
       },
       "http://co-drs.org/capacites/projection/": {
         "short_description": "Sur 15 à 20 au test d’attaque, la victime est projetée et subit +3d6 DM "
