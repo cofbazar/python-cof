@@ -2520,7 +2520,7 @@ uniques = {
             'use': 3
                             
         },
-       'spell-main-déployee': {
+       'spell-main-deployee': {
             "name": "Main déployée (L)",
             'short_description': "Un jet de flamme qui "
                                 "touche toutes les créatures au contact dans un arc de 180°.",
