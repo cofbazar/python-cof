@@ -21,7 +21,7 @@ realestates = {
             'short_description': "Une jolie maison."
         },
         'villa-luxueuse': {
-            'full_description': "Une villa luxueuse dans les beuax quartiers.",
+            'full_description': "Une villa luxueuse dans les beaux quartiers.",
             'short_description': "Une villa luxueuse."
         },
         'manoir': {

@@ -9072,7 +9072,7 @@
       "__type__": "Attack",
       "area": null,
       "atype": "melee",
-      "critical": "20",
+      "critical": "19-20",
       "damages": {
         "__type__": "Damage",
         "base": [

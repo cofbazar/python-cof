@@ -384,7 +384,7 @@ armors = {
             'full_description':
                 lambda item, magical_level: f"{item.full_description} Cette armure est faite en sombracier, un métal "
                                             "lourd presque noir imperméable à la magie. Ce métal très rare et "
-                                            "recherché n'est absolument pas afecté par la magie. Il passe à travers "
+                                            "recherché n'est absolument pas affecté par la magie. Il passe à travers "
                                             "tous les sorts de protection et ignore les bonus de magie des armures "
                                             "ou ceux accordés par des sorts. L'inconvénient majeur reste que cette "
                                             "armure n'est absolument pas affectée par les sorts dont le propriétaire "
