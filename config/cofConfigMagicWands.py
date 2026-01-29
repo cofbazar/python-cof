@@ -97,9 +97,9 @@ magicwands = {
         },
         'magic-wand-armure-de-mage': {
             "short_description": "L'utilisateur de cette baguette fait apparaître un nuage magique "
-                                 "argenté qui lz protège contre les attaques adverses.",
+                                 "argenté qui la protège contre les attaques adverses.",
             "full_description": "L'utilisateur de cette baguette fait apparaître un nuage magique "
-                                "argenté qui lz protège contre les attaques adverses. Elle bénéficie "
+                                "argenté qui la protège contre les attaques adverses. Elle bénéficie "
                                 "d’un bonus de +4 à la DEF pour le reste du combat. Si le sort est "
                                 "cumulé à une armure physique, le bonus est divisé par 2 (+2 DEF).",
         },   

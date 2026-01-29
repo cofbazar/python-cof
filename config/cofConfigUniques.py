@@ -1786,6 +1786,459 @@ uniques = {
             'cost': Cost(value=700.0, unit=ccc['global']['cost']['unit']).iso(),
             'weight': Weight(value=0.3, unit='Kg'),
         },
+        'carte-du-pays-de-dorn': {
+            'name': "Carte du pays de Dorn",
+            'base_item': lambda item: item.oid,
+            'short_description': "Carte du pays de Dorn",
+            'full_description': "Carte du pays de Dorn faite par le géographe Razmar",
+            'category': "quest",
+            'scenario': [
+                Scenario(
+                    campaign="Anathazerïn", title="La traversée de Dorn", chapter="Préparatifs", numbering="1"
+                ),
+            ],
+            'cost': Cost(value=200.0, unit=ccc['global']['cost']['unit']).iso(),
+        },
+        'bracelet-de-communication': {
+            'name': "Bracelet de communication",
+            'base_item': lambda item: item.oid,
+            'short_description':"Bracelet qui permet d'établir une "
+                                "communication avec le porteur d’un bracelet similaire. "
+                                "Une penalité de -2 s'applique lors d'un echec pour composer le prochain code",
+            'full_description': "Ce large bracelet de bronze couvre la moitié de l’avant-bras. Il est décoré d’une"
+                                "multitude de petites pierres semi-précieuses (turquoise, ambre, etc.). En appuyant "
+                                "sur les bonnes pierres dans le bon ordre, il est possible d'établir une "
+                                "communication avec le porteur d’un bracelet similaire."
+                                "Une penalité de -2 s'applique lors d'un echec pour composer le prochain code.",
+            'category': "quest",
+            'scenario': [
+                Scenario(
+                    campaign="Anathazerïn", title="La traversée de Dorn", chapter="Préparatifs", numbering="1"
+                ),
+            ],
+            'cost': Cost(value=0.0, unit=ccc['global']['cost']['unit']).iso(),
+            'weight': Weight(value=0.1, unit='Kg'),
+            'special_property': [
+                "Test INT ≥ 10: Composer le code",
+                "Test INT ≥ 15: Utilisation"
+                ],
+        },
+        'bracelet-de-communication-unlocked': {
+            'name': "Bracelet de communication",
+            'base_item': lambda item: item.oid,
+            'short_description': "Bracelet qui permet de communiquer avec un autre bracelet. "
+                                 "Si échec, penalité de -2 pour composer le prochain code. "
+                                 "Si chargé, toute créature qui fait des DM "
+                                 "reçoit un 1d6 DM électrique.",
+            'full_description': "Ce large bracelet de bronze couvre la moitié de l’avant-bras. Il est décoré d’une"
+                                "multitude de petites pierres semi-précieuses (turquoise, ambre, etc.). En appuyant "
+                                "sur les bonnes pierres dans le bon ordre, il est possible d'établir une "
+                                "communication avec le porteur d’un bracelet similaire. "
+                                "Une penalité de -2 s'applique lors d'un echec pour composer le prochain code."
+                                "Le bracelet peut produire "
+                                "l’effet de la capacité Sous tension trois fois par jour."
+                                "La personne qui utilise le pouvoir de ce bracelet se charge d’énergie "
+                                "électrique pour [5 + Mod. de CHA] tours. Toute créature qui la blesse ou la touche "
+                                "reçoit une décharge infligeant 1d6 DM. Elle peut également délivrer "
+                                "une décharge électrique (attaque magique, portée 10 m) infligeant "
+                                "[1d6 + Mod. de CHA] DM.",
+            'category': "quest",
+            'scenario': [
+                Scenario(
+                    campaign="Anathazerïn", title="La traversée de Dorn", chapter="Préparatifs", numbering="1"
+                ),
+            ],
+            'special_property': [
+                "Test INT ≥ 10: Composer le code",
+                "Test INT ≥ 15: Utilisation",
+                "Durée: [5 + Mod. de CHA] tours (Sous tension)",
+                "Utilisation: 3 / jour (Sous tension)"
+                ],
+            'cost': Cost(value=0.0, unit=ccc['global']['cost']['unit']).iso(),
+            'weight': Weight(value=0.1, unit='Kg'),
+        },
+        'trou-portable': {
+            'name': "Trou portable",
+            'base_item': lambda item: item.oid,
+            'short_description': "Cet objet ressemble à un bouclier ordinaire en bois cerclé de métal",
+            'full_description': "Cet objet ressemble à un bouclier ordinaire en bois cerclé de métal. Il est circulaire et de belle taille et peut être utilisé" 
+                                "comme un grand bouclier +1. S’il est posé au sol, son umbo (la pointe centrale) peut alors être tournée selon un code précis. "
+                                "Si la bonne séquence est exécutée, le bouclier s’ancre au sol par magie et il peut alors être ouvert comme le couvercle d’une "
+                                "trappe. Il faut un tour complet pour poser et activer le bouclier, un autre tour par personne qui souhaite y descendre et "
+                                "un dernier tour pour le refermer et le rendre invisible. A l'intérieur, il y a une pièce de petite taille. Elle permet "
+                                "d’héberger 6 personnes sur des couchettes (3 superposées), on y trouve un point d’eau, des toilettes derrière un rideau. "
+                                "Lorsque le bouclier est refermé, il devient automatiquement invisible. L’autonomie du trou portable est de 12 heures d’affilée "
+                                "ensuite la cachette dimensionnelle doit être vide et le bouclier porté normalement pendant au moins 6 heures avant de pouvoir "
+                                "servir à nouveau. Aucun sort de communication ou de voyage ne fonctionne depuis l’intérieur du trou portable. "
+                                "Tout objet qui y est laissé lorsque le bouclier est déplacé disparaît. Si un objet magique ou une personne y est enfermé, "
+                                "il est impossible de déplacer le bouclier. Lorsque le trou portable est refermé, un personnage dans le sas d’accès peut "
+                                "activer une sorte de périscope qui se déploie grâce aux poignées normalement utilisées pour tenir le bouclier. À l’extérieur, "
+                                "l’umbo périscopique monte jusqu’à une hauteur maximum de 2 mètres et pivote à 360°. Pendant la manœuvre, le bouclier reste "
+                                "invisible. Le périscope permet de voir mais pas d’entendre. Le bouclier possède une fonction d’autodestruction",
+            'category': "quest",
+            'scenario': [
+                Scenario(
+                    campaign="Anathazerïn", title="La traversée de Dorn", chapter="Préparatifs", numbering="1"
+                ),
+            ],
+            'cost': Cost(value=0.0, unit=ccc['global']['cost']['unit']).iso(),
+            'weight': Weight(value=2.0, unit='Kg'),
+            'special_property': [
+                "Activation: Pose + code (1 tour)",
+                "Entrée/Sortie: 1 tour/personne",
+                "Fermeture: 1 tour (invisible)",
+                "Capacité: 6 personnes (eau, WC)",
+                "Usage: 12h (6h repos après usage)",
+                "Periscope: Vue à 360°, max 2m",
+                "Fonction d'autodestruction"
+            ],
+        },
+        'orbe-du-roi-sorcier': {
+            'name': "Orbe du Roi-Sorcier",
+            'short_description': "Ce globe de métal noir mesure 25 centimètres de diamètre. Il est parfaitement "
+                                "sphérique et lisse. Il est impossible de savoir s’il est plein ou creux.",
+            'full_description': "Ce globe de métal noir mesure 25 centimètres de diamètre. Il est parfaitement "
+                                "sphérique et lisse. Il est impossible de savoir s’il est plein ou creux.",
+            'category': "quest",
+            'scenario': [
+                Scenario(campaign="Anathazerïn", title="La traversée de Dorn", chapter="Voyage", numbering="2")
+            ],
+            'weight': Weight(value=10.0, unit='Kg'),
+            'cost': lambda item: Cost(
+                value=0.0,
+                unit=ccc['global']['cost']['unit']).iso(),
+        },
+        'collier-de-glands': {
+            'name': "Collier de glands",  
+            'short_description': "Un jolie collier de glands.",
+            'full_description': "Un jolie collier de glands.",
+            'category': "quest",
+            'scenario': [
+                Scenario(campaign="Anathazerïn", title="La traversée de Dorn", chapter="Voyage", numbering="2")
+            ],
+            'weight': Weight(value=0.1, unit='Kg'),
+            'cost': lambda item: Cost(
+                value=5.0,
+                unit=ccc['global']['cost']['unit']).iso(),
+        },
+        'collier-en-forme-de-fleur': {
+            'name': "Collier en forme de fleur",  
+            'short_description': "Un superbe collier d’or et d’argent en forme de fleur.",
+            'full_description': "Un superbe collier d’or et d’argent en forme de fleur.",
+            'category': "quest",
+            'scenario': [
+                Scenario(campaign="Anathazerïn", title="La traversée de Dorn", chapter="Voyage", numbering="2")
+            ],
+            'weight': Weight(value=0.1, unit='Kg'),
+            'cost': lambda item: Cost(
+                value=2000.0,
+                unit=ccc['global']['cost']['unit']).iso(),
+        },
+        'pot-onguent-parfum': {
+            'name': "Onguents parfumés",  
+            'short_description': "Plusieurs petits pots en terre cuite remplis d'onguents parfumés.",
+            'full_description': "Plusieurs petits pots en terre cuite remplis d'onguents parfumés.",
+            'category': "quest",
+            'scenario': [
+                Scenario(campaign="Anathazerïn", title="La traversée de Dorn", chapter="Voyage", numbering="2")
+            ],
+            'weight': Weight(value=0.5, unit='Kg'),
+            'cost': lambda item: Cost(
+                value=5.0,
+                unit=ccc['global']['cost']['unit']).iso(),
+            'quantity': 5,
+        },
+        'bracelet-en-or': {
+            'name': "Bracelet en or",
+            'base_item': lambda item: item.oid,
+            'short_description': "Un bracelet en or.",
+            'full_description': "Un magifique bracelet en or.",
+            'category': "quest",
+            'scenario': [
+                Scenario(campaign="Anathazerïn", title="Le pacte du Seigneur des cimes", chapter="La vallée des Norderem", numbering="2")
+            ],
+            'cost': Cost(value=1000.0, unit=ccc['global']['cost']['unit']).iso(),
+            'weight': Weight(value=0.0, unit='Kg'),
+        },
+        'bracelet-fin-en-or': {
+            'name': "Bracelet fin en or",
+            'base_item': lambda item: item.oid,
+            'short_description': "Un bracelet fin en or.",
+            'full_description': "Un magifique braceletfin en or.",
+            'category': "quest",
+            'scenario': [
+                Scenario(campaign="Anathazerïn", title="Le pacte du Seigneur des cimes", chapter="La vallée des Norderem", numbering="2")
+            ],
+            'cost': Cost(value=500.0, unit=ccc['global']['cost']['unit']).iso(),
+            'weight': Weight(value=0.0, unit='Kg'),
+        },
+        'anneau-en-or': {
+            'name': "Anneau en or",
+            'base_item': lambda item: item.oid,
+            'short_description': "Un anneau en or.",
+            'full_description': "Un magifique anneau en or.",
+            'category': "quest",
+            'scenario': [
+                Scenario(campaign="Anathazerïn", title="Le pacte du Seigneur des cimes", chapter="La vallée des Norderem", numbering="2")
+            ],
+            'cost': Cost(value=300.0, unit=ccc['global']['cost']['unit']).iso(),
+            'weight': Weight(value=0.0, unit='Kg'),
+        },
+        'bague-en-platine': {
+            'name': "Bague en platine",
+            'base_item': lambda item: item.oid,
+            'short_description': "Une bague en platine.",
+            'full_description': "Une magifique bague en platine.",
+            'category': "quest",
+            'scenario': [
+                Scenario(campaign="Anathazerïn", title="Le pacte du Seigneur des cimes", chapter="La vallée des Norderem", numbering="2")
+            ],
+            'cost': Cost(value=2500.0, unit=ccc['global']['cost']['unit']).iso(),
+            'weight': Weight(value=0.0, unit='Kg'),
+        },
+        'anneau-de-nez': {
+            'name': "Anneau de nez",
+            'base_item': lambda item: item.oid,
+            'short_description': "Un anneau de nez en or.",
+            'full_description': "Un magnifique anneau de nez en or.",
+            'category': "quest",
+            'scenario': [
+                Scenario(campaign="Anathazerïn", title="Le pacte du Seigneur des cimes", chapter="La vallée des Norderem", numbering="2")
+            ],
+            'cost': Cost(value=50.0, unit=ccc['global']['cost']['unit']).iso(),
+            'weight': Weight(value=0.0, unit='Kg'),
+        },
+        'peau-ours-blanc': {
+            'name': "Peau d'ours blanc",
+            'base_item': lambda item: item.oid,
+            'short_description': "Une immense peau d’ours blanc.",
+            'full_description': "Une immense peau d’ours blanc.",
+            'category': "quest",
+            'scenario': [
+                Scenario(campaign="Anathazerïn", title="Le pacte du Seigneur des cimes", chapter="La vallée des Norderem", numbering="2")
+            ],
+            'cost': Cost(value=50.0, unit=ccc['global']['cost']['unit']).iso(),
+            'weight': Weight(value=0.0, unit='Kg'),
+        },
+        'stone-zircon': {
+            'name': "Rubis",
+            'base_item': lambda item: item.oid,
+            'short_description': "Le zircon est une pierre précieuse naturelle fascinante. Le zircon possède un éclat "
+                                "proche de celui du diamant et a la capacité de doubler les rayons lumineux qui le "
+                                "traversent.",
+            'full_description': "Le zircon est une pierre précieuse naturelle fascinante. Le zircon possède un éclat "
+                                "proche de celui du diamant et a la capacité de doubler les rayons lumineux qui le "
+                                "traversent.",
+            'category': "quest",
+            'scenario': [
+                Scenario(campaign="Anathazerïn", title="Le pacte du Seigneur des cimes", chapter="La vallée des Norderem", numbering="2")
+            ],
+            'cost': Cost(value=50.0, unit=ccc['global']['cost']['unit']).iso(),
+            'weight': Weight(value=0.0, unit='Kg'),
+            'quantity': 1
+        },
+        'stone-gemme': {
+            'name': "Gemme",
+            'base_item': lambda item: item.oid,
+            'short_description': "La gemme est une pierre issue des profondeurs de la Terre. Elle possède un éclat "
+                                 "captivant et sa structure cristalline révèle des couleurs d'une intensité inégalée.",
+            'full_description': "La gemme est une pierre issue des profondeurs de la Terre. Elle possède un éclat "
+                                 "captivant et sa structure cristalline révèle des couleurs d'une intensité inégalée.",
+            'category': "quest",
+            'scenario': [
+                Scenario(campaign="Anathazerïn", title="Le pacte du Seigneur des cimes", chapter="La vallée des Norderem", numbering="2")
+            ],
+            'cost': Cost(value=100.0, unit=ccc['global']['cost']['unit']).iso(),
+            'weight': Weight(value=0.0, unit='Kg'),
+            'quantity': 1
+        },
+        'lingot-fer': {
+            'name': "Un lingot en fer",
+            'base_item': lambda item: item.oid,
+            'short_description': "Une petite barre en fer.",
+            'full_description': "Une petite barre en fer",
+            'category': "quest",
+            'scenario': [
+                Scenario(campaign="Anathazerïn", title="Le pacte du Seigneur des cimes", chapter="Kerserac", numbering="3")
+            ],
+            'cost': Cost(value=5.0, unit=ccc['global']['cost']['unit']).iso(),
+            'weight': Weight(value=1, unit='Kg'),
+            'quantity': 853
+        },
+        'lingot-argent': {
+            'name': "Un lingot en argent",
+            'base_item': lambda item: item.oid,
+            'short_description': "Une petite barre en argent.",
+            'full_description': "Une petite barre en argent",
+            'category': "quest",
+            'scenario': [
+                Scenario(campaign="Anathazerïn", title="Le pacte du Seigneur des cimes", chapter="Kerserac", numbering="3")
+            ],
+            'cost': Cost(value=100.0, unit=ccc['global']['cost']['unit']).iso(),
+            'weight': Weight(value=1, unit='Kg'),
+            'quantity': 24
+        },
+        'lingot-mithral': {
+            'name': "Un lingot en mithral",
+            'base_item': lambda item: item.oid,
+            'short_description': "Une petite barre en mithral.",
+            'full_description': "Une petite barre en mithral",
+            'category': "quest",
+            'scenario': [
+                Scenario(campaign="Anathazerïn", title="Le pacte du Seigneur des cimes", chapter="Kerserac", numbering="3")
+            ],
+            'cost': Cost(value=5000.0, unit=ccc['global']['cost']['unit']).iso(),
+            'weight': Weight(value=0.2, unit='Kg'),
+            'quantity': 2
+        },
+        'huile-et-parfum': {
+            'name': "Huile et parfum",
+            'base_item': lambda item: item.oid,
+            'short_description': "Un petit assortiment d'huiles corporelles, du savon et de divers parfums.",
+            'full_description': "Un petit assortiment d'huiles corporelles, du savon et de divers parfums.",
+            'category': "quest",
+            'scenario': [
+                Scenario(campaign="Anathazerïn", title="Le pacte du Seigneur des cimes", chapter="Kerserac", numbering="3")
+            ],
+            'cost': Cost(value=250.0, unit=ccc['global']['cost']['unit']).iso(),
+            'weight': Weight(value=0.2, unit='Kg'),
+            'quantity': 1
+        },
+        'broche-en-argent-araignee': {
+            'name': "Broche araignée d'argent",
+            'short_description': "une broche représentant une araignée d’argent, signe de distinction chez les drows.",
+            'full_description': "une broche représentant une araignée d’argent, signe de distinction chez les drows.",
+            'category': "quest",
+            'special_property': [
+            ],
+            'weight': Weight(value=0.1, unit='Kg'),
+            'cost': lambda item: Cost(
+                value=50,
+                unit=ccc['global']['cost']['unit']).iso(),
+            'scenario': [
+                Scenario(campaign="Anathazerïn", title="Le pacte du Seigneur des cimes", chapter="Kerserac", numbering="3")
+            ],
+        },
+        'stone-turquoise': {
+            'name': "Turquoise",
+            'base_item': lambda item: item.oid,
+            'short_description': "La turquoise est une pierre opaque dont la couleur varie du bleu azur au vert pâle. Sa surface à l'éclat cireux est fréquemment parcourue de veines brunes ou noires formant une matrice rocheuse irrégulière.",
+            'full_description': "La turquoise est une pierre opaque dont la couleur varie du bleu azur au vert pâle. Sa surface à l'éclat cireux est fréquemment parcourue de veines brunes ou noires formant une matrice rocheuse irrégulière.",
+            'category': "quest",
+            'scenario': [
+                Scenario(campaign="Anathazerïn", title="Le pacte du Seigneur des cimes", chapter="Kerserac", numbering="3")
+            ],
+            'cost': Cost(value=25.0, unit=ccc['global']['cost']['unit']).iso(),
+            'weight': Weight(value=0.0, unit='Kg'),
+            'quantity': 1
+        },
+        'corne-des-serres-du-monde': {
+            'name': "La Corne des Serres du monde",
+            'base_item': lambda item: item.oid,
+            'short_description': "La Corne des Serres du monde est une magnifique corne rehaussée de mithral et de pierres précieuses. Elle est le symbole du pacte liant le peuple de Kerserac à celui des seigneurs des cimes.",
+            'full_description': "La Corne des Serres du monde est une magnifique corne rehaussée de mithral et de pierres précieuses. Elle est le symbole du pacte liant le peuple de Kerserac à celui des seigneurs des cimes.",
+            'category': "quest",
+            'scenario': [
+                Scenario(campaign="Anathazerïn", title="Le pacte du Seigneur des cimes", chapter="Kerserac", numbering="3")
+            ],
+            'cost': Cost(value=2500.0, unit=ccc['global']['cost']['unit']).iso(),
+            'weight': Weight(value=0.2, unit='Kg'),
+        },
+        'broche-en-adamantium-araignee': {
+            'name': "Broche araignée en adamantium",
+            'short_description': "Une broche en adamantium sertie de rubis représentant une araignée.",
+            'full_description': "Une broche en adamantium sertie de rubis représentant une araignée.",
+            'category': "quest",
+            'special_property': [
+            ],
+            'weight': Weight(value=0.1, unit='Kg'),
+            'cost': lambda item: Cost(
+                value=2500,
+                unit=ccc['global']['cost']['unit']).iso(),
+            'scenario': [
+                Scenario(campaign="Anathazerïn", title="Les secrets d’Anathazerïn", chapter="", numbering="")
+            ],
+        },
+        'stone-opale-noir': {
+            'name': "Opale noire",
+            'base_item': lambda item: item.oid,
+            'short_description': "L'opale noire est une pierre dont le corps sombre varie du gris anthracite au noir de jais. Sa surface à l'éclat vitreux est fréquemment parcourue de jeux de couleurs électriques, formant une mosaïque de reflets irisés qui s'animent selon l'angle de la lumière.",
+            'full_description': "L'opale noire est une pierre dont le corps sombre varie du gris anthracite au noir de jais. Sa surface à l'éclat vitreux est fréquemment parcourue de jeux de couleurs électriques, formant une mosaïque de reflets irisés qui s'animent selon l'angle de la lumière.",
+            'category': "quest",
+            'scenario': [
+                Scenario(campaign="Anathazerïn", title="Les secrets d’Anathazerïn", chapter="", numbering="")
+            ],
+            'cost': Cost(value=1000.0, unit=ccc['global']['cost']['unit']).iso(),
+            'weight': Weight(value=0.0, unit='Kg'),
+            'quantity': 1
+        },
+        'luth-des-armes-dansantes': {
+            'name': "Luth des armes dansantes",
+            'base_item': lambda item: item.oid,
+            'short_description': "Un magnifique instrument en bois noir.",
+            'full_description': "Ce magnifique instrument de bois noir et d’argent permet d’utiliser la capacité Arme dansante (ensorceleur rang 4) trois fois par jour. Si un barde utilise l’instrument, deux armes sont invoquées à chaque fois que le pouvoir est utilisé et il obtient un bonus de +5 en attaque magique à chaque fois qu’il utilise le Luth pour lancer un sort.",
+            'category': "quest",
+            'magical_level':4,
+             'scenario': [
+                Scenario(campaign="Anathazerïn", title="Les secrets d’Anathazerïn", chapter="", numbering="")
+            ],
+            'cost': lambda item: Cost(
+                value=item.magical_level * item.magical_level * ccc['global']['cost']['magical'],
+                unit=ccc['global']['cost']['unit']).iso(),
+            'weight': Weight(value=1.0, unit='Kg'),
+            'hands': 2,
+            'material': 'airain',
+            'special_property': [
+                "Barde: +5 attaque magique avec le luth",
+                "Barde: 2 lames invoqués (au lieu d'une)"
+            ],
+        },
+        'collier-rune-maison-maedriss': {
+            'name': "Collier de la maison Maedriss",  
+            'short_description': "Un superbe collier avec une rune, symbole de la Maison Maedriss.",
+            'full_description': "Un superbe collier avec une rune, symbole de la Maison Maedriss.",
+            'category': "quest",
+            'scenario': [
+                Scenario(campaign="Anathazerïn", title="Les secrets d’Anathazerïn", chapter="", numbering="")
+            ],
+            'weight': Weight(value=0.1, unit='Kg'),
+            'cost': lambda item: Cost(
+                value=125.0,
+                unit=ccc['global']['cost']['unit']).iso(),
+        },
+        'bille-de-force': {
+            'name': "Bille de force",  
+            'short_description': "Une bille de force qui invoque un mur de force hémisphérique, transparent et indestructible centré sur le point d’impact. Utile pour se protéger ou emprisonner.",
+            'full_description': "La bille de force doit être lancée au sol violemment (action de mouvement) pour fonctionner. En se brisant, elle invoque un mur de force hémisphérique, transparent et indestructible de 5 mètres de rayon centré sur le point d’impact. La durée est de 10 tours. Les billes peuvent être utilisées autant pour bloquer un adversaire puissant à l’intérieur que pour se protéger d’un trop grand nombre d’assaillants extérieurs.",
+            'category': "quest",
+            'scenario': [
+               Scenario(campaign="Anathazerïn", title="La pacification de Krön", chapter="Syndoril", numbering="1")
+            ],
+            'weight': Weight(value=0.1, unit='Kg'),
+            'cost': lambda item: Cost(
+                value=0.0,
+                unit=ccc['global']['cost']['unit']).iso(),
+            'quantity': 3,
+            'special_property': [
+                "Utiliser: action de mouvement",
+                "Mur de force: 5m de diamètre, pendant 10 tours",
+                "Personne ne peut sortir du mur de force"
+            ],
+        },
+        'geolocalisateur': {
+            'name': "Géolocalisateur",  
+            'short_description': "Cet objet ressemble à une boussole. Toutefois, son aiguille n’indique pas le Nord mais la direction dans laquelle se trouve celui dont quelques gouttes de sang ont été  déposées dans le réceptacle.",
+            'full_description': "Cet objet ressemble à une boussole. Toutefois, son aiguille n’indique pas le Nord mais la direction dans laquelle se trouve celui dont quelques gouttes de sang ont été  déposées dans le réceptacle.",
+            'category': "quest",
+            'scenario': [
+               Scenario(campaign="Anathazerïn", title="La pacification de Krön", chapter="Syndoril", numbering="1")
+            ],
+            'weight': Weight(value=0.1, unit='Kg'),
+            'cost': lambda item: Cost(
+                value=0.0,
+                unit=ccc['global']['cost']['unit']).iso(),
+        },
+
     },
     "Bracer": {
     },
@@ -2160,6 +2613,103 @@ uniques = {
             'duration': Duration(value=10, unit="min"),
             'special_property': [
                 "RD: DM acide / 2",
+            ],
+        },
+        'potion-souffle-du-dragon': {
+            'name': "Potion de résistance, à l'acide",
+            'base_item': lambda item: item.oid,
+            'short_description': "Une fois bue cette potion permet, par une action d’attaque,"
+                                "de produire un souffle de dragon.",
+            'full_description': "Une fois bue cette potion permet, par une action d’attaque,"
+                                "de produire un souffle de dragon. Ce souffle couvre une "
+                                "zone conique de 5 mètres de long sur 5 mètres de large à son extrémité et inflige "
+                                "10d6 DM. Les victimes dans le cône d’effet peuvent diviser les DM infligés par 2 "
+                                "à condition de réussir un test de DEX difficulté 15.",
+            'category': "quest",
+           'scenario': [
+                Scenario(
+                    campaign="Anathazerïn", title="Les Faux Monnayeurs", chapter="Voyage", numbering="2"
+                ),
+            ],
+            'cost': lambda item: Cost(
+                value=ccc['global']['cost']['potions'],
+                unit=ccc['global']['cost']['unit']).iso(),
+            'quantity': 1,
+            'weight': Weight(value=0.1, unit='Kg'),
+            'duration': Duration(value=10, unit="min"),
+            'special_property': [
+                "Zone: cone de 5m x 5m",
+                "DM : 10d6 (attaque réussie)",
+                "DM / 2 si test DEX ≥ 15"
+            ],
+        },
+        'potion-elixir-puissant-sante': {
+            'name': "Puissant élixir de santé",
+            'base_item': lambda item: item.oid,
+            'short_description': "Un puissant élixir de santé.",
+            'full_description': "Un puissant élixir de santé. Une fois bue cette potion permet au personnage "
+                                "de gagner un bonus permanent de +1 au Mod. de CON",
+            'category': "quest",
+            'scenario': [
+                Scenario(
+                    campaign="Anathazerïn", title="Les Faux Monnayeurs", chapter="Voyage", numbering="2"
+                ),
+            ],
+            'cost': lambda item: Cost(
+                value=ccc['global']['cost']['potions'],
+                unit=ccc['global']['cost']['unit']).iso(),
+            'quantity': 1,
+            'weight': Weight(value=0.1, unit='Kg'),
+            'duration': Duration(value=10, unit="min"),
+            'special_property': [
+                "Effet permanent: +1 Mod. CON"
+            ],
+        },
+        'potion-furie-berserk': {
+            'name': "Potion de furie du berserk",
+            'base_item': lambda item: item.oid,
+            'short_description': "Cette potion permet à celui qui la boit d'entrer en furie du berserk jusqu'à la fin du combat.",
+            'full_description': "Cette potion permet à celui qui la boit d'entrer en furie du berserk jusqu'à la fin du combat. Cela lui "
+                                "donne +3 en attaque et +2d6 aux DM pour une pénalité en DEF de -6. Pour sortir "
+                                "prématurément de cet état il faut réussir un test de difficulté de SAG de 16.",
+            'category': "quest",
+            'scenario': [
+                Scenario(campaign="Anathazerïn", title="Le pacte du Seigneur des cimes", chapter="Kerserac", numbering="3")
+            ],
+            'cost': lambda item: Cost(
+                value=200.0,
+                unit=ccc['global']['cost']['unit']).iso(),
+            'special_property': [
+                "Attaque: +3",
+                "DM: +2d6",
+                "Pénalité: -6 DEF",
+                "Quitter la furie: test SAG ≥ 16",
+            ],
+            'weight': Weight(value=0.5, unit='Kg'),
+            'quantity': 1
+        },
+        'potion-de-sang-arbre-coeur': {
+            'name': "Puissant élixir de santé",
+            'base_item': lambda item: item.oid,
+            'short_description': "Cette potion soigne immédiatement toutes les blessures (PV au maximum), les infirmités, les maladies ou les poisons.",
+            'full_description': "Cette potion soigne immédiatement toutes les blessures (les PV remontent à leur maximum), les infirmités, les maladies ou les poisons. Le bénéficiaire est immunisé aux poisons et aux maladies pendant une année complète. Pendant les prochaines 24 heures, il sera protégé des effets néfastes de la Pierre du Ciel du cratère de Krön, il régénère 5 PV par tour et reçoit un bonus de +5 en DEF et à tous les tests de résistance à la nécromancie. Mais l’effet principal de l’élixir, celui qui fait sa réputation, est d’augmenter l’espérance de vie d’un siècle complet. Cet effet ne peut être obtenu qu’une seule fois dans la vie d’un mortel.",
+            'category': "quest",
+            'scenario': [
+               Scenario(campaign="Anathazerïn", title="La pacification de Krön", chapter="Syndoril", numbering="1")
+            ],
+            'weight': Weight(value=0.1, unit='Kg'),
+            'cost': lambda item: Cost(
+                value=0.0,
+                unit=ccc['global']['cost']['unit']).iso(),
+            'quantity': 1,
+            'weight': Weight(value=0.1, unit='Kg'),
+            'duration': Duration(value=10, unit="min"),
+            'special_property': [
+                "Immunité (poison et maladie): 1 an",
+                "Protection Pierre du Ciel: 24H",
+                "DEF: +5",
+                "Résistance à la nécromancie: +5",
+                "Espérance de vie: +1 siècle (1 / vie)"
             ],
         },
     },
@@ -2538,7 +3088,7 @@ uniques = {
             ),
             'special_property': [
                 "Utilisable: 3 fois par jour",
-                "Test DEX >= 12: DM / 2"
+                "Test DEX ≥ 12: DM / 2"
             ],
             'category': "quest",
             'scenario': [
@@ -2674,6 +3224,27 @@ uniques = {
                 value=0.0,
                 unit=ccc['global']['cost']['unit']).iso(),
             'use': 3,
+        },
+        'spell-quest': {
+            'name': "Quête (L)",
+            'short_description': "Ce sort affecte une cible volontaire (elle peut être contrainte à accepter) "
+                                 "lors d’un long rituel de 10 minutes. Le prêtre lui assigne une quête et, si "
+                                 "la créature cesse de travailler à l’objectif fixé, elle se sent Affaiblie "
+                                 "après un laps de temps de 24 heures. L’effet cesse si la créature reprend "
+                                 "la quête et le sort prend fin si elle est menée à bien.",
+            'full_description': "Ce sort affecte une cible volontaire (elle peut être contrainte à accepter) "
+                                 "lors d’un long rituel de 10 minutes. Le prêtre lui assigne une quête et, si "
+                                 "la créature cesse de travailler à l’objectif fixé, elle se sent Affaiblie "
+                                 "après un laps de temps de 24 heures. L’effet cesse si la créature reprend "
+                                 "la quête et le sort prend fin si elle est menée à bien.",
+            'category': "quest",
+            'scenario': [
+                Scenario(campaign="Anathazerïn", title="La traversée de Dorn", chapter="Voyage", numbering="2")
+            ],
+            'cost': lambda item: Cost(
+                value=0.0,
+                unit=ccc['global']['cost']['unit']).iso(),
+            'quantity': 1
         },
     },
     "MagicalWand": {
@@ -2862,7 +3433,7 @@ uniques = {
                 critical=RangeSet([20])
             ),
             'material': "gorndar",
-            'special_property': ["Test CON <= 10 (si attaque réussie): Affaibli (d12) pendant 1 tour"],
+            'special_property': ["Test CON ≤ 10 (si attaque réussie): Affaibli (d12) pendant 1 tour"],
             'flavor': [Flavor(ftype="gorndar", count=1)],
         },
         'epee-courte-de-qualite-en-fer-froid': {
@@ -3212,7 +3783,7 @@ uniques = {
                                 "de dague est généralement accompagné de poison pour les assassinats, si la lame se "
                                 "brise la virulence du poison est augmentée et la difficulté du test de CON "
                                 "correspondant au poison est augmenté de +5. Une dague brisée devient inutilisable.",
-            'short_description': "Dague dont la lame se casse (critique). Retirer le fragment (test SAG >= 20) "
+            'short_description': "Dague dont la lame se casse (critique). Retirer le fragment (test SAG ≥ 20) "
                                  "permet de récupérer les points perdus (1 / jour). Chaque échec enlève 1d6 points "
                                  "(CON). Si la lame est empoisonnée et se brise: test contre le poison: +5.",
             'weight': Weight(value=0.5, unit='Kg'),
@@ -3287,6 +3858,34 @@ uniques = {
                 ),
                 critical=RangeSet([20])
             ),
+        },
+        'dague+2-sournoise': {
+            'name': "Dague +2, d'attaque sournoise",
+            'base_item': lambda item: item.oid,
+            'short_description': "Une dague qui ajoute des dégats aux attaques exécutées dans les conditions d’une attaque sournoise.",
+            'full_description': "Une superbe dague +2 d’attaque sournoise qui ajoute +2d6 aux DM des attaques exécutées dans les conditions d’une attaque sournoise. Si le personnage qui utilise cette dague à déjà la capacité d'attaque sournoise, cela ajoute +1d6 aux DM aux dégâts lorsqu'il utilise cette capacité.",
+            'category': "quest",
+            'scenario': [
+                Scenario(campaign="Anathazerïn", title="Le pacte du Seigneur des cimes", chapter="Kerserac", numbering="3")
+            ],
+            'magical_level': 3,
+            'cost': lambda item: Cost(
+                value=item.magical_level * item.magical_level * ccc['global']['cost']['magical'],
+                unit=ccc['global']['cost']['unit']).iso(),
+            'weight': Weight(value=0.5, unit='Kg'),
+            'hands': 1,
+            'attack': Attack(
+                atype='melee',
+                mod=2,
+                damages=Damage(
+                    base=[Mod(die=4, count=1, target=['punctured', 'sharp']),
+                          Mod(mtype="+", count=1, target='magical')],
+                    other=[]
+                ),
+                critical=RangeSet([20])
+            ),
+            'special_property': ["DM: +2d6 (attaque sournoise)",
+                                 "DM: +1d6 (capacité attaque sournoise)"]
         },
         'epee-elfique+2': {
             "magical_level": 2,
@@ -3475,6 +4074,66 @@ uniques = {
                 "Utilisable: Prêtresse de Maëdra"
             ]
         },
+        'masse+2-affaiblissment': {
+            'name': "Masse +2, d'affaiblissement",
+            'base_item': lambda item: item.oid,
+            "magical_level": 2,
+            'short_description': "Une masse enchantée qui inflige le sort d’affaiblissement à sa cible à chaque"
+                                "attaque réussie",
+            'full_description': "Une masse enchantée +2 qui inflige le sort d’affaiblissement à sa cible à chaque"
+                                "attaque réussie. La cible subit alors un malus de -2 à ses tests de FOR, "
+                                "d’attaque au contact et de dégâts, pendant [1d6 + Mod. d’INT] tours.",
+            'category': "quest",
+            'scenario': [
+                Scenario(campaign="Anathazerïn", title="La traversée de Dorn", chapter="Voyage", numbering="2")
+            ],
+            'cost': Cost(
+                value=32000,
+                unit=ccc['global']['cost']['unit']).iso(),
+            'weight': Weight(value=2.0, unit='Kg'),
+            'hands': 1,
+            'attack': Attack(
+                atype='melee',
+                mod=2,
+                damages=Damage(
+                    base=[Mod(die=6, count=1, target=['blunt'])],
+                    other=[Mod(count=2, target='magical', mtype="+")]
+                ),
+                critical=RangeSet([20])
+            ),
+            'special_property': [
+                "Effet: -2 en FOR (attaque au contact et DM)",
+                "Durée: [1d6 + Mod. d’INT] tours",
+                "Effets et durée non cumulables"
+            ],
+            'flavor': [Flavor(ftype='magical', count=2),Flavor(ftype='fire', count=1)],
+        },
+        'falchion': {
+            'name': "Falchion",
+            'base_item': lambda item: item.oid,
+            'short_description': "Un falchion est une épée à une main, qui se distingue par sa lame "
+                                 "courbe et son tranchant unique sur un seul côté.",
+            'full_description': "Un falchion est une épée à une main, qui se distingue par sa lame "
+                                "courbe et son tranchant unique sur un seul côté."
+                                "Cette arme s'utilise à une main et inflige 1d6 dégâts",
+            'category': "quest",
+            'scenario': [
+                Scenario(campaign="Anathazerïn", title="La traversée de Dorn", chapter="Voyage", numbering="2")
+            ],
+            'cost': lambda item: Cost(
+                value=12,
+                unit=ccc['global']['cost']['unit']).iso(),
+            'weight': Weight(value=1.0, unit='Kg'),
+            'hands': 1,
+            'attack': Attack(
+                atype='melee',
+                damages=Damage(
+                    base=[Mod(die=6, count=1, target=['punctured', 'sharp'])],
+                    other=[]
+                ),
+                critical=RangeSet([20])
+            ),
+        },
         'masse-destruction-des-morts': {
             'name': "Masse +2, de destruction des morts",
             'base_item': lambda item: item.oid,
@@ -3575,7 +4234,7 @@ uniques = {
             'flavor': [Flavor(ftype='magical', count=1)],
             "magical_level": 1,
             'material': "gorndar",
-            'special_property': ["Test CON <= 10 (si attaque réussie): Affaibli (d12) pendant 1 tour"],
+            'special_property': ["Test CON ≤ 10 (si attaque réussie): Affaibli (d12) pendant 1 tour"],
             'flavor': [Flavor(ftype="gorndar", count=1)],
             
         },
@@ -3679,7 +4338,307 @@ uniques = {
                 "Grande créature: +1d6 DM",
                 "Énorme créature: +2d6 DM"]
         },
-        
+        'arc-court-grombarth': {
+            "magical_level": 2,
+            'category': 'quest',
+            "name": "Arc court de Grombarth",
+            'base_item': lambda item: item.oid,
+            'full_description': "L'arc est une arme de trait à 2 mains destinée à lancer des flèches. Dans sa "
+                                "version courte, il permet d'envoyer un projectile jusqu'à 30m et inflige "
+                                "1d6 dégâts. Cet arc possède la propriété Ennemi juré : il possede +2 en "
+                                "attaque et inflige +1d6 DM supplémentaires contre les orques et les géants.",
+            'short_description': "Cet arc possede la propriété Ennemi juré et ajoute un bonus d'attaque et "
+                                 "de dégat supplémentaire face aux orques et aux géants",
+            'weight': cof.properties.Weight(value=1.0, unit='Kg'),
+            'hands': 2,
+            'attack': Attack(
+                atype='ranged',
+                damages=Damage(
+                    base=[Mod(die=6, count=1, target=['punctured'])],
+                    other=[Mod(target="giant", mtype="+", count=1, die=6, limitation="Seulement contre orques et géants"),
+            ]
+                ),
+                range=Range(value=30, unit='m'),
+                critical=RangeSet([20])
+            ),
+            'cost': lambda item: Cost(
+                value=item.magical_level * item.magical_level * ccc['global']['cost']['magical'],
+                unit=ccc['global']['cost']['unit']).iso(),
+            'special_property': [
+                "Ennemi juré: +2 en attaque contre orques et géants"],
+            'scenario': [
+                Scenario(
+                    campaign="Anathazerïn", title="La traversée de Dorn", chapter="Préparatifs", numbering="1"
+                ),
+            ],
+        },
+        'marteau-piolet-grombarth': {
+            'category': 'quest',
+            "name": "Marteau-piolet de Grombarth",
+            'base_item': lambda item: item.oid,
+            'full_description': "Ce marteau-piolet « famillial » est usé par les générations qui l'ont utilisé. Il "
+                                " s'utilise aussi bien comme un marteau ou comme un piolet. Il inflige +1d6 Dégats "
+                                "contondants et perforants. Cette arme "
+                                "est magique et offre un bonus de +1 en attaque et aux dégats.",            
+            'short_description': "Ce marteau-piolet s'utilise aussi bien comme un marteau ou comme un piolet. "
+                                 "Cette arme est magique et offre un bonus en attaque et aux dégats.",
+            'weight': cof.properties.Weight(value=0.5, unit='Kg'),
+            'hands': 1,
+            'attack': Attack(
+                atype='melee',
+                damages=Damage(
+                    base=[Mod(die=6, count=1, target=['blunt','punctured'])],
+                    other=[]
+                ),
+                critical=RangeSet([20])
+            ),
+            'special_property': [],
+            'cost': lambda item: Cost(
+                value=2,
+                unit=ccc['global']['cost']['unit']).iso(),
+            'scenario': [
+                Scenario(
+                    campaign="Anathazerïn", title="La traversée de Dorn", chapter="Préparatifs", numbering="1"
+                ),
+            ],
+        },
+        'hache+2-tonnerre': {
+            'name': "Hâche tonnerre",
+            'base_item': lambda item: item.oid,
+            'short_description': "Cette hâche tonnerre est une hache qui peut délivrer des dégâts de foudre supplémentaires.",
+            'full_description': "Cette hâche tonnerre est une hache +2 qui peut délivrer 3d6 DM de foudre supplémentaires, "     
+                                "dans un éclair bruyant et sur une attaque réussie, trois fois par jour. Le mot de "
+                                "commande est « Bleitz », soit « éclair » en orque.",
+            'category': "quest",
+            'magical_level': 2,
+            'scenario': [
+                Scenario(campaign="Anathazerïn", title="Le pacte du Seigneur des cimes", chapter="La vallée des Norderem", numbering="2")
+            ],
+            'cost': lambda item: Cost(value=item.magical_level * item.magical_level * ccc['global']['cost']['magical'] + 32.0,
+                         unit=ccc['global']['cost']['unit']).iso(),
+            'weight': Weight(value=3.5, unit='Kg'),
+            'hands': 1,
+            'attack': Attack(
+                atype='melee',
+                mod=2,
+                damages=Damage(
+                    base=[
+                        Mod(die=8, count=1, target=['sharp']),
+                            Mod(count=2, target=['magical'], mtype="+"),
+                        ],
+                    other=[]
+                ),
+                critical=RangeSet([20])
+            ),
+            'material': 'durium',
+            'flavor': [Flavor(ftype='quality', count=1), Flavor(ftype='durium', count=1)],
+            'special_property': ["DM +3d6 éléctrique (3/jour)"]
+        },
+        'masse-en-pierre': {
+            'name': "Masse en pierre de géant",
+            'base_item': lambda item: item.oid,
+            'short_description': "Cette masse en pierre de géant permet d'infliger de nombreux dégâts si on peut la brandir.",
+            'full_description': "Cette masse Masse en pierre de géant permet d'infliger de nombreux dégâts si on peut la "
+                                "brandir. Elle s'utilise à 2 mains et il faut au moins 18 en FOR pour pouvoir l'utiliser. "
+                                "Lors d'une attaque réussie, elle inflige 3d6 DM.",
+            'category': "quest",
+            'scenario': [
+                Scenario(campaign="Anathazerïn", title="Le pacte du Seigneur des cimes", chapter="La vallée des Norderem", numbering="2")
+            ],
+            'cost': lambda item: Cost(
+                value=5,
+                unit=ccc['global']['cost']['unit']).iso(),
+            'weight': Weight(value=10.0, unit='Kg'),
+            'hands': 2,
+            'attack': Attack(
+                atype='melee',
+                damages=Damage(
+                    base=[Mod(die=6, count=3, target=['blunt'])],
+                    other=[]
+                ),
+                critical=RangeSet([20])
+            ),
+            'special_property': [
+                "Utilisation: FOR ≥ 18"
+            ]
+        },
+        'fouet+1-de-douleur': {
+            'name': "Fouet de douleur, +1",
+            'base_item': lambda item: item.oid,
+            'short_description': "Ce fouet inflige des douleurs telle qu'il peut étourdir ceux qui sont la cible de ses coups",
+            'full_description': "Ce fouet inflige des douleurs telle qu'il peut étourdir ceux qui sont la cible de ses coups."
+                                "Ce fouet possède un bonus magique de +1 et inflige 1d6 + Mod. de DEX DM. La cible doit "
+                                "faire un test de CON de difficulté 12 ou être étourdie pendant 1 tour.",
+            'category': "quest",
+            'scenario': [
+                Scenario(campaign="Anathazerïn", title="Le pacte du Seigneur des cimes", chapter="La vallée des Norderem", numbering="2")
+            ],
+            'cost': lambda item: Cost(
+                value=item.magical_level * item.magical_level * ccc['global']['cost']['magical'],
+                unit=ccc['global']['cost']['unit']).iso(),
+            'special_property': [
+                "Ennemi juré: +2 en attaque et +1d6 DM contre orques et géants"],
+            'weight': Weight(value=10.0, unit='Kg'),
+            'hands': 2,
+            'attack': Attack(
+                atype='melee',
+                mod=1,
+                damages=Damage(
+                    base=[Mod(die=6, count=3, target=['blunt']),
+                    Mod(count=1, target=['magical'], mtype="+")],
+                    other=[]
+                ),
+                critical=RangeSet([20])
+            ),
+            "magical_level": 1,
+            'special_property': [
+                "DM: +[DEX]",
+                "Etourdi: Test CON < 12"
+            ]
+        },
+        'baton-mage+2-boule-de-feu': {
+            'name': "Bâton de mage +2",
+            'base_item': lambda item: item.oid,
+            'short_description': "Un bâton de mage qui permet de lancer un sort de Boule de feu",
+            'full_description': "Un bâton de mage +2 qui ajouter des bonus en attaque magique et aux DM de tous les sorts. Il permet de lancer trois fois par jour un sort de Boule de feu (capacité de magicien, rang 4) infligeant 6d6 DM.",
+            'category': "quest",
+            'magical_level': 6,
+             'scenario': [
+                Scenario(campaign="Anathazerïn", title="Les secrets d’Anathazerïn", chapter="", numbering="")
+            ],
+            'cost': lambda item: Cost(
+                value=item.magical_level * item.magical_level * ccc['global']['cost']['magical'],
+                unit=ccc['global']['cost']['unit']).iso(),
+            'weight': Weight(value=1.0, unit='Kg'),
+            'hands': 2,
+            'material': 'wood',
+            'special_property': [
+                "Boule de feu (L): 3 /jour",
+                "DM (boule de feu): 6d6",
+                "Attaque magique: +2",
+                "DM sorts: +2"
+            ],
+            'flavor': [Flavor(ftype='magical', count=2)],
+        },
+        'epee-courte+3-de-vitesse': {
+            'name': "Épée courte +3, de vitesse",
+            'base_item': lambda item: item.oid,
+            'short_description': "Une épée courte de vitesse qui permet de faire une attaque "
+                                "gratuite au contact.",
+            'full_description': "Une épée courte +3 de vitesse qui permet de faire une attaque "
+                                "gratuite au contact à chaque tour au score d’Init du personnage +10.",
+            'category': "quest",
+            'scenario': [
+                Scenario(campaign="Anathazerïn", title="Les secrets d’Anathazerïn", chapter="", numbering="")
+            ],
+            'cost': lambda item: Cost(
+                value=item.magical_level * item.magical_level * ccc['global']['cost']['magical'],
+                unit=ccc['global']['cost']['unit']).iso(),
+            'weight': Weight(value=1.0, unit='Kg'),
+            'hands': 1,
+            'attack': Attack(
+                atype='melee',
+                mod=3,
+                damages=Damage(
+                    base=[Mod(die=6, count=1, target=['punctured', 'sharp']),
+                          Mod(count=3, target=['magical'], mtype="+")],
+                    other=[]
+                ),
+                critical=RangeSet([20])
+            ),
+            'special_property': [
+                "Attaque gratuite: 1 / tour"
+                "Init +10 (attaque gratuite)"
+            ],
+            'flavor': [Flavor(ftype='magical', count=3)],
+            'magical_level': 4,
+        },
+        'sceptre-de-pouvoir': {
+            'name': "Sceptre de pouvoir",
+            'base_item': lambda item: item.oid,
+            'short_description': "Ce bâton d’airain est surmonté d’une pierre blanche luisante. Il faut être capable de lancer des sorts de rang au moins équivalent à la capacité utilisée.",
+            'full_description': "Ce bâton d’airain est surmonté d’une pierre blanche luisante. Il permet de lancer les sorts de rang 1 à 4 de la Voie de la magie universelle, chacun trois fois par jour (L). Il faut être capable de lancer des sorts de rang au moins équivalent à la capacité utilisée. Si le porteur est déjà capable d’utiliser ces sorts, il peut les lancer par une action gratuite trois fois par jour (un sort par tour).",
+            'category': "quest",
+            'magical_level': 10,
+             'scenario': [
+                Scenario(campaign="Anathazerïn", title="Les secrets d’Anathazerïn", chapter="", numbering="")
+            ],
+            'cost': lambda item: Cost(
+                value=item.magical_level * item.magical_level * ccc['global']['cost']['magical'],
+                unit=ccc['global']['cost']['unit']).iso(),
+            'weight': Weight(value=1.0, unit='Kg'),
+            'hands': 2,
+            'material': 'airain',
+            'special_property': [
+                "Lumière (L): 3 /jour",
+                "Détection de la magie (L): 3 /jour",
+                "Invisibilité (L): 3 /jour",
+                "Vol (L): 3 /jour",
+                "Si possédé, gratuit: 1/tour"
+            ],
+        },
+        'arc-court-runique': {
+            "magical_level": 7,
+            'category': 'quest',
+            "name": "Arc court runique",
+            'base_item': lambda item: item.oid,
+            'short_description': "Un arc en bois blanc avec une Rune de puissance.",
+            'full_description': "Cet arc de bois blanc +3 porte une Rune de puissance (forgesort, rang 4, DM maximum une fois par combat). Il accorde la capacité Nuée de èches (L) trois fois par jour par une action limitée, le personnage peut tirer simultanément sur un maximum 5 cibles différentes dans une zone de 10 mètres de diamètres (un seul test d’attaque).",
+            'weight': cof.properties.Weight(value=1.0, unit='Kg'),
+            'hands': 2,
+            'attack': Attack(
+                atype='ranged',
+                damages=Damage(
+                    base=[Mod(die=6, count=1, target=['punctured'])],
+                    other=[Mod(target="giant", mtype="+", count=1, die=6, limitation="Seulement contre orques et géants"),
+            ]
+                ),
+                range=Range(value=30, unit='m'),
+                critical=RangeSet([20])
+            ),
+            'cost': lambda item: Cost(
+                value=item.magical_level * item.magical_level * ccc['global']['cost']['magical'],
+                unit=ccc['global']['cost']['unit']).iso(),
+            'special_property': [
+                "DM maximum une fois par combat",
+                "Nuée de èches (L): 3 / jour, max 5 cibles, max 10m de portée",
+            ],
+             'scenario': [
+                Scenario(campaign="Anathazerïn", title="Les secrets d’Anathazerïn", chapter="", numbering="")
+            ],
+        },
+        'retribution-divine': {
+            'name': "Rétribution divine",
+            'base_item': lambda item: item.oid,
+            'short_description': "Une splendide arme qui semble forgée dans de l’or pur.",
+            'full_description': "Cette splendide arme +3 semble forgée dans de l’or pur. Lorsqu’un personnage s’en saisit, l’arme change de forme pour s’adapter parfaitement à la force et à la morphologie de celui-ci. Rapidement, le personnage prend conscience qu’avec un effort de volonté (action limitée, test de SAG difficulté 15), il peut modeler l’arme de son choix (de contact, à une ou à 2 mains) : masse, rapière, etc. Pour terminer, Rétribution divine permet à son porteur d’utiliser, trois fois par jour chacune, les capacités Ailes célestes et Foudres divines (prêtre, rang 3 et 4)",
+            'category': "quest",
+            'scenario': [
+                Scenario(campaign="Anathazerïn", title="Les secrets d’Anathazerïn", chapter="", numbering="")
+            ],
+            'cost': lambda item: Cost(
+                value=item.magical_level * item.magical_level * ccc['global']['cost']['magical'],
+                unit=ccc['global']['cost']['unit']).iso(),
+            'weight': Weight(value=1.0, unit='Kg'),
+            'hands': [1,2],
+            'attack': Attack(
+                atype='melee',
+                mod=3,
+                damages=Damage(
+                    base=[Mod(die=6, count=1, target=['punctured', 'sharp']),
+                          Mod(count=3, target=['magical'], mtype="+")],
+                    other=[]
+                ),
+                critical=RangeSet([20])
+            ),
+            'special_property': [
+                "Test SAG ≥ 15 : Arme de son choix",
+                "Ailes célestes: 3 / jour",
+                "Foudres divines: 3 / jour",
+            ],
+            'flavor': [Flavor(ftype='magical', count=3)],
+            'magical_level': 10,
+        },
     },
     "Boots": {
         'boots-sprint': {
@@ -3945,6 +4904,50 @@ uniques = {
                 ),
             ],
         },
+        'casque+1-def': {
+            'base_item': "casque+1-def",
+            'category': 'quest',
+            'skill': [
+                Mod(label="Test", target="view", count=1, mtype="-"), 
+                Mod(label="Test", target="hearing", count=1, mtype="-"),
+                Mod(label="Test", target="embuscade", count=1, mtype="-")
+                ],
+            'magical_level': 2,
+            'name': "Casque +1, de déviation",
+            'short_description': "Ce casque +1 en DEF permet, une fois par combat, de diviser par 2 les DM d’une attaque.",
+            'full_description': "Ce casque +1 en DEF permet, une fois par combat, de diviser par 2 les DM d’une attaque.",
+            'cost': lambda item: Cost(
+                value=(item.magical_level) * (item.magical_level) * ccc['global']['cost']['magical'],
+                unit=ccc['global']['cost']['unit']).iso(),
+            'weight': cof.properties.Weight(value=1.0, unit='Kg'),
+            'defense': [Mod(label="DEF", mtype="+", count=1)],
+            'special_property': [
+                "DM / 2 une fois par combat"
+            ],
+            'scenario': [
+                Scenario(campaign="Anathazerïn", title="Les secrets d’Anathazerïn", chapter="", numbering="")
+            ],
+        },
+        'beandeau-intellect': {
+            'name': "Bandeau d'intellect",
+            'special_property': [
+                "[INT]: +2",
+                "Test d’INT à la place de FOR",
+                "+2 test bricolage ou science"
+            ],
+            'flavor': Flavor(ftype='magical', count=2),
+            'short_description': "Ce bandeau de soie blanche rehaussé de fils d’or accorde un bonus de +2 au Mod. d’INT de son porteur et lui permet de bénéficier de la capacité Grosse tête (Forgesort rang 1).",
+            'full_description': "Un bandeau de soie blanche rehaussé de fils d’or",
+            'category': "quest",
+            'cost': lambda item: Cost(
+                value=item.magical_level * item.magical_level * ccc['global']['cost']['magical'],
+                unit=ccc['global']['cost']['unit']).iso(),
+            'weight': Weight(value=0.1, unit='Kg'),
+            'magical_level': 3,
+             'scenario': [
+                Scenario(campaign="Anathazerïn", title="Les secrets d’Anathazerïn", chapter="", numbering="")
+            ],
+        },
     },
     "Robe": {
         'robe-charisme': {
@@ -3952,8 +4955,8 @@ uniques = {
             'base_item': lambda item: f"{item.oid}",
             'special_property': lambda item: [f"[CHA]: +{item.magical_level}"],
             'flavor': lambda item: [Flavor(ftype='magical', count=item.magical_level)],
-            'short_description': "Cete robe apporte un bonus au Mod. de charisme de la personne qui la porte.",
-            'full_description': lambda item: f"Cete robe apporte un bonus de +{item.magical_level} au Mod. de "
+            'short_description': "Cette robe apporte un bonus au Mod. de charisme de la personne qui la porte.",
+            'full_description': lambda item: f"Cette robe apporte un bonus de +{item.magical_level} au Mod. de "
                                              "charisme de la personne qui la porte.",
             'magical_levels': [1, 2, 3, 4],
             'category': "Magical",
@@ -3987,8 +4990,8 @@ uniques = {
             'base_item': lambda item: f"{item.oid}",
             'special_property': lambda item: [f"[CON]: +{item.magical_level}"],
             'flavor': lambda item: [Flavor(ftype='magical', count=item.magical_level)],
-            'short_description': "Cete amulette apporte un bonus au Mod. de constitution de la personne qui la porte.",
-            'full_description': lambda item: f"Cete amulette apporte un bonus de +{item.magical_level} au Mod. de "
+            'short_description': "Cette amulette apporte un bonus au Mod. de constitution de la personne qui la porte.",
+            'full_description': lambda item: f"Cette amulette apporte un bonus de +{item.magical_level} au Mod. de "
                                              "constitution de la personne qui la porte.",
             'magical_levels': [1, 2, 3, 4],
             'category': "Magical",
@@ -4152,6 +5155,25 @@ uniques = {
             'material': "mythral",
 
         },
+        'gants-de-guerison': {
+            'name': "Gants de guérison",
+            'base_item': lambda item: f"{item.oid}",
+            'special_property': [ 
+                "Soigne: 10 x [niveau] PV / jour"
+            ],
+            'flavor': lambda item: [Flavor(ftype='magical', count=item.magical_level),Flavor(ftype='mythral', count=1)],
+            'short_description': "Le porteur de ces gants peur guérir une ou plusieurs créatures au contact en une ou plusieurs fois.",
+            'full_description': "Le porteur de ces gants de velours rouge peut apposer les mains pour guérir une créature au contact. Chaque jour, il peut guérir un nombre de PV égal à son niveau multiplié par dix. Il lui faut une action de mouvement et il peut fractionner les soins entre plusieurs cibles à des moments différents.",
+            'magical_level': 2,
+            'category': "quest",
+            'scenario': [
+                Scenario(campaign="Anathazerïn", title="Les secrets d’Anathazerïn", chapter="", numbering="")
+            ],
+            'cost': lambda item: Cost(
+                value=(item.magical_level) * (item.magical_level) * ccc['global']['cost']['magical'],
+                unit=ccc['global']['cost']['unit']).iso(),
+            'weight': Weight(value=0.1, unit='Kg'),
+        },
     },
     "Belt": {
         'belt-force': {
@@ -4159,8 +5181,8 @@ uniques = {
             'base_item': lambda item: f"{item.oid}",
             'special_property': lambda item: [f"[FOR]: +{item.magical_level}"],
             'flavor': lambda item: [Flavor(ftype='magical', count=item.magical_level)],
-            'short_description': "Cete ceinture apporte un bonus au Mod. de force de la personne qui la porte.",
-            'full_description': lambda item: f"Cete ceinture apporte un bonus de +{item.magical_level} au Mod. de "
+            'short_description': "Cette ceinture apporte un bonus au Mod. de force de la personne qui la porte.",
+            'full_description': lambda item: f"Cette ceinture apporte un bonus de +{item.magical_level} au Mod. de "
                                              "force de la personne qui la porte.",
             'magical_levels': [1, 2, 3, 4],
             'category': "Magical",
@@ -4175,9 +5197,9 @@ uniques = {
             'base_item': lambda item: f"{item.oid}",
             'special_property': ["[FOR]: +2"],
             'flavor': [Flavor(ftype='magical', count=2)],
-            'short_description': "Cete ceinture en bronze décorée d’un large motif de taureau aux yeux "
+            'short_description': "Cette ceinture en bronze décorée d’un large motif de taureau aux yeux "
                                 "de rubis apporte un bonus au Mod. de force de la personne qui la porte.",
-            'full_description': "Cete ceinture en bronze décorée d’un large motif de taureau aux yeux "
+            'full_description': "Cette ceinture en bronze décorée d’un large motif de taureau aux yeux "
                                 "de rubis apporte un bonus de +2 au Mod. de "
                                 "force de la personne qui la porte.",
             'scenario': [
@@ -4191,6 +5213,70 @@ uniques = {
                 value=item.magical_level * item.magical_level * ccc['global']['cost']['magical'],
                 unit=ccc['global']['cost']['unit']).iso(),
             'weight': Weight(value=0.1, unit='Kg'),
+        },
+        'ceinture-endurance-de-ours+2': {
+            'name': lambda item: f"Ceinture d'endurance de l'ours +2",
+            'base_item': lambda item: f"{item.oid}",
+            'special_property': lambda item: [
+                f"[CON]: +2",
+                "Capacité: Rage du berserk (3/jours)",
+                "Pénalité DEF / 2 rage ou furie (si possède déjà la capacité)"
+            ],
+            'flavor': lambda item: [Flavor(ftype='magical', count=item.magical_level)],
+            'short_description': "Cette ceinture apporte un bonus au Mod. de CON et la capacité de rage du berserk.",
+            'full_description': lambda item: f"Cette ceinture est pourvue d’une plaque ventrale en argent, gravée "
+                                "d’une tête d’ours. Cette ceinture apporte un bonus de +{item.magical_level} au Mod. de "
+                                "constitution de la personne qui la porte. Il gagne aussi la Capacité de Rage du berserk " 
+                                "comme un barbare trois fois par jour. Si elle est portée par un personnage qui possède " "déjà cette capacité, la ceinture divise par 2 la pénalité de DEF associée à la rage ou la furie.",
+            'category': "quest",
+            'magical_level': 3,
+            'cost': lambda item: Cost(
+                value=item.magical_level * item.magical_level * ccc['global']['cost']['magical'],
+                unit=ccc['global']['cost']['unit']).iso(),
+            'weight': Weight(value=0.1, unit='Kg'),
+            'scenario': [
+                Scenario(campaign="Anathazerïn", title="Le pacte du Seigneur des cimes", chapter="La vallée des Norderem", numbering="2")
+            ],
+        },
+        'ceinture-escalade': {
+            'name': "Ceinture d’escalade",  
+            'short_description': "Une vieille ceinture de cuir usé, mais dans la boucle, se détache un "
+                                "crochet relié à un filin d’acier incassable.",
+            'full_description': "Elle ressemble à une vieille ceinture de cuir usé, mais dans la boucle, se détache un "
+                                "crochet relié à un filin d’acier incassable d’une longueur de 100 mètres. Un bouton permet "
+                                "de dérouler le câble et un autre permet au contraire de l’enrouler, supportant un "
+                                "poids de 200 kilos. Au-dessus, ce mécanisme ne fonctionne pas.",
+            'category': "quest",
+            'scenario': [
+                Scenario(campaign="Anathazerïn", title="La traversée de Dorn", chapter="Voyage", numbering="2")
+            ],
+            'weight': Weight(value=0.2, unit='Kg'),
+            'cost': lambda item: Cost(
+                value=1000.0,
+                unit=ccc['global']['cost']['unit']).iso(),
+            'special_property': [
+                "Longueur: 100 m",
+                "Poids; max 200Kg"
+            ],
+        },
+         'ceinture-du-temps': {
+            'name': lambda item: f"Ceinture du temps",
+            'base_item': lambda item: f"{item.oid}",
+            'special_property': lambda item: [
+                "Capacité Hâte (gratuit), pendant 7 tours: 3/jour",
+                "Arrêt du temps (L), pendant 7 tours: 1/jour",
+            ],
+            'short_description': "Cette ceinture est constituée de 23 plaques de métal.",
+            'full_description': "Cette ceinture est constituée de 23 plaques de métal. Le porteur peut utiliser la capacité Hâte (magicien rang 3,7 tours) trois fois par jours par une action gratuite et la capacité Arrêt du temps (magicien rang 5, 7 tours) une fois par jour par une action limitée).",
+            'category': "quest",
+            'magical_level': 8,
+            'cost': lambda item: Cost(
+                value=item.magical_level * item.magical_level * ccc['global']['cost']['magical'],
+                unit=ccc['global']['cost']['unit']).iso(),
+            'weight': Weight(value=0.1, unit='Kg'),
+            'scenario': [
+                Scenario(campaign="Anathazerïn", title="Les secrets d’Anathazerïn", chapter="", numbering="")
+            ],
         },
     },
     "Ring": {
@@ -4406,10 +5492,33 @@ uniques = {
                 unit=ccc['global']['cost']['unit']).iso(),
             'weight': Weight(value=0.0, unit='Kg'),
             'special_property': [
-                "Detection rune: test SAG >= 15",
+                "Detection rune: test SAG ≥ 15",
                 "Ouverture : 4d6 DM de feu",
-                "Test DEX >= 15 : DM / 2"
+                "Test DEX ≥ 15 : DM / 2"
             ]
+        },
+        'anneau-des-rois': {
+            'defense': [Mod(label="DEF", target="", mtype="+", count=6)],
+            'category': "quest",
+            'base_item': lambda item: item.oid,
+            'magical_level':11,
+             'scenario': [
+                Scenario(campaign="Anathazerïn", title="Les secrets d’Anathazerïn", chapter="", numbering="")
+            ],
+            'cost': lambda item: Cost(
+                value=item.magical_level * item.magical_level * ccc['global']['cost']['magical'],
+                unit=ccc['global']['cost']['unit']).iso(),
+            'name': "Anneau des Rois",
+            'special_property': [
+                "Utilisable: Elfe, drow ou demi-elfe",
+                "Charme (elfe et drow): max 30 m",
+                "NC total affecté ≤ 50 (25 si demi-elfe)",
+                "Immunisé: NC ≥8"
+            ],
+            'short_description': "Un anneau très simple composé de 2 bagues jumelées.",
+            'full_description': "L’Anneau des Rois est un anneau très simple, sans pierre précieuse, qui comporte deux larges bagues jumelées, l’une d’or et l’autre d’argent. Les deux sont couvertes de runes sur les deux faces. Il s’agit d'un anneau de protection +6 (DEF +6). L’anneau, lorsqu’il est porté par un elfe (et seulement dans ce cas), confère à son porteur le pouvoir d’influencer les elfes (drows compris). Le pouvoir de charme de l’Anneau des Rois s’exerce dans une zone de 30 mètres autour du porteur. Dans cette zone, les elfes affectés par son pouvoir peuvent être choisis par le porteur, mais, par défaut, ce sont ceux qui sont les plus proches de lui qui sont affectées en premier. L’anneau peut influencer un nombre total d’elfes dont le NC ne doit pas dépasser 50. Toutefois, aucun indivi du dont le NC est supérieur à 8 n’est affecté (si l’anneau est porté par un demi-elfe, son pouvoir est divisé par deux). Les elfes sous le pouvoir de l’anneau considèrent son porteur comme leur roi et seigneur légitime et ils lui obéissent du mieux possible, en fonction de leurs principes moraux et de leur éducation.",
+            'weight': Weight(value=0.0, unit='Kg'),
+            'material': 'gold',
         },
     },
     "Shield": {
@@ -4458,6 +5567,26 @@ uniques = {
                 "Attaque bouclier: 1d8",
                 "DM du bouclier létaux"],
             'flavor': [Flavor(ftype='magical', count=2)],
+        },
+        'bouclier+2-metal-noir': {
+            'name': "Bouclier +2, en métal noir",
+            'base_item': lambda item: item.oid,
+            'short_description': "Un bouclier rond de métal noir",
+            'full_description': "Un bouclier rond de métal noir +2. Toute créature qui le touche doit réussir un test de CON difficulté 10 ou être Affaibli pendant un tour (d12 à tous les tests). Ce bouclier est clairement d'origine maléfique.",
+            'category': "quest",
+            'scenario': [
+                Scenario(campaign="Anathazerïn", title="Les secrets d’Anathazerïn", chapter="", numbering="")
+            ],
+            'magical_level': 2,
+            'cost': lambda item: Cost(
+                value=item.magical_level * item.magical_level * ccc['global']['cost']['magical'],
+                unit=ccc['global']['cost']['unit']).iso(),
+            'weight': Weight(value=2, unit='Kg'),
+            'hands': 1,
+            'defense': [Mod(label="DEF", mtype="+", count=2)],
+            'special_property': [
+                "Affaibli: Test CON < 10 (toute créature qui touche le bouclier)"],
+            'flavor': [Flavor(ftype='magical', count=2)],
         }
     },
     "Bullet": {
@@ -4499,6 +5628,70 @@ uniques = {
             'special_property': ["DM: +2d6"],
             'quantity': 1,
             'use': 4
+        },
+        'fleche-tueuse-de-geant': {
+            'name': "Flêche tueuse de géant",
+            'base_item': lambda item: item.oid,
+            'short_description': "Des flêches tueuses qui infligent d'importants dégâts supplémentaires aux géants, ogres, ettins, cyclopes.",
+            'full_description': "Des flêches tueuses qui infligent d'importants dégâts supplémentaires aux géants, ogres, ettins, cyclopes. Il en "
+                                "reste 12 dans ce carqois.",
+            'category': "quest",
+            'scenario': [
+                Scenario(
+                    campaign="Anathazerïn", title="La traversée de Dorn", chapter="Préparatifs", numbering="1"
+                ),
+            ],
+            'cost': Cost(
+                value=240.0,
+                unit=ccc['global']['cost']['unit']).iso(),
+            'weight': Weight(value=0.3, unit='Kg'),
+            'special_property': [
+                "Attaque: +2 contre géants, ogres, ettins, cyclopes",
+                "DM: +2d6 contre géants, ogres, ettins, cyclopes"
+            ],
+            'quantity': 12,
+        },
+        'carreau-tueur-de-geant': {
+            'name': "Carreau tueur de géant",
+            'base_item': lambda item: item.oid,
+            'short_description': "Des carreaux tueurs qui infligent d'importants dégâts supplémentaires aux géants, ogres, ettins, cyclopes.",
+            'full_description': "Des carreaux tueurs qui infligent d'importants dégâts supplémentaires aux géants, ogres, ettins, cyclopes. Il en "
+                                "reste 12 dans ce lot.",
+            'category': "quest",
+            'scenario': [
+                Scenario(
+                    campaign="Anathazerïn", title="La traversée de Dorn", chapter="Préparatifs", numbering="1"
+                ),
+            ],
+            'cost': Cost(
+                value=240.0,
+                unit=ccc['global']['cost']['unit']).iso(),
+            'weight': Weight(value=0.3, unit='Kg'),
+            'special_property': [
+                "Attaque: +2 contre géants, ogres, ettins, cyclopes",
+                "DM: +2d6 contre géants, ogres, ettins, cyclopes"
+            ],
+            'quantity': 12,
+        },
+        'carreau-tueur-de-vermine': {
+            'name': "Carreau tueur de vermine",
+            'base_item': lambda item: item.oid,
+            'short_description': "Des carreaux tueurs qui infligent d'importants dégâts supplémentaires aux insectes.",
+            'full_description': "Des carreaux tueurs qui infligent d'importants dégâts supplémentaires aux aux insectes. Il en "
+                                "reste 10 dans ce lot.",
+            'category': "quest",
+            'scenario': [
+                Scenario(campaign="Anathazerïn", title="Le pacte du Seigneur des cimes", chapter="Kerserac", numbering="3")
+            ],
+            'cost': Cost(
+                value=240.0,
+                unit=ccc['global']['cost']['unit']).iso(),
+            'weight': Weight(value=0.3, unit='Kg'),
+            'special_property': [
+                "Attaque: +2 contre insectes",
+                "DM: +2d6 contre insectes"
+            ],
+            'quantity': 10,
         },
         'carreau-meutrier': {
             'name': "Carreau meurtrier",
@@ -4772,7 +5965,7 @@ uniques = {
             'full_description': 
                 lambda item, flavor: f"Réalisée par un artisant, cette armure a été confectionnée en utilisant toutes "
                                      "les écailles les plus remarquables d'un dragon "
-                                     "{flavor['color']} {flavor['age']}. Cette armure de qualité (pénalité "
+                                     f"{flavor['color']} {flavor['age']}. Cette armure de qualité (pénalité "
                                      "d'encombrement réduite de 1) octroie en plus de son bonus de défense "
                                      f"de +{flavor['magical_level']}, une réduction aux dégats élémentaires de "
                                      "correspondants au type du dragon (blanc/froid, rouge/feu, noir/acide ou "
@@ -4967,6 +6160,46 @@ uniques = {
                 unit=ccc['global']['cost']['unit']).iso(),
             'flavor': lambda item: [Flavor(ftype=f"naesk", count=item.magical_level)],
         },
+        'armure-orientale-grande-taille': {
+            'name': "Armure orientale de grande taille",
+            'base_item': lambda item: item.oid,
+            'full_description': "Armure orientale de grande taille, composée de grandes plaques bleues de métal, qui protège "
+                                "le corps du combattant. Les plaques sont moulées de façons à ce qu’elles "
+                                "dévient les coups les plus faibles et leur épaisseur garantit un maximum de "
+                                "protection. Un combattant protégé par ce genre de protection intégrale est "
+                                "fortement encombré dans ses mouvements. Elle procure un bonus de DEF +8.",
+            'short_description': "Armure orientale de grande taille, composée de grandes plaques bleues, qui protège le "
+                                 "corps du combattant.",
+            'weight': Weight(value=25.0, unit='Kg'),
+            'defense': [Mod(label="DEF", mtype="+", count=8)],
+            'skill': [Mod(label="Test", target="DEX", count=8, mtype="-")],
+            'category': 'quest',
+            'cost': Cost(value=250.0, unit=ccc['global']['cost']['unit']).iso(),
+            'scenario': [
+                Scenario(campaign="Anathazerïn", title="La traversée de Dorn", chapter="Voyage", numbering="2")
+            ],
+        },
+        'cuirasse-de-bronze': {
+            'name': "Cuirasse de bronze",
+            'base_item': lambda item: item.oid,
+            'full_description': "Cette cuirasse équivaut à une cotte de maille +3. Son porteur peut invoquer la capacité Peau de pierre (magicien, rang 5) trois fois par jour par une action limitée.",
+            'short_description': "Une somptueuse cuirasse en bronze.",
+            'weight': Weight(value=20.0, unit='Kg'),
+            'defense': [Mod(label="DEF", target="def", count=5),
+                        Mod(label="DEF", mtype="+", count=3)],
+            'skill': [Mod(label="Test", target="DEX", count=5, mtype="-")],
+            'category': 'quest',
+            'cost': lambda item: Cost(
+                value=item.magical_level * item.magical_level * ccc['global']['cost']['magical'],
+                unit=ccc['global']['cost']['unit']).iso(),
+            'magical_level':8,
+            'scenario': [
+                Scenario(campaign="Anathazerïn", title="Les secrets d’Anathazerïn", chapter="", numbering="")
+            ],
+            'special_property': [
+                "Peau de pierre (L): 3 / jour",
+            ],
+        },
     },
     "Cloak": {
         'cape-elfique': {
@@ -5010,6 +6243,46 @@ uniques = {
             'special_property': [
                 "Discretion: +5"
             ],
+        },
+        'cape-passe-muraille': {
+            'name': "Cape de passe muraille",
+            'base_item': lambda item: item.oid,
+            'short_description': "Le porteur de cette cape est immunisé aux effets de la condition Immobilisé.",
+            'full_description': "Le porteur de cette cape est immunisé aux effets de la condition Immobilisé (ou englué, retenu, etc.) et aux différentes formes de paralysie. Trois fois par jours, il peut utiliser la capacité Passe muraille (moine rang 5, maximum 3 mètres).",
+            'category': "quest",
+            'weight': Weight(value=0.0, unit='Kg'),
+            "special_property": [
+                "Passe muraille (L): 3/j, max 3m",
+                "Immunité: Immobilisé, englué, etc."
+            ],
+            'magical_level':6,
+             'scenario': [
+                Scenario(campaign="Anathazerïn", title="Les secrets d’Anathazerïn", chapter="", numbering="")
+            ],
+            'cost': lambda item: Cost(
+                value=item.magical_level * item.magical_level * ccc['global']['cost']['magical'],
+                unit=ccc['global']['cost']['unit']).iso(),
+        },
+        'cape-de-deplacement': {
+            'name': "Cape de déplacement",
+            'base_item': lambda item: item.oid,
+            'short_description': "Cette cape permet à son porteur de se téléporter sur de brèves distance de façon très rapide et imprévisible pendant les combats.",
+            'full_description': "Cette cape permet à son porteur de se téléporter sur de brèves distance de façon très rapide et imprévisible pendant les combats. Elle donne à son porteur un bonus de +4 en DEF et en Init. Une fois par tour, elle permet de se déplacer instantanément de 10 mètres à un endroit en vue (téléportation, par une action gratuite).",
+            'category': "quest",
+            'cost': Cost(value=1000.0, unit=ccc['global']['cost']['unit']).iso(),
+            'weight': Weight(value=0.0, unit='Kg'),
+            "special_property": [
+                "Téléportation (gratuit): max 10m, 1/tour",
+                "Init: +4"
+            ],
+            'defense': [Mod(label="DEF", mtype="+", count=4)],
+            'magical_level':9,
+             'scenario': [
+                Scenario(campaign="Anathazerïn", title="Les secrets d’Anathazerïn", chapter="", numbering="")
+            ],
+            'cost': lambda item: Cost(
+                value=item.magical_level * item.magical_level * ccc['global']['cost']['magical'],
+                unit=ccc['global']['cost']['unit']).iso(),
         },
     }
 }

@@ -850,7 +850,7 @@ weapons = {
                                 "son prix. Très maniable, il s'utilise à 2 mains. Il inflige 1d4 dégâts qui "
                                 "peuvent être temporaires si son porteur le décide.",
             'short_description': "Un simple bâton en bois.",
-            'weight': cof.properties.Weight(value=1.0, unit='Kg').iso(),
+            'weight': cof.properties.Weight(value=1.0, unit='Kg'),
             'hands': 2,
             'attack': Attack(
                 atype='melee',
@@ -870,7 +870,7 @@ weapons = {
                                 "Une arme efficace vu son prix. Très maniable, il s'utilise à 2 mains. Il "
                                 "inflige 1d6 dégâts.",
             'short_description': "Un bâton en bois renforcé en plusieurs endroits par de petites lanières de fer.",
-            'weight': cof.properties.Weight(value=1.0, unit='Kg').iso(),
+            'weight': cof.properties.Weight(value=1.0, unit='Kg'),
             'hands': 2,
             'attack': Attack(
                 atype='melee',
@@ -1204,7 +1204,7 @@ weapons = {
                                 "version courte, il permet d'envoyer un projectile jusqu'à 30m et inflige "
                                 "1d6 dégâts.",
             'short_description': "L'arc est une arme de trait à 2 mains destinée à lancer des flèches.",
-            'weight': cof.properties.Weight(value=1.0, unit='Kg').iso(),
+            'weight': cof.properties.Weight(value=1.0, unit='Kg'),
             'hands': 2,
             'attack': Attack(
                 atype='ranged',
@@ -1297,8 +1297,8 @@ weapons = {
         'mousquet': {
             'category': 'Standard',
             'base_item': 'mousquet',
-            'full_description': "Un mousquet est une arme à feu portative au long canon à âme lisse4, "
-                                "crosse d'épaule et platine à mèche. Le mousquet a été inventé pour pallier "
+            'full_description': "Un mousquet est une arme à feu portative dotée d'un long canon lisse, d'une crosse "
+                                "d'épaule et d'un mécanisme de mise à feu à mèche. Le mousquet a été inventé pour pallier "
                                 "le manque de puissance des arquebuses et pemet de tirer une cible jusqu'à 50m. "
                                 "Il s'utilise à 2 mains et inflige 2d6 dégâts. Une action limitée est nécessaire "
                                 "pour le recharger.",
